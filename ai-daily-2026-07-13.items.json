@@ -1,0 +1,102 @@
+[
+  {
+    "source_key": "openai",
+    "source_label": "OpenAI Blog",
+    "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
+    "m3_title": "GPT-5.6 成 Microsoft 365 Copilot 首选模型",
+    "m3_summary": "Microsoft 365 Copilot 全套应用切换到 GPT-5.6,Word/Excel/PPT 全面获最新推理与多模态能力,企业用户无需额外配置即可使用。",
+    "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
+    "desc": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work.",
+    "pubdate": "2026-07-09T13:00:00+00:00"
+  },
+  {
+    "source_key": "openai",
+    "source_label": "OpenAI Blog",
+    "title": "Separating signal from noise in coding evaluations",
+    "m3_title": "OpenAI 拆解 SWE-Bench Pro 评测噪声问题",
+    "m3_summary": "OpenAI 复盘 SWE-Bench Pro 等热门编程基准,指出评测数据存在噪声与可复现性危机,呼吁社区共建更稳健的代码 Agent 评估标准。",
+    "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+    "desc": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models.",
+    "pubdate": "2026-07-08T13:00:00+00:00"
+  },
+  {
+    "source_key": "anthropic",
+    "source_label": "Anthropic News",
+    "title": "Inviting hard questions",
+    "m3_title": "Anthropic 公开征询 AI 治理硬问题",
+    "m3_summary": "Anthropic 发起 Hard Questions 系列,公开向公众征集关于对齐、可解释性、长期利益的尖锐问题,承诺以透明方式逐条回应,直面治理争议。",
+    "url": "https://www.anthropic.com/news/hard-questions",
+    "desc": "We're asking the public for their hardest questions about AI, and committing to show our work as we address them.",
+    "pubdate": "2026-07-09T00:00:00+00:00"
+  },
+  {
+    "source_key": "anthropic",
+    "source_label": "Anthropic News",
+    "title": "Introducing Claude Sonnet 5",
+    "m3_title": "Anthropic 发布 Claude Sonnet 5 编码与 Agent 旗舰",
+    "m3_summary": "Claude Sonnet 5 在编码、Agent、专业级长链路任务上达到新前沿,定位中高价位主力模型,编程评测领先 GPT-5 系。",
+    "url": "https://www.anthropic.com/news/claude-sonnet-5",
+    "desc": "Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.",
+    "pubdate": "2026-06-30T00:00:00+00:00"
+  },
+  {
+    "source_key": "deepmind",
+    "source_label": "DeepMind Blog",
+    "title": "Securing the future of AI agents",
+    "m3_title": "DeepMind 提出 AI Agent 安全控制路线图",
+    "m3_summary": "DeepMind 发布 AI Control Roadmap,把传统防护与实时监控结合,系统化应对 Agent 内部滥用、提示注入与权限升级等新型威胁。",
+    "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+    "desc": "Securing internal systems with an AI Control Roadmap, combining traditional safeguards and real-time monitoring.",
+    "pubdate": "2026-06-16T15:46:31+00:00"
+  },
+  {
+    "source_key": "arxiv",
+    "source_label": "arXiv cs.AI",
+    "title": "Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE",
+    "m3_title": "arXiv:Jet-Long 用动态双焦 RoPE 扩长上下文",
+    "m3_summary": "新论文 Jet-Long 提出动态双焦旋转位置编码,把长上下文训练成本砍半,推理延迟几乎不变,适配 RAG 与 Agent 长链场景。",
+    "url": "https://arxiv.org/abs/2607.07740",
+    "desc": "arXiv:2607.07740v2 Modern LLMs need long-context for RAG, repo-level coding, and agentic traces. Jet-Long uses dynamic bifocal RoPE to extend context cheaply.",
+    "pubdate": "2026-07-13T04:00:00+00:00"
+  },
+  {
+    "source_key": "arxiv",
+    "source_label": "arXiv cs.AI",
+    "title": "ARCANA: A Reflective Multi-Agent Program Synthesis Framework for ARC-AGI-2 Reasoning",
+    "m3_title": "arXiv:ARCANA 反思多 Agent 拿下 ARC-AGI-2",
+    "m3_summary": "ARCANA 用多 Agent 反思回路在 ARC-AGI-2 抽象推理赛取得显著提升,代码与权重开源,为低成本复现前沿推理提供新路径。",
+    "url": "https://arxiv.org/abs/2607.09059",
+    "desc": "ARCANA uses multi-agent reflection to improve on ARC-AGI-2, with open weights and reproducible code.",
+    "pubdate": "2026-07-13T04:00:00+00:00"
+  },
+  {
+    "source_key": "hn",
+    "source_label": "Hacker News",
+    "title": "Samsung Health app threatens data deletion if users opt out AI training",
+    "m3_title": "三星健康拒绝 AI 训练授权将清空用户数据",
+    "m3_summary": "HN 204 分热帖:三星健康应用把关闭 AI 训练开关等同于删除所有健康数据,引发关于消费硬件 AI 默认开启与数据主权的激烈讨论。",
+    "url": "https://neow.in/cWsyMTV3",
+    "desc": "Article: Samsung Health app threatens data deletion if users opt out of AI training. HN 204 points, 55 comments.",
+    "pubdate": "2026-07-13T20:01:43+00:00"
+  },
+  {
+    "source_key": "hn",
+    "source_label": "Hacker News",
+    "title": "Show HN: I implemented a neural network in SQL",
+    "m3_title": "Show HN:工程师用纯 SQL 写完神经网络",
+    "m3_summary": "Show HN 热帖:作者 xarray-sql 库用纯 SQL 实现了 MNIST 神经网络,展示把数组数据库与 ML 工作流统一在同一查询语言里的可能。",
+    "url": "https://github.com/xqlsystems/xarray-sql/blob/claude/xarray-sql-mnist-demo/benchmarks/nn.py",
+    "desc": "xarray-sql now supports training a small NN in pure SQL against array data, demonstrating SQL as a unified ML/analytics surface.",
+    "pubdate": "2026-07-13T20:00:10+00:00"
+  },
+  {
+    "source_key": "github",
+    "source_label": "GitHub openai",
+    "title": "release: 2.45.0 (#3478)",
+    "m3_title": "openai-python v2.45.0 SDK 释出",
+    "m3_summary": "OpenAI 官方 Python SDK 释出 v2.45.0,新增 Bedrock 鉴权、优化首鉴权头解析,改进了 Assistants 与 Responses 的流式行为。",
+    "url": "https://github.com/openai/openai-python/releases/tag/v2.45.0",
+    "desc": "Release v2.45.0: AWS Bedrock provider auth, smarter first auth header, Responses stream improvements.",
+    "pubdate": "2026-07-09T00:00:00+00:00"
+  }
+]
