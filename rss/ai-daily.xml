@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+  <title>AI 圈每日精华</title>
+  <subtitle>一手机构 + 关键人物 + arXiv + GitHub 的 AI 信号流</subtitle>
+  <id>tag:daily-briefing,2026:ai-daily</id>
+  <updated>Mon, 13 Jul 2026 07:50:38 GMT</updated>
+  <generator>daily-briefing/0.1</generator>
+  <link rel="self" type="application/atom+xml" href="file:///run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/daily-briefing/rss/ai-daily.xml"/>
+  <author><name>Daily Briefing</name></author>
+  <entry>
+    <title>36Kr:国产开源大模型 2026 上半年格局重塑</title>
+    <link href="https://36kr.com/p/12345"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-12:https---36kr-com-p-12345</id>
+    <updated>Sun, 12 Jul 2026 19:50:38 GMT</updated>
+    <author><name>36Kr</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: 36Kr:国产开源大模型 2026 上半年格局重塑</p><p><b>摘要</b>: 国产开源大模型 2026 上半年格局重塑:DeepSeek、Qwen、智谱、月之暗面多方混战。</p><p><b>关键信息</b>: 36Kr AI</p><p><b>来源</b>: 36Kr AI · 36Kr</p><p><a href="https://36kr.com/p/12345">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>Qwen3 推出长上下文 Agent 工具链</title>
+    <link href="https://github.com/QwenLM/Qwen3-Agent"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-12:https---github-com-QwenLM-Qwen3-Agent</id>
+    <updated>Sun, 12 Jul 2026 20:50:38 GMT</updated>
+    <author><name>QwenLM</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: Qwen3 推出长上下文 Agent 工具链</p><p><b>摘要</b>: Qwen3 long-context Agent toolchain open-source…</p><p><b>关键信息</b>: Qwen GitHub</p><p><b>来源</b>: Qwen GitHub · QwenLM</p><p><a href="https://github.com/QwenLM/Qwen3-Agent">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>Anthropic 发布 Claude Code 2.0,主打…</title>
+    <link href="https://www.anthropic.com/news/claude-code-2"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:https---www-anthropic-com-news-claude-code-2</id>
+    <updated>Mon, 13 Jul 2026 05:20:38 GMT</updated>
+    <author><name>Anthropic</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: Anthropic 发布 Claude Code 2.0,主打…</p><p><b>摘要</b>: Claude Code 2.0 introduces multi-file coordinat…</p><p><b>关键信息</b>: Anthropic News</p><p><b>来源</b>: Anthropic News · Anthropic</p><p><a href="https://www.anthropic.com/news/claude-code-2">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>OpenAI 公布 GPT 系列新模型的多模态能力升级</title>
+    <link href="https://openai.com/blog/gpt-multimodal-upgrade"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:https---openai-com-blog-gpt-multimodal-upgrade</id>
+    <updated>Mon, 13 Jul 2026 02:50:38 GMT</updated>
+    <author><name>OpenAI</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: OpenAI 公布 GPT 系列新模型的多模态能力升级</p><p><b>摘要</b>: Latest GPT model upgrades video understanding…</p><p><b>关键信息</b>: OpenAI Blog</p><p><b>来源</b>: OpenAI Blog · OpenAI</p><p><a href="https://openai.com/blog/gpt-multimodal-upgrade">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>Sam Altman: GPT-5 将更深度整合工具调用与代…</title>
+    <link href="https://x.com/sama/status/1234567890"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:https---x-com-sama-status-1234567890</id>
+    <updated>Mon, 13 Jul 2026 06:20:38 GMT</updated>
+    <author><name>@sama</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: Sam Altman: GPT-5 将更深度整合工具调用与代…</p><p><b>摘要</b>: GPT-5 will more deeply integrate tool calling, co…</p><p><b>关键信息</b>: Sam Altman (@sama)</p><p><b>来源</b>: Sam Altman (@sama) · @sama</p><p><a href="https://x.com/sama/status/1234567890">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>DeepSeek 官方:开源 V3.2 推理引擎,显存降低 30%</title>
+    <link href="https://x.com/deepseek_ai/status/1234567891"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:https---x-com-deepseek-ai-status-1234567891</id>
+    <updated>Mon, 13 Jul 2026 03:50:38 GMT</updated>
+    <author><name>@deepseek_ai</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: DeepSeek 官方:开源 V3.2 推理引擎,显存降低 30%</p><p><b>摘要</b>: Open-sourced V3.2 inference engine with 30% lower…</p><p><b>关键信息</b>: DeepSeek (@deepseek_ai)</p><p><b>来源</b>: DeepSeek (@deepseek_ai) · @deepseek_ai</p><p><a href="https://x.com/deepseek_ai/status/1234567891">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>DeepSeek-V3.2 推理优化版本开源</title>
+    <link href="https://github.com/deepseek-ai/DeepSeek-V3.2"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:https---github-com-deepseek-ai-DeepSeek-V3-2</id>
+    <updated>Mon, 13 Jul 2026 04:50:38 GMT</updated>
+    <author><name>deepseek-ai</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: DeepSeek-V3.2 推理优化版本开源</p><p><b>摘要</b>: DeepSeek-V3.2 inference-optimized release: 2x th…</p><p><b>关键信息</b>: DeepSeek GitHub</p><p><b>来源</b>: DeepSeek GitHub · deepseek-ai</p><p><a href="https://github.com/deepseek-ai/DeepSeek-V3.2">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>Google DeepMind 开源新一代 Gemma 长…</title>
+    <link href="https://deepmind.google/discover/blog/gemma-long-context"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:https---deepmind-google-discover-blog-gemma-long-context</id>
+    <updated>Mon, 13 Jul 2026 00:50:38 GMT</updated>
+    <author><name>DeepMind</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: Google DeepMind 开源新一代 Gemma 长…</p><p><b>摘要</b>: New Gemma extends context window to 1M tokens, op…</p><p><b>关键信息</b>: Google DeepMind Blog</p><p><b>来源</b>: Google DeepMind Blog · DeepMind</p><p><a href="https://deepmind.google/discover/blog/gemma-long-context">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>Hugging Face 推出新版 Daily Paper…</title>
+    <link href="https://huggingface.co/blog/daily-papers-2026"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-12:https---huggingface-co-blog-daily-papers-2026</id>
+    <updated>Sun, 12 Jul 2026 23:50:38 GMT</updated>
+    <author><name>HF Team</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: Hugging Face 推出新版 Daily Paper…</p><p><b>摘要</b>: HF Daily Papers adds topic-based auto leaderboa…</p><p><b>关键信息</b>: Hugging Face Blog</p><p><b>来源</b>: Hugging Face Blog · HF Team</p><p><a href="https://huggingface.co/blog/daily-papers-2026">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>Hacker News 热议:Mistral Large 3…</title>
+    <link href="https://news.ycombinator.com/item?id=42345678"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-12:https---news-ycombinator-com-item-id-42345678</id>
+    <updated>Sun, 12 Jul 2026 22:50:38 GMT</updated>
+    <author><name>HN</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: Hacker News 热议:Mistral Large 3…</p><p><b>摘要</b>: HN discussion on Mistral Large 3 deployment cos…</p><p><b>关键信息</b>: Hacker News</p><p><b>来源</b>: Hacker News · HN</p><p><a href="https://news.ycombinator.com/item?id=42345678">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>用稀疏注意力把 7B 模型训练提速 3.2 倍</title>
+    <link href="https://arxiv.org/abs/2607.12345"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:https---arxiv-org-abs-2607-12345</id>
+    <updated>Mon, 13 Jul 2026 01:50:38 GMT</updated>
+    <author><name>Anonymous</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: 用稀疏注意力把 7B 模型训练提速 3.2 倍</p><p><b>摘要</b>: Adaptive sparse attention trains 7B models 3.2x…</p><p><b>关键信息</b>: arXiv cs.CL</p><p><b>来源</b>: arXiv cs.CL · Anonymous</p><p><a href="https://arxiv.org/abs/2607.12345">阅读原文</a></p>]]></summary>
+  </entry>
+  <entry>
+    <title>HF Daily Papers 今日榜首:Mixture-o…</title>
+    <link href="https://huggingface.co/papers/2607.99999"/>
+    <id>tag:daily-briefing,2026:ai-daily:2026-07-12:https---huggingface-co-papers-2607-99999</id>
+    <updated>Sun, 12 Jul 2026 21:50:38 GMT</updated>
+    <author><name>Community</name></author>
+    <category term="ai-daily"/>
+    <summary type="html"><![CDATA[<p><b>中文标题</b>: HF Daily Papers 今日榜首:Mixture-o…</p><p><b>摘要</b>: Mixture-of-Depths validated on 70B models: 1.6x in…</p><p><b>关键信息</b>: HF Daily Papers</p><p><b>来源</b>: HF Daily Papers · Community</p><p><a href="https://huggingface.co/papers/2607.99999">阅读原文</a></p>]]></summary>
+  </entry>
+</feed>

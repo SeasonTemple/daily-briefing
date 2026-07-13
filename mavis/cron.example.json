@@ -1,0 +1,16 @@
+{
+  "_comment": "mavis cron 配置示例 · 复制成 cron.json 并用 mavis cron create --config cron.json 加载",
+  "_note": "把 daily-briefing 仓库的所有者 GitHub PAT 放在 GITHUB_PAT 环境变量里,mavis session 会用它 git push",
+  "name": "daily-briefing",
+  "agent_name": "General",
+  "schedule": "0 7 * * *",
+  "timezone": "Asia/Shanghai",
+  "active_hours": { "start": "00:00", "end": "23:59" },
+  "enabled": true,
+  "prompt": "你是 Daily Briefing 执行者(Mavis M3)。\n\n## 任务\n跑 daily-briefing 的 ai-daily profile,产出 RSS,推到 GitHub。\n\n## 步骤\n1. cd /workspace/daily-briefing\n2. git pull origin main  (从 GitHub 拉最新)\n3. python scripts/digest.py --profile ai-daily --limit 20\n   - LLM 不用配(用你自己的 M3 能力,无需 API key)\n4. 检查产出:rss/ai-daily.xml 必须有 ≥ 5 条 entry\n5. git add rss/ reports/\n6. git commit -m 'chore: ai-daily RSS $(date +%Y-%m-%d)'\n7. git push  (用 GITHUB_PAT 环境变量认证)\n8. 报告:\n   - 产出了几条 entry\n   - 一手信源覆盖几个\n   - push 成功 / 失败\n   - 任何异常\n\n## 失败处理\n- 单源失败:不阻塞,继续\n- LLM 失败:走降级模板,继续\n- git push 失败:重试 1 次,失败就给我发消息告诉我\n\n## GitHub PAT\n环境变量 GITHUB_PAT 已设。git push 时:\n  git push https://x-access-token:${GITHUB_PAT}@github.com/SeasonTemple/daily-briefing.git main\n\n## 完成后向 root session (419320500774012) 报告",
+  "env": {
+    "GITHUB_PAT": "<FILL_BY_OWNER>",
+    "GIT_AUTHOR_NAME": "mavis-bot",
+    "GIT_AUTHOR_EMAIL": "mavis@users.noreply.github.com"
+  }
+}

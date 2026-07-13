@@ -1,0 +1,96 @@
+# ========================================================================
+# AI Daily profile · 一手信源优先
+#
+# 这是个示例 profile,不是工具的核心。工具本身通用,任何领域都能套。
+# 加新领域 = 复制本文件改名 + 改 sources 即可,代码零改动。
+# 详见 profiles/README.md
+#
+# 33 个信源:
+#   A. 模型厂家 X 官号  × 10
+#   B. 厂方关键人物      × 5
+#   C. 官方 newsroom    × 4
+#   D. 官方 GitHub orgs × 5
+#   E. arXiv + HF Papers × 4
+#   F. 二手聚合兜底      × 5
+# ========================================================================
+
+profile: ai-daily
+title: "AI 圈每日精华"
+subtitle: "一手机构 + 关键人物 + arXiv + GitHub 的 AI 信号流"
+description: |
+  每天抓取 AI 一手机构(Anthropic / OpenAI / DeepMind / Meta / Mistral / xAI /
+  DeepSeek / 智谱 / 月之暗面 / 通义)X 官号、关键人物、newsroom、GitHub 组织,
+  加上 arXiv 与 HF Daily Papers,经 LLM 脱水中文化与摘要评分,产出可订阅的 RSS。
+author: "Daily Briefing"
+language: zh-CN
+timezone: "Asia/Shanghai"
+hours_lookback: 72
+daily_limit: 20
+output:
+  rss: rss/ai-daily.xml
+  markdown: reports/ai-daily-{date}.md
+keywords:
+  - LLM
+  - 大模型
+  - Agent
+  - 多模态
+  - RAG
+  - Claude
+  - GPT
+  - Gemini
+  - DeepSeek
+  - Qwen
+  - Mistral
+  - Llama
+  - Hugging Face
+  - arXiv
+
+# ----------------------------------------------------------------------
+# 一手信源
+# ----------------------------------------------------------------------
+sources:
+
+  # ----- A. 模型厂家 X 官号 (10) -----
+  - { type: x_user, handle: "AnthropicAI",     label: "Anthropic" }
+  - { type: x_user, handle: "OpenAI",          label: "OpenAI" }
+  - { type: x_user, handle: "GoogleDeepMind",  label: "Google DeepMind" }
+  - { type: x_user, handle: "AIatMeta",        label: "Meta AI" }
+  - { type: x_user, handle: "MistralAI",       label: "Mistral AI" }
+  - { type: x_user, handle: "xai",             label: "xAI" }
+  - { type: x_user, handle: "deepseek_ai",     label: "DeepSeek" }
+  - { type: x_user, handle: "Zhipuai_org",     label: "智谱 Zhipu" }
+  - { type: x_user, handle: "moonshotai",      label: "月之暗面 Moonshot" }
+  - { type: x_user, handle: "Alibaba_Qwen",    label: "通义千问 Qwen" }
+
+  # ----- B. 厂方关键人物 (5) -----
+  - { type: x_user, handle: "sama",            label: "Sam Altman" }
+  - { type: x_user, handle: "ylecun",          label: "Yann LeCun" }
+  - { type: x_user, handle: "karpathy",        label: "Andrej Karpathy" }
+  - { type: x_user, handle: "demishassabis",   label: "Demis Hassabis" }
+  - { type: x_user, handle: "sundarpichai",    label: "Sundar Pichai" }
+
+  # ----- C. 官方 newsroom / blog (4) -----
+  - { type: rss, name: "Anthropic News",  url: "https://www.anthropic.com/news/rss.xml" }
+  - { type: rss, name: "OpenAI Blog",     url: "https://openai.com/blog/rss.xml" }
+  - { type: rss, name: "DeepMind Blog",   url: "https://deepmind.google/discover/blog/rss.xml" }
+  - { type: rss, name: "Hugging Face Blog", url: "https://huggingface.co/blog/feed.xml" }
+
+  # ----- D. 官方 GitHub orgs (5) -----
+  - { type: github_org, org: "anthropics",      label: "Anthropic GitHub" }
+  - { type: github_org, org: "openai",          label: "OpenAI GitHub" }
+  - { type: github_org, org: "google-deepmind", label: "Google DeepMind GitHub" }
+  - { type: github_org, org: "deepseek-ai",     label: "DeepSeek GitHub" }
+  - { type: github_org, org: "QwenLM",          label: "Qwen GitHub" }
+
+  # ----- E. arXiv + HF Papers -----
+  - { type: rss, name: "arXiv cs.AI", url: "http://export.arxiv.org/rss/cs.AI" }
+  - { type: rss, name: "arXiv cs.CL", url: "http://export.arxiv.org/rss/cs.CL" }
+  - { type: rss, name: "arXiv cs.LG", url: "http://export.arxiv.org/rss/cs.LG" }
+  - { type: rss, name: "HF Daily Papers", url: "https://jamesg.blog/hf-papers.xml" }
+
+  # ----- F. 二手聚合兜底 (5) -----
+  - { type: rss, name: "Hacker News", url: "https://hnrss.org/frontpage" }
+  - { type: rss, name: "36Kr AI",     url: "https://36kr.com/feed" }
+  - { type: rss, name: "少数派",      url: "https://sspai.com/feed" }
+  - { type: rss, name: "InfoQ AI",    url: "https://www.infoq.cn/ai.xml" }
+  - { type: rss, name: "V2EX AI",     url: "https://www.v2ex.com/feed/tab/ai.xml" }
