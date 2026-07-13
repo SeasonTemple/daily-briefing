@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Reddit">
+  <title>Reddit</title>
+  <circle cx="32" cy="32" r="30" fill="#FF4500"/>
+  <circle cx="24" cy="28" r="3" fill="white"/>
+  <circle cx="40" cy="28" r="3" fill="white"/>
+  <circle cx="24" cy="28" r="1.5" fill="#FF4500"/>
+  <circle cx="40" cy="28" r="1.5" fill="#FF4500"/>
+  <path d="M22 36 Q32 44 42 36" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>
