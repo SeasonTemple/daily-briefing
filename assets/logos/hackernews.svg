@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Hacker News">
+  <title>Hacker News</title>
+  <rect x="0" y="0" width="64" height="64" rx="8" fill="#FF6600"/>
+  <text x="32" y="42" font-family="Verdana, sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle">Y</text>
+</svg>
