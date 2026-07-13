@@ -1,100 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-  <title>财经每日精华</title>
-  <subtitle>美联储 / SEC / 头部财经媒体 + 关键宏观数据</subtitle>
-  <id>tag:daily-briefing,2026:example-finance-daily</id>
-  <updated>Mon, 13 Jul 2026 11:13:33 GMT</updated>
-  <generator>daily-briefing/0.1</generator>
-  <link rel="self" type="application/atom+xml" href="file:///run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/daily-briefing/rss/example-finance-daily.xml"/>
-  <author><name>Daily Briefing</name></author>
-  <entry>
-    <title>Sam Altman: GPT-5 将更深度整合工具调用与代…</title>
-    <link href="https://x.com/sama/status/1234567890"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---x-com-sama-status-1234567890</id>
-    <updated>Mon, 13 Jul 2026 09:43:33 GMT</updated>
-    <author><name>@sama</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Sam Altman: GPT-5 将更深度整合工具调用与代…</p><p><b>摘要</b>: GPT-5 will more deeply integrate tool calling, co…</p><p><b>关键信息</b>: Sam Altman (@sama)</p><p><b>来源</b>: Sam Altman (@sama) · @sama</p><p><a href="https://x.com/sama/status/1234567890">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>DeepSeek 官方:开源 V3.2 推理引擎,显存降低 30%</title>
-    <link href="https://x.com/deepseek_ai/status/1234567891"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---x-com-deepseek-ai-status-1234567891</id>
-    <updated>Mon, 13 Jul 2026 07:13:33 GMT</updated>
-    <author><name>@deepseek_ai</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: DeepSeek 官方:开源 V3.2 推理引擎,显存降低 30%</p><p><b>摘要</b>: Open-sourced V3.2 inference engine with 30% lower…</p><p><b>关键信息</b>: DeepSeek (@deepseek_ai)</p><p><b>来源</b>: DeepSeek (@deepseek_ai) · @deepseek_ai</p><p><a href="https://x.com/deepseek_ai/status/1234567891">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>DeepSeek-V3.2 推理优化版本开源</title>
-    <link href="https://github.com/deepseek-ai/DeepSeek-V3.2"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---github-com-deepseek-ai-DeepSeek-V3-2</id>
-    <updated>Mon, 13 Jul 2026 08:13:33 GMT</updated>
-    <author><name>deepseek-ai</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: DeepSeek-V3.2 推理优化版本开源</p><p><b>摘要</b>: DeepSeek-V3.2 inference-optimized release: 2x th…</p><p><b>关键信息</b>: DeepSeek GitHub</p><p><b>来源</b>: DeepSeek GitHub · deepseek-ai</p><p><a href="https://github.com/deepseek-ai/DeepSeek-V3.2">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Qwen3 推出长上下文 Agent 工具链</title>
-    <link href="https://github.com/QwenLM/Qwen3-Agent"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---github-com-QwenLM-Qwen3-Agent</id>
-    <updated>Mon, 13 Jul 2026 00:13:33 GMT</updated>
-    <author><name>QwenLM</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Qwen3 推出长上下文 Agent 工具链</p><p><b>摘要</b>: Qwen3 long-context Agent toolchain open-source…</p><p><b>关键信息</b>: Qwen GitHub</p><p><b>来源</b>: Qwen GitHub · QwenLM</p><p><a href="https://github.com/QwenLM/Qwen3-Agent">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Anthropic 发布 Claude Code 2.0,主打…</title>
-    <link href="https://www.anthropic.com/news/claude-code-2"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---www-anthropic-com-news-claude-code-2</id>
-    <updated>Mon, 13 Jul 2026 08:43:33 GMT</updated>
-    <author><name>Anthropic</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Anthropic 发布 Claude Code 2.0,主打…</p><p><b>摘要</b>: Claude Code 2.0 introduces multi-file coordinat…</p><p><b>关键信息</b>: Anthropic News</p><p><b>来源</b>: Anthropic News · Anthropic</p><p><a href="https://www.anthropic.com/news/claude-code-2">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>OpenAI 公布 GPT 系列新模型的多模态能力升级</title>
-    <link href="https://openai.com/blog/gpt-multimodal-upgrade"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---openai-com-blog-gpt-multimodal-upgrade</id>
-    <updated>Mon, 13 Jul 2026 06:13:33 GMT</updated>
-    <author><name>OpenAI</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: OpenAI 公布 GPT 系列新模型的多模态能力升级</p><p><b>摘要</b>: Latest GPT model upgrades video understanding…</p><p><b>关键信息</b>: OpenAI Blog</p><p><b>来源</b>: OpenAI Blog · OpenAI</p><p><a href="https://openai.com/blog/gpt-multimodal-upgrade">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>用稀疏注意力把 7B 模型训练提速 3.2 倍</title>
-    <link href="https://arxiv.org/abs/2607.12345"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---arxiv-org-abs-2607-12345</id>
-    <updated>Mon, 13 Jul 2026 05:13:33 GMT</updated>
-    <author><name>Anonymous</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: 用稀疏注意力把 7B 模型训练提速 3.2 倍</p><p><b>摘要</b>: Adaptive sparse attention trains 7B models 3.2x…</p><p><b>关键信息</b>: arXiv cs.CL</p><p><b>来源</b>: arXiv cs.CL · Anonymous</p><p><a href="https://arxiv.org/abs/2607.12345">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Google DeepMind 开源新一代 Gemma 长…</title>
-    <link href="https://deepmind.google/discover/blog/gemma-long-context"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---deepmind-google-discover-blog-gemma-long-context</id>
-    <updated>Mon, 13 Jul 2026 04:13:33 GMT</updated>
-    <author><name>DeepMind</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Google DeepMind 开源新一代 Gemma 长…</p><p><b>摘要</b>: New Gemma extends context window to 1M tokens, op…</p><p><b>关键信息</b>: Google DeepMind Blog</p><p><b>来源</b>: Google DeepMind Blog · DeepMind</p><p><a href="https://deepmind.google/discover/blog/gemma-long-context">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Hugging Face 推出新版 Daily Paper…</title>
-    <link href="https://huggingface.co/blog/daily-papers-2026"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---huggingface-co-blog-daily-papers-2026</id>
-    <updated>Mon, 13 Jul 2026 03:13:33 GMT</updated>
-    <author><name>HF Team</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Hugging Face 推出新版 Daily Paper…</p><p><b>摘要</b>: HF Daily Papers adds topic-based auto leaderboa…</p><p><b>关键信息</b>: Hugging Face Blog</p><p><b>来源</b>: Hugging Face Blog · HF Team</p><p><a href="https://huggingface.co/blog/daily-papers-2026">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Hacker News 热议:Mistral Large 3…</title>
-    <link href="https://news.ycombinator.com/item?id=42345678"/>
-    <id>tag:daily-briefing,2026:example-finance-daily:2026-07-13:https---news-ycombinator-com-item-id-42345678</id>
-    <updated>Mon, 13 Jul 2026 02:13:33 GMT</updated>
-    <author><name>HN</name></author>
-    <category term="example-finance-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Hacker News 热议:Mistral Large 3…</p><p><b>摘要</b>: HN discussion on Mistral Large 3 deployment cos…</p><p><b>关键信息</b>: Hacker News</p><p><b>来源</b>: Hacker News · HN</p><p><a href="https://news.ycombinator.com/item?id=42345678">阅读原文</a></p>]]></summary>
-  </entry>
-</feed>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>财经每日精华</title>
+    <description>SEC / 联储 / 头部财经媒体 + 关键宏观数据</description>
+    <link>https://seasontemple.github.io/daily-briefing/</link>
+    <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/example-finance-daily.xml"/>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 13 Jul 2026 19:43:00 +0800</lastBuildDate>
+    <generator>daily-briefing/0.2</generator>
+
+    <item>
+      <title>SEC:大型对冲基金披露 Q2 持仓变动</title>
+      <description>13F 文件披露日,机构大举加仓 NVDA / TSLA,减持 AAPL,半导体仓位创 5 年新高。</description>
+      <link>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;type=13F</link>
+      <guid isPermaLink="false">sec-13f-2026-q2</guid>
+      <pubDate>Mon, 13 Jul 2026 11:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>美联储:官员讲话强化高利率维持信号</title>
+      <description>两位联储官员在公开场合强调需要更多通胀下降证据,9 月降息预期被市场回调至 35%。</description>
+      <link>https://www.federalreserve.gov/feeds/press_all.xml</link>
+      <guid isPermaLink="false">fed-hawkish-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 10:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>WSJ Markets: 大型科技财报季开启</title>
+      <description>NFLX / TSLA 拉开本季序幕,市场关注 AI 资本开支对盈利的拉动作用。</description>
+      <link>https://www.wsj.com/finance/markets</link>
+      <guid isPermaLink="false">wsj-markets-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 09:45:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Bloomberg: 黄金突破历史新高</title>
+      <description>现货黄金突破 2480 美元,创历史新高,受央行购金 + 利率下行预期推动。</description>
+      <link>https://www.bloomberg.com/markets</link>
+      <guid isPermaLink="false">bloomberg-gold-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>FT: 中国央行连续 4 个月增持黄金</title>
+      <description>央行 6 月再增 9 吨黄金,黄金储备占外储比例升至 4.9%,去美元化趋势延续。</description>
+      <link>https://www.ft.com/markets</link>
+      <guid isPermaLink="false">ft-china-gold-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 08:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Reuters: 欧元区 6 月 CPI 终值持平于 2.5%</title>
+      <description>核心通胀仍粘性,欧央行 9 月降息空间收窄,欧元对美元短线上涨 0.3%。</description>
+      <link>https://www.reuters.com/business/finance</link>
+      <guid isPermaLink="false">reuters-cpi-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>MarketWatch: 美 10 年期国债收益率回落</title>
+      <description>从 4.45% 回落至 4.32%,市场对联储宽松预期重新定价,科技股反弹。</description>
+      <link>https://www.marketwatch.com/</link>
+      <guid isPermaLink="false">mw-yield-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 07:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>SEC: 重点关注 AI 公司治理披露</title>
+      <description>SEC 风险提示:AI 公司需要在 10-K 中详尽披露模型偏差 / 数据来源 / 监管风险。</description>
+      <link>https://www.sec.gov/news/press.xml</link>
+      <guid isPermaLink="false">sec-ai-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 07:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>ZeroHedge: 财报季前的隐含波动率</title>
+      <description>VIX 跌破 13,期权市场显示财报季前低波动预期,但分析师警告平静可能误导。</description>
+      <link>https://www.zerohedge.com/</link>
+      <guid isPermaLink="false">zh-vix-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 06:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Seeking Alpha: 中概股回归热度</title>
+      <description>VIE 架构合规框架优化,阿里 / 京东等龙头 ADR 回流预期升温,分析师看好 30% 估值修复空间。</description>
+      <link>https://seekingalpha.com/</link>
+      <guid isPermaLink="false">sa-china-adr-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 06:00:00 +0800</pubDate>
+    </item>
+  </channel>
+</rss>
