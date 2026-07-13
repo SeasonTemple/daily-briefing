@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="arXiv">
+  <title>arXiv</title>
+  <rect x="0" y="0" width="64" height="64" rx="8" fill="#B31B1B"/>
+  <text x="32" y="40" font-family="Times, 'Times New Roman', serif" font-size="22" font-weight="700" font-style="italic" fill="white" text-anchor="middle">arXiv</text>
+</svg>
