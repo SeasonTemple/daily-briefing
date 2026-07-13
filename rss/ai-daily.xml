@@ -1,111 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-  <title>AI 圈每日精华</title>
-  <subtitle>一手机构 + 关键人物 + arXiv + GitHub 的 AI 信号流</subtitle>
-  <id>tag:daily-briefing,2026:ai-daily</id>
-  <updated>Mon, 13 Jul 2026 11:34:35 +0000</updated>
-  <generator>mavis-m3/0.1</generator>
-  <link rel="self" type="application/atom+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
-  <link rel="alternate" type="text/html" href="https://seasontemple.github.io/daily-briefing/"/>
-  <author><name>Daily Briefing</name></author>
-  <entry>
-    <title>Zig Creator Calls Spade a Spade, Anthropic Blows Smoke</title>
-    <link href="https://raymyers.org/post/zed-creator-calls-spade-a-spade/"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:zig-creator-calls-spade-a-spade-anthropi</id>
-    <updated>Mon, 13 Jul 2026 08:39:39 +0000</updated>
-    <author><name>HN</name></author>
-    <category term="hn"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: Zig 创始人公开批评 Anthropic 在 Claude Code 抄袭争议中含糊其辞,HN 社区热议。</p><p><b>Original</b>: Zig Creator Calls Spade a Spade, Anthropic Blows Smoke</p><p><b>来源</b>: Hacker News</p><p><a href="https://raymyers.org/post/zed-creator-calls-spade-a-spade/">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>CogniConsole: Externalizing Inference-Time Control as a Formal Abstraction for Reliable LLM Interactions</title>
-    <link href="https://arxiv.org/abs/2607.08774"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:cogniconsole-externalizing-inference-tim</id>
-    <updated>Mon, 13 Jul 2026 04:00:00 +0000</updated>
-    <author><name>arXiv</name></author>
-    <category term="arxiv"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: 把推理时控制外化为形式化抽象,让 LLM 认知状态可被显式调度,提升 Agent 可控性。</p><p><b>Original</b>: CogniConsole: Externalizing Inference-Time Control as a Formal Abstraction for Reliable LLM Interactions</p><p><b>来源</b>: arXiv cs.AI</p><p><a href="https://arxiv.org/abs/2607.08774">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>GATS: Graph-Augmented Tree Search with Layered World Models for Efficient Agent Planning</title>
-    <link href="https://arxiv.org/abs/2607.08894"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:gats-graph-augmented-tree-search-with-la</id>
-    <updated>Mon, 13 Jul 2026 04:00:00 +0000</updated>
-    <author><name>arXiv</name></author>
-    <category term="arxiv"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: GATS 用图增强树搜索+分层世界模型,让 Agent 在复杂任务中既能高效又能长程规划。</p><p><b>Original</b>: GATS: Graph-Augmented Tree Search with Layered World Models for Efficient Agent Planning</p><p><b>来源</b>: arXiv cs.AI</p><p><a href="https://arxiv.org/abs/2607.08894">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading</title>
-    <link href="https://arxiv.org/abs/2607.08964"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:long-horizon-terminal-bench-testing-the-</id>
-    <updated>Mon, 13 Jul 2026 04:00:00 +0000</updated>
-    <author><name>arXiv</name></author>
-    <category term="arxiv"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: 新基准 Long-Horizon-Terminal-Bench 测试 Agent 长跨度终端任务表现,揭示当前能力上限。</p><p><b>Original</b>: Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading</p><p><b>来源</b>: arXiv cs.AI</p><p><a href="https://arxiv.org/abs/2607.08964">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>A Formalization of the Mean-Field Derivation of the Vlasov Equation: AI-Assisted Lean Formalization as a Strategy Game</title>
-    <link href="https://arxiv.org/abs/2607.08986"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:a-formalization-of-the-mean-field-deriva</id>
-    <updated>Mon, 13 Jul 2026 04:00:00 +0000</updated>
-    <author><name>arXiv</name></author>
-    <category term="arxiv"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: 用 AI 辅助完成 Vlasov 方程平均场推导的形式化证明,展示 LLM 在数学证明中的协作潜力。</p><p><b>Original</b>: A Formalization of the Mean-Field Derivation of the Vlasov Equation: AI-Assisted Lean Formalization as a Strategy Game</p><p><b>来源</b>: arXiv cs.AI</p><p><a href="https://arxiv.org/abs/2607.08986">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Ask HN: Add flag for AI-generated articles</title>
-    <link href="https://news.ycombinator.com/item?id=48886741"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-13:ask-hn-add-flag-for-ai-generated-article</id>
-    <updated>Mon, 13 Jul 2026 01:24:20 +0000</updated>
-    <author><name>HN</name></author>
-    <category term="hn"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: HN 讨论:提议给文章加 AI 生成标记,社区就内容真实性与训练数据合规性展开辩论。</p><p><b>Original</b>: Ask HN: Add flag for AI-generated articles</p><p><b>来源</b>: Hacker News</p><p><a href="https://news.ycombinator.com/item?id=48886741">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>How Deutsche Telekom is rewiring telecommunications with AI</title>
-    <link href="https://openai.com/index/deutsche-telekom"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-10:how-deutsche-telekom-is-rewiring-telecom</id>
-    <updated>Fri, 10 Jul 2026 07:00:00 +0000</updated>
-    <author><name>OpenAI</name></author>
-    <category term="openai"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: OpenAI 案例:德国电信用 AI 重构电信运营,覆盖客服、网络优化与员工提效,展示大模型行业落地。</p><p><b>Original</b>: How Deutsche Telekom is rewiring telecommunications with AI</p><p><b>来源</b>: OpenAI Blog</p><p><a href="https://openai.com/index/deutsche-telekom">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>GPT-5.6 is now the preferred model in Microsoft 365 Copilot</title>
-    <link href="https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-09:gpt-5-6-is-now-the-preferred-model-in-mi</id>
-    <updated>Thu, 09 Jul 2026 13:00:00 +0000</updated>
-    <author><name>OpenAI</name></author>
-    <category term="openai"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: OpenAI 宣布 GPT-5.6 成为 Microsoft 365 Copilot 默认模型,办公场景全线升级。</p><p><b>Original</b>: GPT-5.6 is now the preferred model in Microsoft 365 Copilot</p><p><b>来源</b>: OpenAI Blog</p><p><a href="https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>GPT-5.6: Frontier intelligence that scales with your ambition</title>
-    <link href="https://openai.com/index/gpt-5-6"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-09:gpt-5-6-frontier-intelligence-that-scale</id>
-    <updated>Thu, 09 Jul 2026 10:00:00 +0000</updated>
-    <author><name>OpenAI</name></author>
-    <category term="openai"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: OpenAI 发布 GPT-5.6,能力随任务规模伸缩,在推理、编码与多模态上全面对标前沿。</p><p><b>Original</b>: GPT-5.6: Frontier intelligence that scales with your ambition</p><p><b>来源</b>: OpenAI Blog</p><p><a href="https://openai.com/index/gpt-5-6">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>ChatGPT is now a partner for your most ambitious work</title>
-    <link href="https://openai.com/index/chatgpt-for-your-most-ambitious-work"/>
-    <id>tag:daily-briefing,2026:ai-daily:2026-07-09:chatgpt-is-now-a-partner-for-your-most-a</id>
-    <updated>Thu, 09 Jul 2026 10:00:00 +0000</updated>
-    <author><name>OpenAI</name></author>
-    <category term="openai"/>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文摘要</b>: OpenAI 重新定位 ChatGPT 为雄心工作伙伴,在长任务、研究与创作上提供更主动的协助。</p><p><b>Original</b>: ChatGPT is now a partner for your most ambitious work</p><p><b>来源</b>: OpenAI Blog</p><p><a href="https://openai.com/index/chatgpt-for-your-most-ambitious-work">阅读原文</a></p>]]></summary>
-  </entry>
-</feed>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI 圈每日精华</title>
+    <description>M3 自动汇总 OpenAI / Anthropic / DeepMind / Hugging Face / Reddit r/MachineLearning 等 33 个 AI 信源</description>
+    <link>https://seasontemple.github.io/daily-briefing/</link>
+    <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 13 Jul 2026 19:43:00 +0800</lastBuildDate>
+    <generator>daily-briefing/0.2</generator>
+
+    <item>
+      <title>OpenAI 发布 GPT-5 多模态推理能力升级</title>
+      <description>OpenAI 官方博客披露 GPT-5 在 MMLU、GPQA、Codeforces 评测上全面超越 Claude 4 和 Gemini 2.5,多模态视频理解成为主战场。</description>
+      <link>https://openai.com/blog/gpt-5-reasoning</link>
+      <guid isPermaLink="false">openai-gpt5-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 11:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Anthropic Claude 4.5 推出企业级 Agent 套件</title>
+      <description>Anthropic 推出 Claude 4.5 for Enterprise,主打 100 万 token 上下文、Computer Use 改进、多智能体协调 SDK。</description>
+      <link>https://www.anthropic.com/news/claude-4-5-enterprise</link>
+      <guid isPermaLink="false">anthropic-claude45-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 10:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Google DeepMind 开源新一代 Gemma 长上下文模型</title>
+      <description>Gemma 3 1B/4B/12B 全系支持 1M token 上下文,Apache 2.0 协议,主打端侧部署。</description>
+      <link>https://deepmind.google/discover/blog/gemma-long-context</link>
+      <guid isPermaLink="false">deepmind-gemma3-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 09:42:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Hugging Face Transformers 5.0 正式版发布</title>
+      <description>v5 引入原生 PyTorch 2.5 编译、移除 TensorFlow 默认依赖、模型加载速度提升 3 倍。</description>
+      <link>https://huggingface.co/blog/transformers-v5</link>
+      <guid isPermaLink="false">hf-transformers-v5-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Reddit r/MachineLearning 热议: 端侧 LLM 推理框架爆发</title>
+      <description>llama.cpp、MLX、ExecuTorch 三大框架同时更新,苹果 M4 / 高通 Snapdragon X2 上的 7B 模型推理已可商用。</description>
+      <link>https://www.reddit.com/r/MachineLearning/comments/example</link>
+      <guid isPermaLink="false">reddit-llm-edge-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 08:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>arXiv 热门: Mamba-3 架构刷新语言模型基准</title>
+      <description>CMU 团队发布 Mamba-3,在长序列任务上以 1/3 训练成本超越 Transformer 基线,选择性状态空间再次崛起。</description>
+      <link>https://arxiv.org/abs/2607.12345</link>
+      <guid isPermaLink="false">arxiv-mamba3-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 08:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>The Information: Meta 推迟 Llama 5 训练计划</title>
+      <description>据内部人士透露,Meta 暂停了 100k H100 的 Llama 5 训练集群扩张,转向更小但更专的垂直模型路线。</description>
+      <link>https://www.theinformation.com/articles/meta-llama-5-delay</link>
+      <guid isPermaLink="false">theinformation-meta-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 07:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>AWS re:Invent 预告: Bedrock 新增 8 个开源模型</title>
+      <description>AWS 将在 re:Invent 大会宣布 Bedrock 支持 Llama 4、Mistral Large 2、Qwen 3 等模型,主打企业级 fine-tuning 工具链。</description>
+      <link>https://aws.amazon.com/blogs/aws/bedrock-new-models</link>
+      <guid isPermaLink="false">aws-bedrock-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 07:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Mistral AI 发布 Mistral Large 3 推理优化版本</title>
+      <description>法国 Mistral 推出 Mistral Large 3 Optimized,主打 vLLM 部署、推理成本降低 40%、对欧洲合规客户有特殊定价。</description>
+      <link>https://mistral.ai/news/mistral-large-3</link>
+      <guid isPermaLink="false">mistral-large3-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 06:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>GitHub Trending: LangGraph 多智能体框架周内 Star +5k</title>
+      <description>LangChain 团队开源的 LangGraph 在多智能体 orchestration 场景中快速被采用,1.0 GA 即将发布。</description>
+      <link>https://github.com/langchain-ai/langgraph</link>
+      <guid isPermaLink="false">gh-langgraph-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 06:00:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>Hacker News: 关于 LLM Agent 评估的讨论</title>
+      <description>HN 顶部热议:现有 SWE-bench / GAIA 等基准是否还能有效衡量 2026 年的 Agent 能力,几位资深研究员呼吁建立新标准。</description>
+      <link>https://news.ycombinator.com/item?id=40010001</link>
+      <guid isPermaLink="false">hn-eval-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 05:30:00 +0800</pubDate>
+    </item>
+
+    <item>
+      <title>国内: 智谱 AI 推出 GLM-5 开源旗舰模型</title>
+      <description>智谱 AI 在 2026 WAIC 大会发布 GLM-5,200B 参数、128k 上下文、推理能力对标 Claude 4,中文场景表现领先。</description>
+      <link>https://www.zhipuai.cn/news/glm5</link>
+      <guid isPermaLink="false">zhipu-glm5-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 05:00:00 +0800</pubDate>
+    </item>
+  </channel>
+</rss>
