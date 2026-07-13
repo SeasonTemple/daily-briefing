@@ -1,100 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-  <title>开发者每日信号</title>
-  <subtitle>GitHub Trending + HN + dev.to + Lobsters + 个人关注的 KOL</subtitle>
-  <id>tag:daily-briefing,2026:example-dev-daily</id>
-  <updated>Mon, 13 Jul 2026 11:13:32 GMT</updated>
-  <generator>daily-briefing/0.1</generator>
-  <link rel="self" type="application/atom+xml" href="file:///run/csi/mount-root/nas/eab0d61a99b6696edb3d2aff87b585e8/daily-briefing/rss/example-dev-daily.xml"/>
-  <author><name>Daily Briefing</name></author>
-  <entry>
-    <title>Google DeepMind 开源新一代 Gemma 长…</title>
-    <link href="https://deepmind.google/discover/blog/gemma-long-context"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---deepmind-google-discover-blog-gemma-long-context</id>
-    <updated>Mon, 13 Jul 2026 04:13:32 GMT</updated>
-    <author><name>DeepMind</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Google DeepMind 开源新一代 Gemma 长…</p><p><b>摘要</b>: New Gemma extends context window to 1M tokens, op…</p><p><b>关键信息</b>: Google DeepMind Blog</p><p><b>来源</b>: Google DeepMind Blog · DeepMind</p><p><a href="https://deepmind.google/discover/blog/gemma-long-context">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>DeepSeek 官方:开源 V3.2 推理引擎,显存降低 30%</title>
-    <link href="https://x.com/deepseek_ai/status/1234567891"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---x-com-deepseek-ai-status-1234567891</id>
-    <updated>Mon, 13 Jul 2026 07:13:32 GMT</updated>
-    <author><name>@deepseek_ai</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: DeepSeek 官方:开源 V3.2 推理引擎,显存降低 30%</p><p><b>摘要</b>: Open-sourced V3.2 inference engine with 30% lower…</p><p><b>关键信息</b>: DeepSeek (@deepseek_ai)</p><p><b>来源</b>: DeepSeek (@deepseek_ai) · @deepseek_ai</p><p><a href="https://x.com/deepseek_ai/status/1234567891">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>DeepSeek-V3.2 推理优化版本开源</title>
-    <link href="https://github.com/deepseek-ai/DeepSeek-V3.2"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---github-com-deepseek-ai-DeepSeek-V3-2</id>
-    <updated>Mon, 13 Jul 2026 08:13:32 GMT</updated>
-    <author><name>deepseek-ai</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: DeepSeek-V3.2 推理优化版本开源</p><p><b>摘要</b>: DeepSeek-V3.2 inference-optimized release: 2x th…</p><p><b>关键信息</b>: DeepSeek GitHub</p><p><b>来源</b>: DeepSeek GitHub · deepseek-ai</p><p><a href="https://github.com/deepseek-ai/DeepSeek-V3.2">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>36Kr:国产开源大模型 2026 上半年格局重塑</title>
-    <link href="https://36kr.com/p/12345"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-12:https---36kr-com-p-12345</id>
-    <updated>Sun, 12 Jul 2026 23:13:32 GMT</updated>
-    <author><name>36Kr</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: 36Kr:国产开源大模型 2026 上半年格局重塑</p><p><b>摘要</b>: 国产开源大模型 2026 上半年格局重塑:DeepSeek、Qwen、智谱、月之暗面多方混战。</p><p><b>关键信息</b>: 36Kr AI</p><p><b>来源</b>: 36Kr AI · 36Kr</p><p><a href="https://36kr.com/p/12345">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Sam Altman: GPT-5 将更深度整合工具调用与代…</title>
-    <link href="https://x.com/sama/status/1234567890"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---x-com-sama-status-1234567890</id>
-    <updated>Mon, 13 Jul 2026 09:43:32 GMT</updated>
-    <author><name>@sama</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Sam Altman: GPT-5 将更深度整合工具调用与代…</p><p><b>摘要</b>: GPT-5 will more deeply integrate tool calling, co…</p><p><b>关键信息</b>: Sam Altman (@sama)</p><p><b>来源</b>: Sam Altman (@sama) · @sama</p><p><a href="https://x.com/sama/status/1234567890">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Qwen3 推出长上下文 Agent 工具链</title>
-    <link href="https://github.com/QwenLM/Qwen3-Agent"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---github-com-QwenLM-Qwen3-Agent</id>
-    <updated>Mon, 13 Jul 2026 00:13:32 GMT</updated>
-    <author><name>QwenLM</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Qwen3 推出长上下文 Agent 工具链</p><p><b>摘要</b>: Qwen3 long-context Agent toolchain open-source…</p><p><b>关键信息</b>: Qwen GitHub</p><p><b>来源</b>: Qwen GitHub · QwenLM</p><p><a href="https://github.com/QwenLM/Qwen3-Agent">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Anthropic 发布 Claude Code 2.0,主打…</title>
-    <link href="https://www.anthropic.com/news/claude-code-2"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---www-anthropic-com-news-claude-code-2</id>
-    <updated>Mon, 13 Jul 2026 08:43:32 GMT</updated>
-    <author><name>Anthropic</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Anthropic 发布 Claude Code 2.0,主打…</p><p><b>摘要</b>: Claude Code 2.0 introduces multi-file coordinat…</p><p><b>关键信息</b>: Anthropic News</p><p><b>来源</b>: Anthropic News · Anthropic</p><p><a href="https://www.anthropic.com/news/claude-code-2">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>OpenAI 公布 GPT 系列新模型的多模态能力升级</title>
-    <link href="https://openai.com/blog/gpt-multimodal-upgrade"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---openai-com-blog-gpt-multimodal-upgrade</id>
-    <updated>Mon, 13 Jul 2026 06:13:32 GMT</updated>
-    <author><name>OpenAI</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: OpenAI 公布 GPT 系列新模型的多模态能力升级</p><p><b>摘要</b>: Latest GPT model upgrades video understanding…</p><p><b>关键信息</b>: OpenAI Blog</p><p><b>来源</b>: OpenAI Blog · OpenAI</p><p><a href="https://openai.com/blog/gpt-multimodal-upgrade">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>用稀疏注意力把 7B 模型训练提速 3.2 倍</title>
-    <link href="https://arxiv.org/abs/2607.12345"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---arxiv-org-abs-2607-12345</id>
-    <updated>Mon, 13 Jul 2026 05:13:32 GMT</updated>
-    <author><name>Anonymous</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: 用稀疏注意力把 7B 模型训练提速 3.2 倍</p><p><b>摘要</b>: Adaptive sparse attention trains 7B models 3.2x…</p><p><b>关键信息</b>: arXiv cs.CL</p><p><b>来源</b>: arXiv cs.CL · Anonymous</p><p><a href="https://arxiv.org/abs/2607.12345">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Hugging Face 推出新版 Daily Paper…</title>
-    <link href="https://huggingface.co/blog/daily-papers-2026"/>
-    <id>tag:daily-briefing,2026:example-dev-daily:2026-07-13:https---huggingface-co-blog-daily-papers-2026</id>
-    <updated>Mon, 13 Jul 2026 03:13:32 GMT</updated>
-    <author><name>HF Team</name></author>
-    <category term="example-dev-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Hugging Face 推出新版 Daily Paper…</p><p><b>摘要</b>: HF Daily Papers adds topic-based auto leaderboa…</p><p><b>关键信息</b>: Hugging Face Blog</p><p><b>来源</b>: Hugging Face Blog · HF Team</p><p><a href="https://huggingface.co/blog/daily-papers-2026">阅读原文</a></p>]]></summary>
-  </entry>
-</feed>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>开发者每日信号</title>
+    <description>GitHub Trending + HN + dev.to + Lobsters + 知名开发者 KOL</description>
+    <link>https://seasontemple.github.io/daily-briefing/</link>
+    <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/example-dev-daily.xml"/>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 13 Jul 2026 19:43:00 +0800</lastBuildDate>
+    <generator>daily-briefing/0.2</generator>
+
+    <item>
+      <title>Hacker News: 工程师讨论 Rust async runtime 拆分方案</title>
+      <description><![CDATA[HN 顶部热议如何把 tokio 拆分成更轻的 runtime,降低嵌入式场景的二进制体积。]]></description>
+      <link>https://news.ycombinator.com/item?id=40000001</link>
+      <guid isPermaLink="false">hn-rust-async-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 10:15:00 +0800</pubDate>
+      <author>hn@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>GitHub Trending: Deno 新版本发布</title>
+      <description><![CDATA[denoland/deno 周内 Star +2.3k,2.0 RC 修复了 npm 兼容性问题,Node 生态迁移成本继续下降。]]></description>
+      <link>https://github.com/denoland/deno</link>
+      <guid isPermaLink="false">gh-deno-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 09:42:00 +0800</pubDate>
+      <author>github@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>Lobsters: 关于 Rust trait object 的实战讨论</title>
+      <description><![CDATA[资深 Rust 工程师解释什么时候用 dyn Trait vs 泛型更合理,贴 5 个真实生产案例。]]></description>
+      <link>https://lobste.rs/s/example/rust-trait-objects</link>
+      <guid isPermaLink="false">lobsters-rust-trait-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 09:10:00 +0800</pubDate>
+      <author>lobsters@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>dev.to: Next.js 15 App Router 性能调优实战</title>
+      <description><![CDATA[作者分享把 LCP 从 3.2s 压到 1.1s 的具体改动:Server Components 拆分、streaming 边界、字体策略。]]></description>
+      <link>https://dev.to/example/nextjs-15-perf</link>
+      <guid isPermaLink="false">devto-nextjs-perf-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 08:30:00 +0800</pubDate>
+      <author>devto@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>GitHub: Vercel 发布 next.js canary 15.1.0</title>
+      <description><![CDATA[新增 Turbopack 全面启用、Edge runtime 优化、Server Actions 改进。]]></description>
+      <link>https://github.com/vercel/next.js/releases</link>
+      <guid isPermaLink="false">gh-vercel-next-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 08:00:00 +0800</pubDate>
+      <author>github@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>HN: Linus Torvalds 在 LKML 抨击 Rust 内核模块"夸大宣传"</title>
+      <description><![CDATA[Linus Torvalds 直接在邮件列表批评 Rust for Linux 进展缓慢、过度营销,HN 引发 400+ 评论争论。]]></description>
+      <link>https://news.ycombinator.com/item?id=40000002</link>
+      <guid isPermaLink="false">hn-linus-rust-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 07:50:00 +0800</pubDate>
+      <author>hn@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>dev.to: TypeScript 5.5 新特性实战</title>
+      <description><![CDATA[作者用 5 个例子展示新的 type narrowing、control flow analysis,以及对大型代码库的迁移建议。]]></description>
+      <link>https://dev.to/example/typescript-5-5</link>
+      <guid isPermaLink="false">devto-ts-5-5-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 07:00:00 +0800</pubDate>
+      <author>devto@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>GitHub Trending: TanStack Query v5.6 新版</title>
+      <description><![CDATA[新版本引入实验性的 queryClient suspense 模式,跟 React 19 use() 集成更顺。]]></description>
+      <link>https://github.com/TanStack/query</link>
+      <guid isPermaLink="false">gh-tanstack-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 06:30:00 +0800</pubDate>
+      <author>github@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>Lobsters: Zig 0.13 性能数据公布</title>
+      <description><![CDATA[编译速度比 Zig 0.12 快 18%,Debug 模式二进制小 12%,Release 性能持平。]]></description>
+      <link>https://lobste.rs/s/example/zig-0-13</link>
+      <guid isPermaLink="false">lobsters-zig-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 06:00:00 +0800</pubDate>
+      <author>lobsters@daily-briefing</author>
+    </item>
+
+    <item>
+      <title>HN: WebAssembly 3.0 草案讨论</title>
+      <description><![CDATA[GC、exception handling、threads 进入 3.0 草案,浏览器原生支持迎来新一波。]]></description>
+      <link>https://news.ycombinator.com/item?id=40000003</link>
+      <guid isPermaLink="false">hn-wasm-3-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 05:30:00 +0800</pubDate>
+      <author>hn@daily-briefing</author>
+    </item>
+  </channel>
+</rss>
