@@ -2,19 +2,119 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AI 圈每日精华</title>
-    <description>📌 占位 RSS — 真实内容由 cron 在 2026-07-14 07:00 (Asia/Shanghai) 首次自动产出。本文件当前是 Mavis 手动写的占位条目,不是真实新闻。请明天 7:00 之后刷新查看。</description>
+    <description>每日 7:00 (Asia/Shanghai) 自动抓取 AI 圈一手信源 (HN / OpenAI / Anthropic / DeepMind / arXiv cs.AI),由 M3 中文摘要。本次共 12 条。</description>
     <link>https://seasontemple.github.io/daily-briefing/</link>
     <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 13 Jul 2026 20:05:00 +0800</lastBuildDate>
-    <generator>daily-briefing/0.2</generator>
+    <lastBuildDate>Mon, 13 Jul 2026 20:08:11 +0800</lastBuildDate>
+    <generator>daily-briefing/0.3 (M3 cron)</generator>
 
     <item>
-      <title>📌 [占位] 等明天 7:00 真实 cron 跑出来</title>
-      <description>当前内容是 Mavis 手动写的占位 RSS,目的是让你在 Feedly 验证订阅流程能跑通。真实产出由 Mavis cron 在 2026-07-14 07:00 (Asia/Shanghai) 自动抓 8 个一手 AI 信源 (HN / OpenAI / Anthropic / DeepMind / arXiv / GitHub Trending 等),由 M3 LLM 中文摘要,生成 8-12 条真实新闻摘要。在此之前,你可以看 example-dev-daily.xml / example-finance-daily.xml 验证 RSS 2.0 格式兼容。</description>
-      <link>https://seasontemple.github.io/daily-briefing/</link>
-      <guid isPermaLink="false">placeholder-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 20:05:00 +0800</pubDate>
+      <title>GPT-5.6 发布:可随雄心扩展的前沿智能</title>
+      <description>OpenAI 推出 GPT-5.6,主打随任务雄心扩展的前沿推理与长上下文能力,同日宣布已成为 Microsoft 365 Copilot 首选模型。 [来源: OpenAI Blog]</description>
+      <link>https://openai.com/index/gpt-5-6</link>
+      <guid isPermaLink="false">openai-gpt56-2026-07-09</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>OpenAI Blog</category>
+    </item>
+
+    <item>
+      <title>GPT-5.6 成为 Microsoft 365 Copilot 首选模型</title>
+      <description>Microsoft 365 Copilot 已切换默认模型为 GPT-5.6,企业用户可直接获得最新推理与多模态能力。 [来源: OpenAI Blog]</description>
+      <link>https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot</link>
+      <guid isPermaLink="false">openai-m365-gpt56-2026-07-09</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>OpenAI Blog</category>
+    </item>
+
+    <item>
+      <title>Deutsche Telekom 用 AI 重构电信业务</title>
+      <description>欧洲最大电信运营商 Deutsche Telekom 与 OpenAI 深度合作,把客服、网络运维、产品研发全链路接入 GPT,展示传统行业 AI 原生转型路径。 [来源: OpenAI Blog]</description>
+      <link>https://openai.com/index/deutsche-telekom</link>
+      <guid isPermaLink="false">openai-dt-2026-07-10</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>OpenAI Blog</category>
+    </item>
+
+    <item>
+      <title>OpenAI 推出 GPT-Live:实时多模态交互</title>
+      <description>GPT-Live 支持语音+视觉+屏幕共享的实时流式对话,主打低延迟全双工,直接对标 Gemini Live。 [来源: OpenAI Blog]</description>
+      <link>https://openai.com/index/introducing-gpt-live</link>
+      <guid isPermaLink="false">openai-gptlive-2026-07-08</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>OpenAI Blog</category>
+    </item>
+
+    <item>
+      <title>Claude Code 启动 33k token 才读 prompt,工程效率被质疑</title>
+      <description>HN 热帖实测:Claude Code 在执行任务前向 API 发送 33k token 的系统/历史上下文,而 OpenCode 仅 7k,引发关于 Agent 框架上下文税的讨论。 [来源: HN frontpage]</description>
+      <link>https://news.ycombinator.com/item?id=48886741</link>
+      <guid isPermaLink="false">hn-claudecode-tokens-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>HN frontpage</category>
+    </item>
+
+    <item>
+      <title>生产 AI Agent 迁移到 GPT-5.6:提速 2.2 倍、成本降 27%</title>
+      <description>Ploy.ai 公开把生产环境 AI Agent 从前代模型迁到 GPT-5.6 的实战数据:延迟降 55%、单次调用成本降 27%,长链路任务稳定性显著提升。 [来源: HN frontpage]</description>
+      <link>https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6</link>
+      <guid isPermaLink="false">hn-gpt56-migration-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>HN frontpage</category>
+    </item>
+
+    <item>
+      <title>DeepMind AlphaEvolve:用进化算法发现新算法</title>
+      <description>DeepMind 发布 AlphaEvolve 实际部署一年回顾:在数学发现、芯片设计、训练加速等多场景自主进化出新算法,部分已回写生产。 [来源: DeepMind Blog]</description>
+      <link>https://deepmind.google/blog/alphaevolve-impact/</link>
+      <guid isPermaLink="false">dm-alphaevolve-2026-07-10</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>DeepMind Blog</category>
+    </item>
+
+    <item>
+      <title>Gemini 安全防护全面升级</title>
+      <description>DeepMind 公布 Gemini 新一代安全防护栈,覆盖越狱、提示注入、模型自身滥用等场景,关键能力提升并附技术评估报告。 [来源: DeepMind Blog]</description>
+      <link>https://deepmind.google/blog/advancing-geminis-security-safeguards/</link>
+      <guid isPermaLink="false">dm-gemini-safety-2026-07-08</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>DeepMind Blog</category>
+    </item>
+
+    <item>
+      <title>Anthropic 推进 Claude 教育版:进入 K-12 课堂</title>
+      <description>Anthropic 宣布 Claude for Education 拓展至 K-12 阶段,提供学区级隐私保护、教师专用工具与课程设计资源。 [来源: Anthropic News]</description>
+      <link>https://www.anthropic.com/news/advancing-claude-for-education</link>
+      <guid isPermaLink="false">anthropic-edu-2026-07-09</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>Anthropic News</category>
+    </item>
+
+    <item>
+      <title>Anthropic 发布硬问题系列:直面 AGI 安全治理争议</title>
+      <description>Anthropic 公开 Hard Questions 系列长文,系统回应可解释性、对齐评估、长期利益信托等被社区诘问的安全治理议题。 [来源: Anthropic News]</description>
+      <link>https://www.anthropic.com/news/hard-questions</link>
+      <guid isPermaLink="false">anthropic-hard-questions-2026-07-09</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>Anthropic News</category>
+    </item>
+
+    <item>
+      <title>arXiv:Long-Horizon-Terminal-Bench — 测 Agent 长链路终态能力</title>
+      <description>新基准 Long-Horizon-Terminal-Bench 评估 Agent 在数小时级、多步终端任务上的终态达成率,主流模型得分仍低于 30%。 [来源: arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.08964</link>
+      <guid isPermaLink="false">arxiv-longhorizon-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>arXiv cs.AI</category>
+    </item>
+
+    <item>
+      <title>arXiv:ARCANA — 面向 ARC-AGI-2 的反思式多 Agent 框架</title>
+      <description>ARCANA 用多 Agent + 反思回路在 ARC-AGI-2 上取得显著提升,代码与权重开源,提供低成本复现路径。 [来源: arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.09059</link>
+      <guid isPermaLink="false">arxiv-arcana-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 20:08:11 +0800</pubDate>
+      <category>arXiv cs.AI</category>
     </item>
 
   </channel>
