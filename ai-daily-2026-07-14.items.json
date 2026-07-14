@@ -1,0 +1,102 @@
+[
+  {
+    "source_key": "openai",
+    "source_label": "OpenAI Blog",
+    "title": "Separating signal from noise in coding evaluations",
+    "m3_title": "OpenAI 拆解 SWE-Bench Pro 评测噪声问题",
+    "m3_summary": "OpenAI 复盘 SWE-Bench Pro 等热门编程基准,指出评测数据存在噪声与可复现性危机,呼吁社区共建更稳健的代码 Agent 评估标准。",
+    "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+    "desc": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models.",
+    "pubdate": "2026-07-08T13:00:00+00:00"
+  },
+  {
+    "source_key": "anthropic",
+    "source_label": "Anthropic News",
+    "title": "Inviting hard questions",
+    "m3_title": "Anthropic 公开征询 AI 治理硬问题",
+    "m3_summary": "Anthropic 发起 Hard Questions 系列,公开向公众征集关于对齐、可解释性、长期利益的尖锐问题,承诺透明方式逐条回应,直面治理争议。",
+    "url": "https://www.anthropic.com/news/hard-questions",
+    "desc": "We're asking the public for their hardest questions about AI, and committing to show our work as we address them.",
+    "pubdate": "2026-07-09T00:00:00+00:00"
+  },
+  {
+    "source_key": "anthropic",
+    "source_label": "Anthropic News",
+    "title": "Introducing Claude Sonnet 5",
+    "m3_title": "Anthropic 发布 Claude Sonnet 5 编码与 Agent 旗舰",
+    "m3_summary": "Claude Sonnet 5 在编码、Agent、专业级长链路任务上达到新前沿,定位中高价位主力模型,编程评测领先 GPT-5 系。",
+    "url": "https://www.anthropic.com/news/claude-sonnet-5",
+    "desc": "Sonnet 5 delivers frontier performance across coding, agents, and professional work at scale.",
+    "pubdate": "2026-06-30T00:00:00+00:00"
+  },
+  {
+    "source_key": "deepmind",
+    "source_label": "DeepMind Blog",
+    "title": "Google DeepMind and A24 announce first-of-its-kind research partnership",
+    "m3_title": "DeepMind 联手 A24 探索 AI 与电影跨界研究",
+    "m3_summary": "DeepMind 与独立电影厂 A24 宣布首个 AI 影视研究合作,聚焦生成式工具对创作流程与故事讲述的影响,产出案例将公开。",
+    "url": "https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/",
+    "desc": "Google DeepMind and A24 announce first-of-its-kind research partnership.",
+    "pubdate": "2026-07-03T14:25:43+00:00"
+  },
+  {
+    "source_key": "deepmind",
+    "source_label": "DeepMind Blog",
+    "title": "Securing the future of AI agents",
+    "m3_title": "DeepMind 提出 AI Agent 安全控制路线图",
+    "m3_summary": "DeepMind 发布 AI Control Roadmap,把传统防护与实时监控结合,系统化应对 Agent 内部滥用、提示注入与权限升级等新型威胁。",
+    "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/",
+    "desc": "Securing internal systems with an AI Control Roadmap, combining traditional safeguards and real-time monitoring.",
+    "pubdate": "2026-06-16T15:46:31+00:00"
+  },
+  {
+    "source_key": "arxiv",
+    "source_label": "arXiv cs.AI",
+    "title": "Jet-Long: Efficient Long-Context Extension with Dynamic Bifocal RoPE",
+    "m3_title": "arXiv:Jet-Long 用动态双焦 RoPE 扩长上下文",
+    "m3_summary": "新论文 Jet-Long 提出动态双焦旋转位置编码,把长上下文训练成本砍半,推理延迟几乎不变,适配 RAG 与 Agent 长链场景。",
+    "url": "https://arxiv.org/abs/2607.07740",
+    "desc": "Jet-Long uses dynamic bifocal RoPE to extend LLM context cheaply, halving training cost with negligible inference latency, suited for RAG and long agent traces.",
+    "pubdate": "2026-07-13T04:00:00+00:00"
+  },
+  {
+    "source_key": "arxiv",
+    "source_label": "arXiv cs.AI",
+    "title": "Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading",
+    "m3_title": "arXiv:Long-Horizon-Terminal-Bench 测 Agent 长链极限",
+    "m3_summary": "新基准用稠密奖励取代稀疏终态评分,首次系统测出 Agent 在分钟到小时级终端任务中的真实能力上限,代码与数据全开源。",
+    "url": "https://arxiv.org/abs/2607.08964",
+    "desc": "Long-Horizon-Terminal-Bench evaluates AI agents on minute-to-hour terminal tasks with dense reward grading, exposing gaps masked by sparse final-outcome scoring.",
+    "pubdate": "2026-07-13T04:00:00+00:00"
+  },
+  {
+    "source_key": "hn",
+    "source_label": "Hacker News",
+    "title": "Samsung Health app threatens data deletion if users opt out AI training",
+    "m3_title": "三星健康拒 AI 训练授权将清空用户数据",
+    "m3_summary": "HN 281 分热帖:三星健康应用把关闭 AI 训练开关等同于删除所有健康数据,引发关于消费硬件 AI 默认开启与数据主权的激烈讨论。",
+    "url": "https://neow.in/cWsyMTV3",
+    "desc": "Article: Samsung Health app threatens data deletion if users opt out of AI training. HN 281 points, 70 comments.",
+    "pubdate": "2026-07-13T20:01:43+00:00"
+  },
+  {
+    "source_key": "hn",
+    "source_label": "Hacker News",
+    "title": "Show HN: I implemented a neural network in SQL",
+    "m3_title": "Show HN:工程师用纯 SQL 写完神经网络",
+    "m3_summary": "Show HN 热帖:作者在 xarray-sql 库中用纯 SQL 实现了 MNIST 神经网络,展示把数组数据库与 ML 工作流统一在同一查询语言里的可能。",
+    "url": "https://github.com/xqlsystems/xarray-sql/blob/claude/xarray-sql-mnist-demo/benchmarks/nn.py",
+    "desc": "xarray-sql now supports training a small NN in pure SQL against array data, demonstrating SQL as a unified ML/analytics surface.",
+    "pubdate": "2026-07-13T20:00:10+00:00"
+  },
+  {
+    "source_key": "github",
+    "source_label": "GitHub openai",
+    "title": "feat: pass context to runTools callbacks (#1973)",
+    "m3_title": "openai-node 改进 runTools 回调上下文传递",
+    "m3_summary": "OpenAI 官方 Node SDK 提交 #1973,runTools 回调新增 context 参数,让多步 Agent 工具调用可携带会话级元数据,简化上层集成。",
+    "url": "https://github.com/openai/openai-node/commit/a6f01e53de019e71a3a21f6097c38c9c674005c9",
+    "desc": "feat: pass context to runTools callbacks (#1973) — openai-node now forwards per-call context to tool callbacks, easing multi-step agent orchestration.",
+    "pubdate": "2026-07-13T17:33:07+00:00"
+  }
+]
