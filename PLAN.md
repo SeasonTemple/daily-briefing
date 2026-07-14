@@ -59,8 +59,8 @@ scoring: { recency_weight: 0.25, relevance_weight: 0.45, engagement_weight: 0.30
 | Profile | 信源 | 用例 |
 |---------|------|------|
 | `ai-daily.yaml` | X 官号 / 关键人物 / 官网 / GitHub / arXiv | AI 工程圈 |
-| `example-finance-daily.yaml` | SEC / 财经媒体 / 经济日历 | 美股 + 宏观 |
-| `example-dev-daily.yaml` | GitHub Trending / HN / dev.to / Lobsters | 通用开发者动态 |
+| `finance-daily.yaml` | SEC / 财经媒体 / 经济日历 | 美股 + 宏观 |
+| `developer-daily.yaml` | GitHub Trending / HN / dev.to / Lobsters | 通用开发者动态 |
 
 **用别的领域**: 复制任意 example,改 `sources` + `keywords` + 标题即可。代码一行不动。
 
