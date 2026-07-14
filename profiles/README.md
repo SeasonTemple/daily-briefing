@@ -79,8 +79,8 @@ scoring:
 | 文件 | 领域 | 信源数 | 怎么用 |
 |------|------|-------:|--------|
 | `ai-daily.yaml` | AI 工程圈(默认) | 33 | `python scripts/digest.py --profile ai-daily` |
-| `example-finance-daily.yaml` | 美股 + 宏观财经 | 12 | 复制改名跑 |
-| `example-dev-daily.yaml` | 通用开发者动态 | 10 | 复制改名跑 |
+| `finance-daily.yaml` | 美股 + 宏观财经 | 12 | 复制改名跑 |
+| `developer-daily.yaml` | 通用开发者动态 | 10 | 复制改名跑 |
 
 ---
 
