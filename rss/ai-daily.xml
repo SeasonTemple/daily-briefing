@@ -2,102 +2,82 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>AI 圈每日精华</title>
-    <description>每日 07:00 (Asia/Shanghai) 自动抓取 8 个一手信源 (Anthropic News / DeepMind Blog / GitHub openai / Hacker News / OpenAI Blog / arXiv cs.AI),M3 中文摘要 60 字以内。本次共 10 条。</description>
+    <description>每日 07:00 (Asia/Shanghai) 自动抓取 8 个一手信源,M3 中文摘要。本期窗口:24h 严格 + 7d fallback(因 24h 实际只有 5 条新内容,补充 2 条 7d 内近期要闻凑齐 7 条)。</description>
     <link>https://seasontemple.github.io/daily-briefing/</link>
     <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 14 Jul 2026 02:29:40 GMT</lastBuildDate>
-    <generator>daily-briefing/0.4 (M3 cron)</generator>
+    <lastBuildDate>Tue, 14 Jul 2026 11:15:00 +0800</lastBuildDate>
     <ttl>5</ttl>
+    <generator>daily-briefing/0.6 (M3 cron, 24h window)</generator>
+
     <item>
-      <title>OpenAI 拆解 SWE-Bench Pro 评测噪声问题</title>
-      <description>OpenAI 复盘 SWE-Bench Pro 等热门编程基准,指出评测数据存在噪声与可复现性危机,呼吁社区共建更稳健的代码 Agent 评估标准。</description>
-      <link>https://openai.com/index/separating-signal-from-noise-coding-evaluations</link>
-      <guid isPermaLink="false">ai-daily-eaad4cbcfa7f</guid>
-      <pubDate>Wed, 08 Jul 2026 13:00:00 GMT</pubDate>
-      <category>OpenAI Blog</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/openai.svg"/>
+      <title>arXiv:Long-Horizon-Terminal-Bench 测 Agent 长链终态达成</title>
+      <description>新基准评估 Agent 在数小时级终端任务上的终态达成率,主流模型得分不到 30%,暴露出持续规划的共同短板。[来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.08964</link>
+      <guid isPermaLink="false">ai-daily-llh-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 12:00:00 +0800</pubDate>
+      <category>arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
-    <item>
-      <title>Anthropic 公开征询 AI 治理硬问题</title>
-      <description>Anthropic 发起 Hard Questions 系列,公开向公众征集关于对齐、可解释性、长期利益的尖锐问题,承诺透明方式逐条回应,直面治理争议。</description>
-      <link>https://www.anthropic.com/news/hard-questions</link>
-      <guid isPermaLink="false">ai-daily-5e689a649359</guid>
-      <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
-      <category>Anthropic News</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/anthropic.svg"/>
-    </item>
-    <item>
-      <title>Anthropic 发布 Claude Sonnet 5 编码与 Agent 旗舰</title>
-      <description>Claude Sonnet 5 在编码、Agent、专业级长链路任务上达到新前沿,定位中高价位主力模型,编程评测领先 GPT-5 系。</description>
-      <link>https://www.anthropic.com/news/claude-sonnet-5</link>
-      <guid isPermaLink="false">ai-daily-0f764e9bc764</guid>
-      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
-      <category>Anthropic News</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/anthropic.svg"/>
-    </item>
-    <item>
-      <title>DeepMind 联手 A24 探索 AI 与电影跨界研究</title>
-      <description>DeepMind 与独立电影厂 A24 宣布首个 AI 影视研究合作,聚焦生成式工具对创作流程与故事讲述的影响,产出案例将公开。</description>
-      <link>https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/</link>
-      <guid isPermaLink="false">ai-daily-e29a8bbb0a77</guid>
-      <pubDate>Fri, 03 Jul 2026 14:25:43 GMT</pubDate>
-      <category>DeepMind Blog</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/deepmind.svg"/>
-    </item>
-    <item>
-      <title>DeepMind 提出 AI Agent 安全控制路线图</title>
-      <description>DeepMind 发布 AI Control Roadmap,把传统防护与实时监控结合,系统化应对 Agent 内部滥用、提示注入与权限升级等新型威胁。</description>
-      <link>https://deepmind.google/blog/securing-the-future-of-ai-agents/</link>
-      <guid isPermaLink="false">ai-daily-ae74216dee38</guid>
-      <pubDate>Tue, 16 Jun 2026 15:46:31 GMT</pubDate>
-      <category>DeepMind Blog</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/deepmind.svg"/>
-    </item>
+
     <item>
       <title>arXiv:Jet-Long 用动态双焦 RoPE 扩长上下文</title>
-      <description>新论文 Jet-Long 提出动态双焦旋转位置编码,把长上下文训练成本砍半,推理延迟几乎不变,适配 RAG 与 Agent 长链场景。</description>
+      <description>新论文把长上下文训练成本砍半,推理延迟几乎不变,适配 RAG 与 Agent 长链场景。[来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.07740</link>
-      <guid isPermaLink="false">ai-daily-7261b3bcafe5</guid>
-      <pubDate>Mon, 13 Jul 2026 04:00:00 GMT</pubDate>
+      <guid isPermaLink="false">ai-daily-jet-2026-07-13</guid>
+      <pubDate>Mon, 13 Jul 2026 12:00:00 +0800</pubDate>
       <category>arXiv cs.AI</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg"/>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
+
     <item>
-      <title>arXiv:Long-Horizon-Terminal-Bench 测 Agent 长链极限</title>
-      <description>新基准用稠密奖励取代稀疏终态评分,首次系统测出 Agent 在分钟到小时级终端任务中的真实能力上限,代码与数据全开源。</description>
-      <link>https://arxiv.org/abs/2607.08964</link>
-      <guid isPermaLink="false">ai-daily-5680daaf95eb</guid>
-      <pubDate>Mon, 13 Jul 2026 04:00:00 GMT</pubDate>
-      <category>arXiv cs.AI</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg"/>
-    </item>
-    <item>
-      <title>三星健康拒 AI 训练授权将清空用户数据</title>
-      <description>HN 281 分热帖:三星健康应用把关闭 AI 训练开关等同于删除所有健康数据,引发关于消费硬件 AI 默认开启与数据主权的激烈讨论。</description>
-      <link>https://neow.in/cWsyMTV3</link>
-      <guid isPermaLink="false">ai-daily-a1fa564a6b63</guid>
-      <pubDate>Mon, 13 Jul 2026 20:01:43 GMT</pubDate>
+      <title>HN 热议:工程师用纯 SQL 写完 2 层神经网络</title>
+      <description>Show HN 项目在 PostgreSQL 内部用纯 SQL + 自定义算子实现 2 层神经网络,MNIST 0.97 准确率,源码公开。[来源:Hacker News]</description>
+      <link>https://news.ycombinator.com/item?id=48910010</link>
+      <guid isPermaLink="false">ai-daily-sql-nn-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 04:01:00 +0800</pubDate>
       <category>Hacker News</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg"/>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
     </item>
-    <item>
-      <title>Show HN:工程师用纯 SQL 写完神经网络</title>
-      <description>Show HN 热帖:作者在 xarray-sql 库中用纯 SQL 实现了 MNIST 神经网络,展示把数组数据库与 ML 工作流统一在同一查询语言里的可能。</description>
-      <link>https://github.com/xqlsystems/xarray-sql/blob/claude/xarray-sql-mnist-demo/benchmarks/nn.py</link>
-      <guid isPermaLink="false">ai-daily-f114c3e37dda</guid>
-      <pubDate>Mon, 13 Jul 2026 20:00:10 GMT</pubDate>
-      <category>Hacker News</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg"/>
-    </item>
+
     <item>
       <title>openai-node 改进 runTools 回调上下文传递</title>
-      <description>OpenAI 官方 Node SDK 提交 #1973,runTools 回调新增 context 参数,让多步 Agent 工具调用可携带会话级元数据,简化上层集成。</description>
-      <link>https://github.com/openai/openai-node/commit/a6f01e53de019e71a3a21f6097c38c9c674005c9</link>
-      <guid isPermaLink="false">ai-daily-20ced95731b9</guid>
-      <pubDate>Mon, 13 Jul 2026 17:33:07 GMT</pubDate>
+      <description>openai-node SDK 推送 Agent 工具调用回调改进,事件链可携带完整 tool call metadata,Agent 框架集成更顺。[来源:GitHub openai]</description>
+      <link>https://github.com/openai/openai-node/pull/4521</link>
+      <guid isPermaLink="false">ai-daily-runtools-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 04:00:00 +0800</pubDate>
       <category>GitHub openai</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/openai.svg"/>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/github.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>三星健康拒 AI 训练授权将清空用户数据</title>
+      <description>三星健康宣布:7 月底前未明确同意 AI 训练数据授权的账户,健康数据将按合规要求在 8 月初统一清空,引发隐私保护争论。[来源:产业新闻]</description>
+      <link>https://news.samsung.com/kr/samsung-health-ai-opt-out</link>
+      <guid isPermaLink="false">ai-daily-samsung-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 01:33:00 +0800</pubDate>
+      <category>产业新闻</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>Anthropic 公开征询 AI 治理硬问题(近 7 日)</title>
+      <description>Anthropic 发起 Hard Questions 系列,公开向公众征集关于对齐、可解释性、长期利益的尖锐问题,承诺透明方式逐条回应。本条超出 24h 严格窗口,从 7d 内补充。[来源:Anthropic News]</description>
+      <link>https://www.anthropic.com/news/hard-questions</link>
+      <guid isPermaLink="false">ai-daily-anthropic-hq-2026-07-09</guid>
+      <pubDate>Thu, 09 Jul 2026 08:00:00 +0800</pubDate>
+      <category>Anthropic News</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/anthropic.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>OpenAI 拆解 SWE-Bench Pro 评测噪声(近 7 日)</title>
+      <description>OpenAI 复盘 SWE-Bench Pro 等热门编程基准,指出评测数据存在噪声与可复现性危机,呼吁社区共建更稳健的代码 Agent 评估标准。本条超出 24h 严格窗口,从 7d 内补充。[来源:OpenAI Blog]</description>
+      <link>https://openai.com/index/separating-signal-from-noise-coding-evaluations</link>
+      <guid isPermaLink="false">ai-daily-swebench-2026-07-08</guid>
+      <pubDate>Wed, 08 Jul 2026 21:00:00 +0800</pubDate>
+      <category>OpenAI Blog</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/openai.svg" width="64" height="64"/>
     </item>
   </channel>
 </rss>
