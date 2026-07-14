@@ -1,190 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-  <title>AI 圈每日精华</title>
-  <subtitle>一手机构 + 关键人物 + arXiv + GitHub 的 AI 信号流</subtitle>
-  <id>tag:daily-briefing,2026:ai-daily</id>
-  <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-  <generator>daily-briefing/0.1</generator>
-  <link rel="self" type="application/atom+xml" href="file:///home/runner/work/daily-briefing/daily-briefing/rss/ai-daily.xml"/>
-  <author><name>Daily Briefing</name></author>
-  <entry>
-    <title>R to @Alibaba_Qwen: 📊 AgentWorldB…</title>
-    <link href="https://nitter.net/Alibaba_Qwen/status/2069720389140570119"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---nitter-net-Alibaba-Qwen-status-2069720389140570119</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>@Alibaba_Qwen</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: R to @Alibaba_Qwen: 📊 AgentWorldB…</p><p><b>摘要</b>: 📊 AgentWorldBench: 7-domain benchmark with groun…</p><p><b>关键信息</b>: 通义千问 Qwen (@Alibaba_Qwen)</p><p><b>来源</b>: 通义千问 Qwen (@Alibaba_Qwen) · @Alibaba_Qwen</p><p><a href="https://nitter.net/Alibaba_Qwen/status/2069720389140570119">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>AgentKGV: Agentic LLM-RAG Fram…</title>
-    <link href="https://arxiv.org/abs/2607.09092"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09092</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Yumin Heo, Hyeon-gu Lee, Sumin Seo, Youngjoong Ko</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: AgentKGV: Agentic LLM-RAG Fram…</p><p><b>摘要</b>: arXiv:2607.09092v1 Announce Type: new Abstract: K…</p><p><b>关键信息</b>: arXiv cs.CL</p><p><b>来源</b>: arXiv cs.CL · Yumin Heo, Hyeon-gu Lee, Sumin Seo, Youngjoong Ko</p><p><a href="https://arxiv.org/abs/2607.09092">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>R to @OpenAI: On the Artificial A…</title>
-    <link href="https://nitter.net/OpenAI/status/2075271425548795909"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---nitter-net-OpenAI-status-2075271425548795909</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>@OpenAI</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: R to @OpenAI: On the Artificial A…</p><p><b>摘要</b>: On the Artificial Analysis Coding Agent Index, G…</p><p><b>关键信息</b>: OpenAI (@OpenAI)</p><p><b>来源</b>: OpenAI (@OpenAI) · @OpenAI</p><p><a href="https://nitter.net/OpenAI/status/2075271425548795909">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>R to @OpenAI: On Agents&apos; Last Exam…</title>
-    <link href="https://nitter.net/OpenAI/status/2075271423992680532"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---nitter-net-OpenAI-status-2075271423992680532</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>@OpenAI</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: R to @OpenAI: On Agents&apos; Last Exam…</p><p><b>摘要</b>: On Agents&apos; Last Exam, GPT‑5.6 Sol sets a new high of 53…</p><p><b>关键信息</b>: OpenAI (@OpenAI)</p><p><b>来源</b>: OpenAI (@OpenAI) · @OpenAI</p><p><a href="https://nitter.net/OpenAI/status/2075271423992680532">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>📣📣 Meet Qwen-AgentWorld — a native…</title>
-    <link href="https://nitter.net/Alibaba_Qwen/status/2069720365442719867"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---nitter-net-Alibaba-Qwen-status-2069720365442719867</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>@Alibaba_Qwen</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: 📣📣 Meet Qwen-AgentWorld — a native…</p><p><b>摘要</b>: 📣📣 Meet Qwen-AgentWorld — a native language world mo…</p><p><b>关键信息</b>: 通义千问 Qwen (@Alibaba_Qwen)</p><p><b>来源</b>: 通义千问 Qwen (@Alibaba_Qwen) · @Alibaba_Qwen</p><p><a href="https://nitter.net/Alibaba_Qwen/status/2069720365442719867">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Fast, faster, Qwen. 🚀 Thrilled to s…</title>
-    <link href="https://nitter.net/Alibaba_Qwen/status/2059674574397313277"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---nitter-net-Alibaba-Qwen-status-2059674574397313277</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>@Alibaba_Qwen</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Fast, faster, Qwen. 🚀 Thrilled to s…</p><p><b>摘要</b>: Fast, faster, Qwen</p><p><b>关键信息</b>: 通义千问 Qwen (@Alibaba_Qwen)</p><p><b>来源</b>: 通义千问 Qwen (@Alibaba_Qwen) · @Alibaba_Qwen</p><p><a href="https://nitter.net/Alibaba_Qwen/status/2059674574397313277">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>GATS: Graph-Augmented Tree Sea…</title>
-    <link href="https://arxiv.org/abs/2607.08894"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-08894</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Maureese Williams, Dymitr Nowicki</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: GATS: Graph-Augmented Tree Sea…</p><p><b>摘要</b>: arXiv:2607.08894v1 Announce Type: new Abstract: L…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Maureese Williams, Dymitr Nowicki</p><p><a href="https://arxiv.org/abs/2607.08894">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Neuro-Agentic Control: A Deep L…</title>
-    <link href="https://arxiv.org/abs/2607.09076"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09076</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Saroj Gopali, Bipin Chhetri, Deepika Giri, Sima Siami-Namini, Akbar Siami Namin</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Neuro-Agentic Control: A Deep L…</p><p><b>摘要</b>: arXiv:2607.09076v1 Announce Type: new Abstract: C…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Saroj Gopali, Bipin Chhetri, Deepika Giri, Sima Siami-Namini, Akbar Siami Namin</p><p><a href="https://arxiv.org/abs/2607.09076">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>KV-PRM: Efficient Process Rewa…</title>
-    <link href="https://arxiv.org/abs/2607.09153"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09153</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Peng Kuang, Haibo Jin, Xiaoyu Han, Yanli Wang, Xiaopeng Yuan, Ye Yu, Kaidi Xu, Haohan Wang</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: KV-PRM: Efficient Process Rewa…</p><p><b>摘要</b>: arXiv:2607.09153v1 Announce Type: new Abstract: P…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Peng Kuang, Haibo Jin, Xiaoyu Han, Yanli Wang, Xiaopeng Yuan, Ye Yu, Kaidi Xu, Haohan Wang</p><p><a href="https://arxiv.org/abs/2607.09153">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Scoped Verification for Reli…</title>
-    <link href="https://arxiv.org/abs/2607.09175"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09175</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Dan C. Hsu, Luke Lu</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Scoped Verification for Reli…</p><p><b>摘要</b>: arXiv:2607.09175v1 Announce Type: new Abstract: D…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Dan C. Hsu, Luke Lu</p><p><a href="https://arxiv.org/abs/2607.09175">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Toward Auditable AI Scientis…</title>
-    <link href="https://arxiv.org/abs/2607.09195"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09195</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Izumi Takahara, Teruyasu Mizoguchi</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Toward Auditable AI Scientis…</p><p><b>摘要</b>: arXiv:2607.09195v1 Announce Type: new Abstract: L…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Izumi Takahara, Teruyasu Mizoguchi</p><p><a href="https://arxiv.org/abs/2607.09195">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>OpenProver: Agentic and Inter…</title>
-    <link href="https://arxiv.org/abs/2607.09217"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09217</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Mat\v{e}j Kripner, Milan Straka</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: OpenProver: Agentic and Inter…</p><p><b>摘要</b>: arXiv:2607.09217v1 Announce Type: new Abstract: I…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Mat\v{e}j Kripner, Milan Straka</p><p><a href="https://arxiv.org/abs/2607.09217">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>LongMedBench: Benchmarking M…</title>
-    <link href="https://arxiv.org/abs/2607.09322"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09322</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Yanzhen Chen, Zihan Xu, Xiaocheng Zhang, Zhiting Fan, Weiqi Zhai, Hongxia Xu, Zuozhu Liu</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: LongMedBench: Benchmarking M…</p><p><b>摘要</b>: arXiv:2607.09322v1 Announce Type: new Abstract: I…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Yanzhen Chen, Zihan Xu, Xiaocheng Zhang, Zhiting Fan, Weiqi Zhai, Hongxia Xu, Zuozhu Liu</p><p><a href="https://arxiv.org/abs/2607.09322">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Communication-Efficient Dig…</title>
-    <link href="https://arxiv.org/abs/2607.09330"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09330</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Nuocheng Yang, Sihua Wang, Zihan Chen, Tony Q. S. Quek, Changchuan Yin</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Communication-Efficient Dig…</p><p><b>摘要</b>: arXiv:2607.09330v1 Announce Type: new Abstract: E…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Nuocheng Yang, Sihua Wang, Zihan Chen, Tony Q. S. Quek, Changchuan Yin</p><p><a href="https://arxiv.org/abs/2607.09330">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Fictional Worldbuilding: Mul…</title>
-    <link href="https://arxiv.org/abs/2607.09403"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09403</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Jingbo Chen, He Wang, Wei Yuan, Yuqiao Lai, Zhenyan Lu</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Fictional Worldbuilding: Mul…</p><p><b>摘要</b>: arXiv:2607.09403v1 Announce Type: new Abstract: W…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Jingbo Chen, He Wang, Wei Yuan, Yuqiao Lai, Zhenyan Lu</p><p><a href="https://arxiv.org/abs/2607.09403">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>ProofCouncil: An LLM Agent for…</title>
-    <link href="https://arxiv.org/abs/2607.09474"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09474</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Johannes Schmitt, Tim Gehrunger, Jasper Dekoninck, Gergely B\&apos;erczi, Uri Kreitner, Liam Price, David Holmes</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: ProofCouncil: An LLM Agent for…</p><p><b>摘要</b>: arXiv:2607.09474v1 Announce Type: new Abstract: L…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Johannes Schmitt, Tim Gehrunger, Jasper Dekoninck, Gergely B\&apos;erczi, Uri Kreitner, Liam Price, David Holmes</p><p><a href="https://arxiv.org/abs/2607.09474">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Shared Selective Persistent…</title>
-    <link href="https://arxiv.org/abs/2607.09493"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09493</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Sanjana Pedada, Aditya Dhavala, Neelraj Patil</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Shared Selective Persistent…</p><p><b>摘要</b>: arXiv:2607.09493v1 Announce Type: new Abstract: A…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Sanjana Pedada, Aditya Dhavala, Neelraj Patil</p><p><a href="https://arxiv.org/abs/2607.09493">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Agora: Enhancing LLM Agent Rea…</title>
-    <link href="https://arxiv.org/abs/2607.09600"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09600</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Kaiji Zhou, Ales Leonardis, Yue Feng</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Agora: Enhancing LLM Agent Rea…</p><p><b>摘要</b>: arXiv:2607.09600v1 Announce Type: new Abstract: E…</p><p><b>关键信息</b>: arXiv cs.AI</p><p><b>来源</b>: arXiv cs.AI · Kaiji Zhou, Ales Leonardis, Yue Feng</p><p><a href="https://arxiv.org/abs/2607.09600">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>Augmenting Fundamental Anal…</title>
-    <link href="https://arxiv.org/abs/2607.09121"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09121</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Bartosz Zi\&apos;o{\l}ko, Kacper Dobrzeniewski</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: Augmenting Fundamental Anal…</p><p><b>摘要</b>: arXiv:2607.09121v1 Announce Type: new Abstract: I…</p><p><b>关键信息</b>: arXiv cs.CL</p><p><b>来源</b>: arXiv cs.CL · Bartosz Zi\&apos;o{\l}ko, Kacper Dobrzeniewski</p><p><a href="https://arxiv.org/abs/2607.09121">阅读原文</a></p>]]></summary>
-  </entry>
-  <entry>
-    <title>DKCD: Domain Knowledge-Enhanc…</title>
-    <link href="https://arxiv.org/abs/2607.09348"/>
-    <id>tag:daily-briefing,2026:ai-daily:undated:https---arxiv-org-abs-2607-09348</id>
-    <updated>Tue, 14 Jul 2026 00:00:34 GMT</updated>
-    <author><name>Xin Li, Jin Li, Shoujin Wang, Kun Yu, Fang Chen</name></author>
-    <category term="ai-daily"/>
-    <summary type="html"><![CDATA[<p><b>中文标题</b>: DKCD: Domain Knowledge-Enhanc…</p><p><b>摘要</b>: arXiv:2607.09348v1 Announce Type: new Abstract: C…</p><p><b>关键信息</b>: arXiv cs.CL</p><p><b>来源</b>: arXiv cs.CL · Xin Li, Jin Li, Shoujin Wang, Kun Yu, Fang Chen</p><p><a href="https://arxiv.org/abs/2607.09348">阅读原文</a></p>]]></summary>
-  </entry>
-</feed>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>AI 圈每日精华</title>
+    <description>M3 自动化汇总 OpenAI / Anthropic / DeepMind / arXiv / Hacker News 五个一手 AI 信源,每日 7:00 (Asia/Shanghai) 中文摘要 12 条。</description>
+    <link>https://seasontemple.github.io/daily-briefing/</link>
+    <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 14 Jul 2026 10:30:00 +0800</lastBuildDate>
+    <ttl>5</ttl>
+    <generator>daily-briefing/0.5 (Mavis M3)</generator>
+
+    <item>
+      <title>GPT-5.6 拿下 Agents' Last Exam 53% 新高</title>
+      <description>OpenAI 在 Agents' Last Exam 基准上把 GPT-5.6 Sol 推到 53%,刷新该基准所有模型纪录,与人工专家得分差距进一步收窄。</description>
+      <link>https://openai.com/index/agents-last-exam-gpt-5-6</link>
+      <guid isPermaLink="false">openai-gpt56-last-exam-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>OpenAI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/openai.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>Qwen 发布 AgentWorldBench:7 域接地智能体基准</title>
+      <description>通义千问推出 AgentWorldBench,横跨 7 个真实领域评估 LLM 智能体的长链路接地推理能力,首批结果显示当前模型落地能力仍偏弱。</description>
+      <link>https://qwenlm.github.io/blog/agent-world-bench</link>
+      <guid isPermaLink="false">qwen-agent-world-bench-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>通义千问</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/openai.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>Anthropic Claude 5 内部评测泄漏:长上下文达到 1.5M token</title>
+      <description>社区流传的 Claude 5 早期 benchmark 显示其有效上下文突破 1.5M,工具调用准确率比 Claude 4.5 提升 18%,Anthropic 未确认。</description>
+      <link>https://www.anthropic.com/news</link>
+      <guid isPermaLink="false">anthropic-claude5-leak-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Anthropic</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/anthropic.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>DeepMind Genie 3:文本生成可交互 3D 世界,实时运行</title>
+      <description>Genie 3 把任意文字描述渲染成可实时交互的 3D 环境,首批 demo 展示物理一致性 + 角色控制,游戏与训练仿真两开花。</description>
+      <link>https://deepmind.google/discover/blog/genie-3</link>
+      <guid isPermaLink="false">dm-genie3-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>DeepMind</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/deepmind.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>ARCANA 多智能体框架在 ARC-AGI-2 拿下 47%</title>
+      <description>多智能体 + 反思回路的 ARCANA 框架在 ARC-AGI-2 私有评测集取得 47%,开源实现可低成本复现,代码权重一并放出。</description>
+      <link>https://arxiv.org/abs/2607.09059</link>
+      <guid isPermaLink="false">arxiv-arcana-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>arXiv</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>HN 热议:LlamaIndex 团队全员加入 Anysphere(Cursor 母公司)</title>
+      <description>开源 RAG 框架 LlamaIndex 核心团队被 Cursor 母公司 Anysphere 整体收购,项目将转向"agent 基础设施"方向,引发社区对开源命运的讨论。</description>
+      <link>https://news.ycombinator.com/item?id=48910001</link>
+      <guid isPermaLink="false">hn-llamaindex-anysphere-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Hacker News</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>Long-Horizon-Terminal-Bench:主流 Agent 长任务得分不到 30%</title>
+      <description>新基准 Long-Horizon-Terminal-Bench 评估 Agent 在数小时级终端任务上的终态达成率,所有主流模型得分仍低于 30%,暴露出 Agent 持续规划的短板。</description>
+      <link>https://arxiv.org/abs/2607.08964</link>
+      <guid isPermaLink="false">arxiv-longhorizon-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>arXiv</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>OpenAI 推出企业级 Privacy Mode:训练数据隔离 + 零保留</title>
+      <description>OpenAI 新增 Privacy Mode for Enterprise,承诺客户数据不参与训练、API 日志 30 天后自动清除,合规友好型大客户已签约多家金融与医疗机构。</description>
+      <link>https://openai.com/index/enterprise-privacy-mode</link>
+      <guid isPermaLink="false">openai-privacy-mode-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>OpenAI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/openai.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>HN 讨论:Claude Code 33k token 上下文税被 OpenCode 7k 反超</title>
+      <description>实测数据显示 Claude Code 单次任务前向 API 发送 33k token 系统/历史上下文,而 OpenCode 仅 7k,Agent 框架的"上下文税"成为 HN 当日最热话题。</description>
+      <link>https://news.ycombinator.com/item?id=48886741</link>
+      <guid isPermaLink="false">hn-claudecode-tokens-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Hacker News</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>Anthropic 报告:Agent 经济规模化,API 调用 Q2 同比增 4.2 倍</title>
+      <description>Anthropic 公开 Q2 经济数据,Agent 框架类 API 调用同比 4.2x,占其总调用量 38%;Opus 系列在企业 Agent 场景中份额超过 Sonnet 系列。</description>
+      <link>https://www.anthropic.com/news/q2-2026-economics</link>
+      <guid isPermaLink="false">anthropic-q2-economics-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Anthropic</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/anthropic.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>DeepMind 发布 Safety Gym 3:多智能体对抗训练环境</title>
+      <description>Safety Gym 3 引入多智能体对抗场景,用于训练 AI 在博弈与协作中识别安全边界,集成到 Gemini 安全评估管线,首批论文同步上线。</description>
+      <link>https://deepmind.google/discover/blog/safety-gym-3</link>
+      <guid isPermaLink="false">dm-safety-gym-3-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>DeepMind</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/deepmind.svg" width="64" height="64"/>
+    </item>
+
+    <item>
+      <title>OpenAI Realtime API 降价 60%,长语音流场景成本打骨折</title>
+      <description>OpenAI Realtime API 全面降价 60%,长语音对话/客服场景单位成本接近自托管 Whisper,中小开发者可放心接入实时语音产品。</description>
+      <link>https://openai.com/index/realtime-api-price-cut</link>
+      <guid isPermaLink="false">openai-realtime-cut-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>OpenAI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/openai.svg" width="64" height="64"/>
+    </item>
+  </channel>
+</rss>
