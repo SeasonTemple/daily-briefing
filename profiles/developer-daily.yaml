@@ -1,0 +1,66 @@
+# ========================================================================
+#  Dev Daily · 通用开发者动态 RSS 早报示例
+#  演示「信源即配置」:跟踪开发者社区(语言/框架/开源),不绑 AI
+#  跑法:python scripts/digest.py --profile example-dev-daily
+# ========================================================================
+
+profile: example-dev-daily
+title: "开发者每日信号"
+subtitle: "GitHub Trending + HN + dev.to + Lobsters + 个人关注的 KOL"
+description: |
+  跟踪开源生态热门仓库、社区讨论与开发者 KOL 观点。
+  适合所有"我想知道技术圈在发生什么"的人,跟具体语言/框架无关。
+author: "Daily Briefing"
+language: zh-CN
+timezone: "Asia/Shanghai"
+hours_lookback: 72
+daily_limit: 20
+output:
+  rss: rss/example-dev-daily.xml
+  markdown: reports/example-dev-daily-{date}.md
+keywords:
+  - GitHub
+  - 开源
+  - Rust
+  - Go
+  - TypeScript
+  - Python
+  - WebAssembly
+  - Linux
+  - DevOps
+  - 数据库
+
+# ----------------------------------------------------------------------
+# 信源
+# ----------------------------------------------------------------------
+sources:
+
+  # ----- A. GitHub Trending & Releases(开源热度) -----
+  - { type: rss, name: "GitHub Trending", url: "https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml" }
+  - { type: rss, name: "GitHub Releases All", url: "https://github.com/AllThingsCrabs.atom" }
+
+  # ----- B. 社区讨论(4 个) -----
+  - { type: rss, name: "Hacker News",        url: "https://hnrss.org/frontpage" }
+  - { type: rss, name: "Lobsters",           url: "https://lobste.rs/rss" }
+  - { type: rss, name: "dev.to",             url: "https://dev.to/feed" }
+  - { type: rss, name: "Indie Hackers",      url: "https://www.indiehackers.com/feed.xml" }
+
+  # ----- C. 关键 KOL / 知名开发者 X 官号 (6) -----
+  - { type: x_user, handle: "github",         label: "GitHub 官方" }
+  - { type: x_user, handle: "linustorvalds",  label: "Linus Torvalds" }
+  - { type: x_user, handle: "addyosmani",     label: "Addy Osmani (Google Chrome)" }
+  - { type: x_user, handle: "daboross",       label: "daboross (Rust 生态)" }
+  - { type: x_user, handle: "rich_harris",    label: "Rich Harris (Svelte)" }
+  - { type: x_user, handle: "tannerlinsley",  label: "Tanner Linsley (TanStack)" }
+
+  # ----- D. 常用框架的官方 GitHub (5) -----
+  - { type: github_org, org: "vercel",        label: "Vercel" }
+  - { type: github_org, org: "rust-lang",     label: "Rust" }
+  - { type: github_org, org: "denoland",      label: "Deno" }
+  - { type: github_org, org: "withastro",     label: "Astro" }
+  - { type: github_org, org: "tldraw",        label: "tldraw" }
+
+  # ----- E. 中文开发者社区 (3) -----
+  - { type: rss, name: "V2EX 技术",     url: "https://www.v2ex.com/feed/tab/tech.xml" }
+  - { type: rss, name: "掘金前端",     url: "https://rsshub.app/juejin/category/frontend" }
+  - { type: rss, name: "InfoQ 中文",   url: "https://www.infoq.cn/feed.xml" }
