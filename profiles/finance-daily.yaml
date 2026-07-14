@@ -1,0 +1,63 @@
+# ========================================================================
+#  Finance Daily · 财经领域 RSS 早报示例
+#  演示「信源即配置」:把 profile 从 AI 换成财经,代码零改动
+#  跑法:python scripts/digest.py --profile example-finance-daily
+# ========================================================================
+
+profile: example-finance-daily
+title: "财经每日精华"
+subtitle: "美联储 / SEC / 头部财经媒体 + 关键宏观数据"
+description: |
+  跟踪美股、宏观经济与监管动态。一手信源为主(SEC 备案 / 联储会议 /
+  头部媒体),加少量 KOL X 官号做信号放大。
+author: "Daily Briefing"
+language: zh-CN
+timezone: "America/New_York"
+hours_lookback: 48
+daily_limit: 18
+output:
+  rss: rss/example-finance-daily.xml
+  markdown: reports/example-finance-daily-{date}.md
+keywords:
+  - 美联储
+  - 通胀
+  - 非农
+  - CPI
+  - GDP
+  - 财报
+  - 收益率曲线
+  - 利率
+  - SEC
+  - 美股
+
+# ----------------------------------------------------------------------
+# 一手信源(机构、监管、官方)
+# ----------------------------------------------------------------------
+sources:
+
+  # ----- A. 监管 / 官方机构 (3) -----
+  - { type: rss, name: "SEC Press Releases", url: "https://www.sec.gov/news/press.xml" }
+  - { type: rss, name: "Federal Reserve Press", url: "https://www.federalreserve.gov/feeds/press_all.xml" }
+  - { type: rss, name: "BIS Speeches",         url: "https://www.bis.org/doclist/bis_pubilc_speeches.rss.xml" }
+
+  # ----- B. 头部财经媒体 (5) -----
+  - { type: rss, name: "WSJ Markets",        url: "https://feeds.a.dj.com/rss/RSSMarkets.xml" }
+  - { type: rss, name: "Bloomberg Markets",  url: "https://feeds.bloomberg.com/markets/news.rss" }
+  - { type: rss, name: "FT Markets",         url: "https://www.ft.com/markets?format=rss" }
+  - { type: rss, name: "Reuters Business",   url: "https://www.reutersagency.com/feed/?best-topics=business" }
+  - { type: rss, name: "MarketWatch Real-time", url: "https://www.marketwatch.com/rss/topstories" }
+
+  # ----- C. 关键 KOL / 经济学家 X 官号 (4) -----
+  - { type: x_user, handle: "federalreserve",     label: "美联储官方" }
+  - { type: x_user, handle: "secgov",             label: "SEC 官方" }
+  - { type: x_user, handle: "elerianm",           label: "Mohamed El-Erian" }
+  - { type: x_user, handle: "R-bloggers",         label: "R-Bloggers 量化" }
+
+  # ----- D. 宏观经济日历 / 数据(占位, 真实场景可接 API) -----
+  # - { type: rss, name: "Forex Factory Calendar", url: "https://www.forexfactory.com/calendar.xml" }
+  # - { type: rss, name: "EIA Petroleum",         url: "https://www.eia.gov/rss/petroleum.xml" }
+  # 注: 上面两个源 URL 可能变动,本 profile 注释掉,实际用时建议先 curl 验证
+
+  # ----- E. 兜底二手 (2) -----
+  - { type: rss, name: "Zero Hedge",  url: "https://feeds.feedburner.com/zerohedge/feed" }
+  - { type: rss, name: "Seeking Alpha", url: "https://seekingalpha.com/feed.xml" }
