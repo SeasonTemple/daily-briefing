@@ -173,3 +173,27 @@ llm:
     - already_seen_24h
     - low_signal_keywords
     - non_ai_tech
+
+# ============================================================================
+# Subagent 调研后增量补丁 (commit pending)
+# 调研来源: explore subagent on 2026-07-14
+# 仅加: fetch 通 + 高置信度
+# ============================================================================
+
+  # ----- T0: subagent 真验证 fetch 通的强必加 (4) -----
+  - { type: rss, name: "AIBase Daily (中文 AI 聚合)", url: "https://www.aibase.com/daily", tier: T5, subagent_verified: true }
+  - { type: rss, name: "虎嗅", url: "https://www.huxiu.com/", tier: T5, subagent_verified: true, best_effort: true }
+  - { type: rss, name: "AWS ML Blog", url: "https://aws.amazon.com/blogs/machine-learning/feed/", tier: T1, subagent_verified: true }
+  - { type: rss, name: "Apple ML Research", url: "https://machinelearning.apple.com/rss.xml", tier: T1, subagent_verified: true }
+
+  # ----- T1: Newsletter + 权威推荐 (10, 全部 best_effort 因没自验) -----
+  - { type: rss, name: "Latent Space", url: "https://www.latent.space/feed.xml", tier: T4, best_effort: true }
+  - { type: rss, name: "The Rundown AI", url: "https://www.therundown.ai/feed", tier: T4, best_effort: true }
+  - { type: rss, name: "AlphaSignal", url: "https://www.alphasignal.ai/feed", tier: T4, best_effort: true }
+  - { type: rss, name: "Last Week in AI", url: "https://lastweekin.ai/feed", tier: T4, best_effort: true }
+  - { type: rss, name: "Simon Willison", url: "https://simonwillison.net/atom/everything/", tier: T4, best_effort: true }
+  - { type: rss, name: "Stratechery", url: "https://stratechery.com/feed/", tier: T2, best_effort: true }
+  - { type: rss, name: "arXiv cs.CV", url: "http://export.arxiv.org/rss/cs.CV", tier: T1.5 }
+  - { type: rss, name: "arXiv cs.RO", url: "http://export.arxiv.org/rss/cs.RO", tier: T1.5 }
+  - { type: rss, name: "HN Best", url: "https://hnrss.org/best", tier: T3 }
+  - { type: rss, name: "Reddit r/LocalLLaMA", url: "https://www.reddit.com/r/LocalLLaMA/.rss", tier: T3 }
