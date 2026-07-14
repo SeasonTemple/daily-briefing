@@ -30,7 +30,7 @@ PROFILES = [
 ]
 
 
-def gh_request(path, data=None, method='GET'):
+def gh_request(path, data=None, method=None):
     token = os.environ.get('GITHUB_PAT')
     if not token:
         sys.exit('[notify] GITHUB_PAT env var required')
@@ -44,6 +44,9 @@ def gh_request(path, data=None, method='GET'):
     if data is not None:
         headers['Content-Type'] = 'application/json'
         body = json.dumps(data).encode('utf-8')
+    # GraphQL endpoint always needs POST regardless of data
+    if method is None:
+        method = 'POST' if path == '/graphql' else 'GET'
     req = urllib.request.Request(url, data=body, headers=headers, method=method)
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)
@@ -83,20 +86,26 @@ def find_category(categories, name='Daily Briefing'):
 
 
 def today_discussion_exists(category_id, title_prefix):
-    """Check if a discussion with same title prefix already exists today."""
+    """Check if a discussion with same title prefix already exists today in this category."""
     data = graphql("""
-        query($id: ID!, $first: Int!) {
-          node(id: $id) {
-            ... on DiscussionCategory {
-              discussions(first: $first, orderBy: {field: CREATED_AT, direction: DESC}) {
-                nodes { title createdAt url }
+        query($owner: String!, $name: String!) {
+          repository(owner: $owner, name: $name) {
+            discussions(first: 30, orderBy: {field: CREATED_AT, direction: DESC}) {
+              nodes {
+                title
+                createdAt
+                url
+                category { id }
               }
             }
           }
         }
-    """, {'id': category_id, 'first': 30})
+    """, {'owner': REPO_OWNER, 'name': REPO_NAME})
     today = datetime.date.today().isoformat()
-    for d in data['node']['discussions']['nodes']:
+    repo = data.get('repository') or {}
+    for d in repo.get('discussions', {}).get('nodes', []):
+        if (d.get('category') or {}).get('id') != category_id:
+            continue
         if d['title'].startswith(title_prefix) and d['createdAt'].startswith(today):
             return d
     return None
@@ -206,7 +215,8 @@ def main():
         title_prefix = f'📡 {profile_name} · {date_str}'
         existing = today_discussion_exists(cat_id, title_prefix)
         if existing:
-            print(f"[notify] {profile_id}: skip (today exists, #{existing['number']})")
+            existing_num = existing.get('url', '').rsplit('/', 1)[-1] or '?'
+            print(f"[notify] {profile_id}: skip (today exists, #{existing_num})")
             skip += 1
             continue
         title = f'{title_prefix} · {len(items)} 条'
