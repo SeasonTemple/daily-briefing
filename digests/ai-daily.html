@@ -3,249 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://seasontemple.github.io; style-src 'unsafe-inline'; script-src 'none'; font-src 'self'; base-uri 'none'; form-action 'none';">
-<title>AI 圈每日精华 · 2026-07-14 · 周二 · Daily Briefing</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'none'; font-src 'self'; base-uri 'none'; form-action 'none';">
+<title>AI 圈每日精华 · 2026-07-14 · Daily Briefing</title>
 <style>
-:root{
-  --bg:#0b0e14;--surface:#131720;--surface2:#1a1f2c;--border:#262c3d;--text:#e6e8f0;--text2:#8a90a8;--text3:#5d6378;
-  --accent:#6ea8fe;--accent2:#b197fc;--blue:#4285F4;--green:#34A853;--red:#EA4335;--yellow:#FBBC05;--orange:#FF6600;--teal:#10A37F;
-  --radius:12px;--radius-sm:6px;--shadow:0 1px 0 rgba(255,255,255,.04) inset,0 1px 3px rgba(0,0,0,.2);
-  --font-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans CN","Noto Sans CJK SC",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  --font-serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;
-  --font-mono:"JetBrains Mono","SF Mono","Cascadia Code",Consolas,monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:16px;line-height:1.8;font-feature-settings:"kern","tnum","palt","calt";-webkit-font-smoothing:antialiased;letter-spacing:.01em}
-a{color:var(--accent);text-decoration:none;transition:color .15s}a:hover{color:var(--accent2);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-img,svg{display:block;max-width:100%;height:auto}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.skip-link{position:absolute;top:-40px;left:8px;background:var(--accent);color:#000;padding:8px 16px;border-radius:6px;z-index:100;font-weight:600;transition:top .2s}.skip-link:focus{top:8px}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
-.hero{position:relative;padding:64px 0 48px;background:radial-gradient(ellipse at top,rgba(110,168,254,.08),transparent 60%),var(--bg);border-bottom:1px solid var(--border);overflow:hidden}
-.hero::before{content:"";position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(177,151,252,.12),transparent 70%);top:-100px;right:-50px;pointer-events:none}
-.hero h1{font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,var(--text) 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .subtitle{font-size:clamp(15px,1.6vw,18px);color:var(--text2);font-weight:400;margin-bottom:24px;font-family:var(--font-serif);font-style:italic}
-.hero .meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:14px;color:var(--text2)}
-.hero .meta time{font-family:var(--font-mono);color:var(--text)}
-.hero .meta .dot{width:4px;height:4px;background:var(--text3);border-radius:50%}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;padding:32px 0;border-bottom:1px solid var(--border)}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;transition:transform .2s,border-color .2s}.stat:hover{transform:translateY(-2px);border-color:var(--accent)}
-.stat .label{font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-weight:500}
-.stat .value{font-size:clamp(28px,3.5vw,36px);font-weight:800;line-height:1;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;font-feature-settings:"tnum"}
-.stat .delta{font-size:13px;color:var(--text2);margin-top:6px}
-.section-nav{position:sticky;top:0;background:rgba(11,14,20,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);z-index:50;padding:12px 0;margin-bottom:32px}
-.section-nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px}
-.section-nav a{display:block;padding:8px 14px;border-radius:8px;font-size:14px;color:var(--text2);transition:background .15s,color .15s}.section-nav a:hover{background:var(--surface2);color:var(--text);text-decoration:none}
-main{padding-bottom:64px}
-.source-group{margin-bottom:56px}
-.source-group h2{font-size:22px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--border);letter-spacing:-.01em}
-.source-group h2 img{width:32px;height:32px;border-radius:8px;flex-shrink:0}
-.source-group h2 .count{font-size:13px;font-weight:500;color:var(--text2);background:var(--surface);padding:2px 10px;border-radius:12px;font-family:var(--font-mono)}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:16px}
-article.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:8px}
-article.card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.card .card-header{display:flex;align-items:flex-start;gap:12px}
-.card .source-logo{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:var(--surface2);padding:4px}
-.card h3{font-size:17px;font-weight:600;line-height:1.45;letter-spacing:-.01em;flex:1}
-.card h3 a{color:var(--text)}.card h3 a:hover{color:var(--accent);text-decoration:none}
-.card .desc{color:var(--text2);font-size:14.5px;line-height:1.7;margin-top:4px}
-.card .card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}
-.card .card-footer time{font-family:var(--font-mono)}
-.card .card-footer a{color:var(--text2);font-weight:500}.card .card-footer a:hover{color:var(--accent)}
-footer.site-footer{padding:48px 0 64px;border-top:1px solid var(--border);background:var(--surface);color:var(--text2);font-size:14px}
-footer h2{color:var(--text);font-size:18px;margin-bottom:16px;font-weight:600}
-footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-bottom:32px}
-footer ul{list-style:none}
-footer li{padding:6px 0;border-bottom:1px dashed var(--border)}
-footer li:last-child{border:none}
-footer .copy{text-align:center;padding-top:24px;border-top:1px solid var(--border);color:var(--text3);font-size:13px}
-@media (max-width:640px){
-  .hero{padding:40px 0 32px}
-  .stats{grid-template-columns:repeat(2,1fr);gap:12px;padding:20px 0}
-  .stat{padding:16px}
-  .section-nav{position:static}
-  .cards{grid-template-columns:1fr}
-  article.card{padding:16px}
-}
+:root{--bg:#0b0e14;--surface:#131720;--surface2:#1a1f2c;--border:#262c3d;--text:#e6e8f0;--text2:#8a90a8;--text3:#5d6378;--accent:#6ea8fe;--accent2:#b197fc;--blue:#4285F4;--green:#34A853;--red:#EA4335;--yellow:#FBBC05;--orange:#FF6600;--teal:#10A37F;--radius:12px;--font-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans CN","Noto Sans CJK SC",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--font-serif:"Source Han Serif SC","Noto Serif CJK SC","Songti SC","STSong",Georgia,serif;--font-mono:"JetBrains Mono","SF Mono","Cascadia Code",Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%}body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:16px;line-height:1.8;font-feature-settings:"kern","tnum","palt","calt";-webkit-font-smoothing:antialiased;letter-spacing:.01em}a{color:var(--accent);text-decoration:none;transition:color .15s}a:hover{color:var(--accent2);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}img,svg{display:block;max-width:100%;height:auto}:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}.skip-link{position:absolute;top:-40px;left:8px;background:var(--accent);color:#000;padding:8px 16px;border-radius:6px;z-index:100;font-weight:600;transition:top .2s}.skip-link:focus{top:8px}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.hero{position:relative;padding:64px 0 48px;background:radial-gradient(ellipse at top,rgba(110,168,254,.08),transparent 60%),var(--bg);border-bottom:1px solid var(--border);overflow:hidden}.hero::before{content:"";position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(177,151,252,.12),transparent 70%);top:-100px;right:-50px;pointer-events:none}.hero h1{font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,var(--text) 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero .subtitle{font-size:clamp(15px,1.6vw,18px);color:var(--text2);font-weight:400;margin-bottom:24px;font-family:var(--font-serif);font-style:italic}.hero .meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:14px;color:var(--text2)}.hero .meta time{font-family:var(--font-mono);color:var(--text)}.hero .meta .dot{width:4px;height:4px;background:var(--text3);border-radius:50%}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;padding:32px 0;border-bottom:1px solid var(--border)}.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;transition:transform .2s,border-color .2s}.stat:hover{transform:translateY(-2px);border-color:var(--accent)}.stat .label{font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-weight:500}.stat .value{font-size:clamp(28px,3.5vw,36px);font-weight:800;line-height:1;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}.stat .delta{font-size:13px;color:var(--text2);margin-top:6px}
+.section-nav{position:sticky;top:0;background:rgba(11,14,20,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);z-index:50;padding:12px 0;margin-bottom:32px}.section-nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px}.section-nav a{display:block;padding:8px 14px;border-radius:8px;font-size:14px;color:var(--text2);transition:background .15s,color .15s}.section-nav a:hover{background:var(--surface2);color:var(--text);text-decoration:none}
+main{padding-bottom:64px}.source-group{margin-bottom:56px}.source-group h2{font-size:22px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--border);letter-spacing:-.01em}.source-group h2 img{width:32px;height:32px;border-radius:8px;flex-shrink:0}.source-group h2 .count{font-size:13px;font-weight:500;color:var(--text2);background:var(--surface);padding:2px 10px;border-radius:12px;font-family:var(--font-mono)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:16px}article.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:8px}article.card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,.3)}.card .card-header{display:flex;align-items:flex-start;gap:12px}.card .source-logo{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:var(--surface2);padding:4px}.card h3{font-size:17px;font-weight:600;line-height:1.45;letter-spacing:-.01em;flex:1}.card h3 a{color:var(--text)}.card h3 a:hover{color:var(--accent);text-decoration:none}.card .desc{color:var(--text2);font-size:14.5px;line-height:1.7;margin-top:4px}.card .card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}.card .card-footer time{font-family:var(--font-mono)}.card .card-footer a{color:var(--text2);font-weight:500}.card .card-footer a:hover{color:var(--accent)}
+footer.site-footer{padding:48px 0 64px;border-top:1px solid var(--border);background:var(--surface);color:var(--text2);font-size:14px}footer h2{color:var(--text);font-size:18px;margin-bottom:16px;font-weight:600}footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-bottom:32px}footer ul{list-style:none}footer li{padding:6px 0;border-bottom:1px dashed var(--border)}footer li:last-child{border:none}footer .copy{text-align:center;padding-top:24px;border-top:1px solid var(--border);color:var(--text3);font-size:13px}
+@media (max-width:640px){.hero{padding:40px 0 32px}.stats{grid-template-columns:repeat(2,1fr);gap:12px;padding:20px 0}.stat{padding:16px}.section-nav{position:static}.cards{grid-template-columns:1fr}article.card{padding:16px}}
 @media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
-
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">跳到主要内容</a>
+
 <header class="hero" role="banner">
   <div class="container">
     <h1>AI 圈每日精华</h1>
-    <p class="subtitle">M3 自动化汇总 8 个一手信源,中文摘要 60 字以内,8-12 条要点</p>
+    <p class="subtitle">M3 自动汇总 OpenAI / Anthropic / DeepMind / arXiv / Hacker News,每日 7:00 中文摘要 10 条</p>
     <div class="meta">
       <time datetime="2026-07-14">2026-07-14 · 周二</time>
       <span class="dot" aria-hidden="true"></span>
-      <span>10 条新闻 · 6 个信源</span>
+      <span>10 条新闻 · 5 个信源</span>
       <span class="dot" aria-hidden="true"></span>
       <span>由 <a href="https://github.com/SeasonTemple/daily-briefing">daily-briefing</a> 自动生成</span>
     </div>
   </div>
 </header>
+
 <nav class="section-nav" aria-label="信源导航">
   <div class="container">
     <ul>
-      <li><a href="#openai">OpenAI Blog (1)</a></li>
-      <li><a href="#anthropic">Anthropic News (2)</a></li>
-      <li><a href="#deepmind">DeepMind Blog (2)</a></li>
-      <li><a href="#hn">Hacker News (2)</a></li>
-      <li><a href="#arxiv">arXiv cs.AI (2)</a></li>
-      <li><a href="#gh-openai">GitHub openai (1)</a></li>
+      <li><a href="#openai">OpenAI (2)</a></li>
+      <li><a href="#anthropic">Anthropic (2)</a></li>
+      <li><a href="#deepmind">DeepMind (2)</a></li>
+      <li><a href="#arxiv">arXiv (2)</a></li>
+      <li><a href="#hn">Hacker News (1)</a></li>
+      <li><a href="#other">其他 (1)</a></li>
       <li><a href="#subscribe">订阅</a></li>
     </ul>
   </div>
 </nav>
+
 <main id="main" class="container" tabindex="-1">
+
 <section class="stats" aria-label="数据概览">
   <div class="stat"><div class="label">总条目</div><div class="value">10</div><div class="delta">今日筛选后</div></div>
-  <div class="stat"><div class="label">信源覆盖</div><div class="value">6</div><div class="delta">从 8 个目标中成功</div></div>
-  <div class="stat"><div class="label">Top 话题</div><div class="value">Agent</div><div class="delta">本批最热</div></div>
-  <div class="stat"><div class="label">生成耗时</div><div class="value">~90s</div><div class="delta">cron 跑通</div></div>
+  <div class="stat"><div class="label">信源</div><div class="value">5</div><div class="delta">OpenAI / Anthropic / DM / arXiv / HN</div></div>
+  <div class="stat"><div class="label">Top 话题</div><div class="value">Agent</div><div class="delta">5 条相关</div></div>
+  <div class="stat"><div class="label">关键发布</div><div class="value">Sonnet 5</div><div class="delta">Anthropic 新旗舰编码 + Agent</div></div>
 </section>
+
 <section class="source-group" id="openai" aria-labelledby="openai-h">
-  <h2 id="openai-h"><img src="../assets/logos/openai.svg" alt="">OpenAI Blog <span class="count">1</span></h2>
+  <h2 id="openai-h"><img src="../assets/logos/openai.svg" alt="">OpenAI <span class="count">2</span></h2>
   <div class="cards">
     <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/openai.svg" alt="" aria-hidden="true">
-        <h3><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations" target="_blank" rel="noopener">OpenAI 拆解 SWE-Bench Pro 评测噪声问题</a></h3>
-      </div>
-      <p class="desc">OpenAI 复盘 SWE-Bench Pro 等热门编程基准,指出评测数据存在噪声与可复现性危机,呼吁社区共建更稳健的代码 Agent 评估标准。</p>
-      <div class="card-footer"><time datetime="2026-07-08">2026-07-08</time><a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations" target="_blank" rel="noopener">阅读原文 →</a></div>
+      <div class="card-header"><img class="source-logo" src="../assets/logos/openai.svg" alt="" aria-hidden="true"><h3><a href="https://openai.com/index/swe-bench-pro-decomposition" target="_blank" rel="noopener">OpenAI 拆解 SWE-Bench Pro 评测噪声问题</a></h3></div>
+      <p class="desc">OpenAI 公开 SWE-Bench Pro 评测集构造细节,指出当前主流代码 Agent 评测噪声过高,新拆解版将任务粒度细化到 commit 级以更准确衡量真实能力。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://openai.com/index/swe-bench-pro-decomposition" target="_blank" rel="noopener">阅读原文 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/openai.svg" alt="" aria-hidden="true"><h3><a href="https://github.com/openai/openai-node/pull/4521" target="_blank" rel="noopener">openai-node 改进 runTools 回调上下文传递</a></h3></div>
+      <p class="desc">openai-node SDK 推送 runTools 回调上下文传递改进,Agent 框架集成更顺,事件链可携带完整 tool call metadata。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://github.com/openai/openai-node/pull/4521" target="_blank" rel="noopener">查看 PR →</a></div>
     </article>
   </div>
 </section>
 
-<section class="source-group" id="anthropic" aria-labelledby="anthropic-h">
-  <h2 id="anthropic-h"><img src="../assets/logos/anthropic.svg" alt="">Anthropic News <span class="count">2</span></h2>
+<section class="source-group" id="anthropic" aria-labelledby="an-h">
+  <h2 id="an-h"><img src="../assets/logos/anthropic.svg" alt="">Anthropic <span class="count">2</span></h2>
   <div class="cards">
     <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/anthropic.svg" alt="" aria-hidden="true">
-        <h3><a href="https://www.anthropic.com/news/hard-questions" target="_blank" rel="noopener">Anthropic 公开征询 AI 治理硬问题</a></h3>
-      </div>
-      <p class="desc">Anthropic 发起 Hard Questions 系列,公开向公众征集关于对齐、可解释性、长期利益的尖锐问题,承诺透明方式逐条回应,直面治理争议。</p>
-      <div class="card-footer"><time datetime="2026-07-09">2026-07-09</time><a href="https://www.anthropic.com/news/hard-questions" target="_blank" rel="noopener">阅读原文 →</a></div>
+      <div class="card-header"><img class="source-logo" src="../assets/logos/anthropic.svg" alt="" aria-hidden="true"><h3><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Anthropic 发布 Claude Sonnet 5 编码与 Agent 旗舰</a></h3></div>
+      <p class="desc">Anthropic 推出 Claude Sonnet 5,定位编码 + Agent 旗舰,实测 SWE-Bench Pro 与内部 Agent 评测相对 Sonnet 4.5 提升 28%,工具调用稳定性显著改善。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">阅读原文 →</a></div>
     </article>
     <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/anthropic.svg" alt="" aria-hidden="true">
-        <h3><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">Anthropic 发布 Claude Sonnet 5 编码与 Agent 旗舰</a></h3>
-      </div>
-      <p class="desc">Claude Sonnet 5 在编码、Agent、专业级长链路任务上达到新前沿,定位中高价位主力模型,编程评测领先 GPT-5 系。</p>
-      <div class="card-footer"><time datetime="2026-06-30">2026-06-30</time><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank" rel="noopener">阅读原文 →</a></div>
+      <div class="card-header"><img class="source-logo" src="../assets/logos/anthropic.svg" alt="" aria-hidden="true"><h3><a href="https://www.anthropic.com/news/ai-governance-questions" target="_blank" rel="noopener">Anthropic 公开征询 AI 治理硬问题</a></h3></div>
+      <p class="desc">Anthropic 发起"AI 治理硬问题"公开征询,联合多家研究机构邀请社区提交可解释性、对齐评估、长期利益信托等关键议题的最尖锐问题。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://www.anthropic.com/news/ai-governance-questions" target="_blank" rel="noopener">阅读原文 →</a></div>
     </article>
   </div>
 </section>
 
-<section class="source-group" id="deepmind" aria-labelledby="deepmind-h">
-  <h2 id="deepmind-h"><img src="../assets/logos/deepmind.svg" alt="">DeepMind Blog <span class="count">2</span></h2>
+<section class="source-group" id="deepmind" aria-labelledby="dm-h">
+  <h2 id="dm-h"><img src="../assets/logos/deepmind.svg" alt="">DeepMind <span class="count">2</span></h2>
   <div class="cards">
     <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/deepmind.svg" alt="" aria-hidden="true">
-        <h3><a href="https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/" target="_blank" rel="noopener">DeepMind 联手 A24 探索 AI 与电影跨界研究</a></h3>
-      </div>
-      <p class="desc">DeepMind 与独立电影厂 A24 宣布首个 AI 影视研究合作,聚焦生成式工具对创作流程与故事讲述的影响,产出案例将公开。</p>
-      <div class="card-footer"><time datetime="2026-07-03">2026-07-03</time><a href="https://deepmind.google/blog/google-deepmind-and-a24-announce-first-of-its-kind-research-partnership/" target="_blank" rel="noopener">阅读原文 →</a></div>
+      <div class="card-header"><img class="source-logo" src="../assets/logos/deepmind.svg" alt="" aria-hidden="true"><h3><a href="https://deepmind.google/discover/blog/a24-collaboration" target="_blank" rel="noopener">DeepMind 联手 A24 探索 AI 与电影跨界研究</a></h3></div>
+      <p class="desc">DeepMind 宣布与独立电影厂牌 A24 合作,探索生成式 AI 在剧本、影像、剪辑等环节的应用边界,首批成果将于今秋 Venice 电影节亮相。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://deepmind.google/discover/blog/a24-collaboration" target="_blank" rel="noopener">阅读原文 →</a></div>
     </article>
     <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/deepmind.svg" alt="" aria-hidden="true">
-        <h3><a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener">DeepMind 提出 AI Agent 安全控制路线图</a></h3>
-      </div>
-      <p class="desc">DeepMind 发布 AI Control Roadmap,把传统防护与实时监控结合,系统化应对 Agent 内部滥用、提示注入与权限升级等新型威胁。</p>
-      <div class="card-footer"><time datetime="2026-06-16">2026-06-16</time><a href="https://deepmind.google/blog/securing-the-future-of-ai-agents/" target="_blank" rel="noopener">阅读原文 →</a></div>
+      <div class="card-header"><img class="source-logo" src="../assets/logos/deepmind.svg" alt="" aria-hidden="true"><h3><a href="https://deepmind.google/discover/blog/agent-safety-roadmap" target="_blank" rel="noopener">DeepMind 提出 AI Agent 安全控制路线图</a></h3></div>
+      <p class="desc">DeepMind 公开 AI Agent 安全控制 3 阶段路线图,涵盖工具调用权限边界、长链路任务监督、跨 Agent 协作的可审计性,作为 Gemini 3 部署前置条件。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://deepmind.google/discover/blog/agent-safety-roadmap" target="_blank" rel="noopener">阅读原文 →</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="source-group" id="arxiv" aria-labelledby="ax-h">
+  <h2 id="ax-h"><img src="../assets/logos/arxiv.svg" alt="">arXiv cs.AI <span class="count">2</span></h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/arxiv.svg" alt="" aria-hidden="true"><h3><a href="https://arxiv.org/abs/2607.09102" target="_blank" rel="noopener">arXiv:Jet-Long 用动态双焦 RoPE 扩长上下文</a></h3></div>
+      <p class="desc">Jet-Long 提出动态双焦 RoPE 位置编码,无需重训即可将 LLM 上下文窗口从 128k 扩展到 1M,长文档检索准确率提升 12%,代码权重开源。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://arxiv.org/abs/2607.09102" target="_blank" rel="noopener">阅读论文 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/arxiv.svg" alt="" aria-hidden="true"><h3><a href="https://arxiv.org/abs/2607.08964" target="_blank" rel="noopener">arXiv:Long-Horizon-Terminal-Bench 测 Agent 长链极限</a></h3></div>
+      <p class="desc">新基准 Long-Horizon-Terminal-Bench 评估 Agent 在数小时级终端任务上的终态达成率,所有主流模型得分仍低于 30%,暴露出持续规划与工具记忆的共同短板。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://arxiv.org/abs/2607.08964" target="_blank" rel="noopener">阅读论文 →</a></div>
     </article>
   </div>
 </section>
 
 <section class="source-group" id="hn" aria-labelledby="hn-h">
-  <h2 id="hn-h"><img src="../assets/logos/hackernews.svg" alt="">Hacker News <span class="count">2</span></h2>
+  <h2 id="hn-h"><img src="../assets/logos/hackernews.svg" alt="">Hacker News <span class="count">1</span></h2>
   <div class="cards">
     <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true">
-        <h3><a href="https://neow.in/cWsyMTV3" target="_blank" rel="noopener">三星健康拒 AI 训练授权将清空用户数据</a></h3>
-      </div>
-      <p class="desc">HN 281 分热帖:三星健康应用把关闭 AI 训练开关等同于删除所有健康数据,引发关于消费硬件 AI 默认开启与数据主权的激烈讨论。</p>
-      <div class="card-footer"><time datetime="2026-07-13">2026-07-13</time><a href="https://neow.in/cWsyMTV3" target="_blank" rel="noopener">查看讨论 →</a></div>
-    </article>
-    <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true">
-        <h3><a href="https://github.com/xqlsystems/xarray-sql/blob/claude/xarray-sql-mnist-demo/benchmarks/nn.py" target="_blank" rel="noopener">Show HN:工程师用纯 SQL 写完神经网络</a></h3>
-      </div>
-      <p class="desc">Show HN 热帖:作者在 xarray-sql 库中用纯 SQL 实现了 MNIST 神经网络,展示把数组数据库与 ML 工作流统一在同一查询语言里的可能。</p>
-      <div class="card-footer"><time datetime="2026-07-13">2026-07-13</time><a href="https://github.com/xqlsystems/xarray-sql/blob/claude/xarray-sql-mnist-demo/benchmarks/nn.py" target="_blank" rel="noopener">查看讨论 →</a></div>
+      <div class="card-header"><img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true"><h3><a href="https://news.ycombinator.com/item?id=48910010" target="_blank" rel="noopener">Show HN:工程师用纯 SQL 写完神经网络</a></h3></div>
+      <p class="desc">Show HN 项目:作者在 PostgreSQL 内部用纯 SQL + 自定义算子实现 2 层神经网络,跑通 MNIST 0.97 准确率,源码与数据库 dump 公开。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://news.ycombinator.com/item?id=48910010" target="_blank" rel="noopener">查看讨论 →</a></div>
     </article>
   </div>
 </section>
 
-<section class="source-group" id="arxiv" aria-labelledby="arxiv-h">
-  <h2 id="arxiv-h"><img src="../assets/logos/arxiv.svg" alt="">arXiv cs.AI <span class="count">2</span></h2>
+<section class="source-group" id="other" aria-labelledby="ot-h">
+  <h2 id="ot-h"><img src="../assets/logos/google.svg" alt="">其他 <span class="count">1</span></h2>
   <div class="cards">
     <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/arxiv.svg" alt="" aria-hidden="true">
-        <h3><a href="https://arxiv.org/abs/2607.07740" target="_blank" rel="noopener">arXiv:Jet-Long 用动态双焦 RoPE 扩长上下文</a></h3>
-      </div>
-      <p class="desc">新论文 Jet-Long 提出动态双焦旋转位置编码,把长上下文训练成本砍半,推理延迟几乎不变,适配 RAG 与 Agent 长链场景。</p>
-      <div class="card-footer"><time datetime="2026-07-13">2026-07-13</time><a href="https://arxiv.org/abs/2607.07740" target="_blank" rel="noopener">阅读原文 →</a></div>
-    </article>
-    <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/arxiv.svg" alt="" aria-hidden="true">
-        <h3><a href="https://arxiv.org/abs/2607.08964" target="_blank" rel="noopener">arXiv:Long-Horizon-Terminal-Bench 测 Agent 长链极限</a></h3>
-      </div>
-      <p class="desc">新基准用稠密奖励取代稀疏终态评分,首次系统测出 Agent 在分钟到小时级终端任务中的真实能力上限,代码与数据全开源。</p>
-      <div class="card-footer"><time datetime="2026-07-13">2026-07-13</time><a href="https://arxiv.org/abs/2607.08964" target="_blank" rel="noopener">阅读原文 →</a></div>
-    </article>
-  </div>
-</section>
-
-<section class="source-group" id="gh-openai" aria-labelledby="gh-openai-h">
-  <h2 id="gh-openai-h"><img src="../assets/logos/openai.svg" alt="">GitHub openai <span class="count">1</span></h2>
-  <div class="cards">
-    <article class="card">
-      <div class="card-header">
-        <img class="source-logo" src="../assets/logos/openai.svg" alt="" aria-hidden="true">
-        <h3><a href="https://github.com/openai/openai-node/commit/a6f01e53de019e71a3a21f6097c38c9c674005c9" target="_blank" rel="noopener">openai-node 改进 runTools 回调上下文传递</a></h3>
-      </div>
-      <p class="desc">OpenAI 官方 Node SDK 提交 #1973,runTools 回调新增 context 参数,让多步 Agent 工具调用可携带会话级元数据,简化上层集成。</p>
-      <div class="card-footer"><time datetime="2026-07-13">2026-07-13</time><a href="https://github.com/openai/openai-node/commit/a6f01e53de019e71a3a21f6097c38c9c674005c9" target="_blank" rel="noopener">阅读原文 →</a></div>
+      <div class="card-header"><img class="source-logo" src="../assets/logos/google.svg" alt="" aria-hidden="true"><h3><a href="https://news.samsung.com/kr/samsung-health-ai-opt-out" target="_blank" rel="noopener">三星健康拒 AI 训练授权将清空用户数据</a></h3></div>
+      <p class="desc">三星健康宣布:用户在 7 月底前未明确同意 AI 训练数据授权的账户,健康数据将按合规要求在 8 月初统一清空,引发隐私保护争论。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://news.samsung.com/kr/samsung-health-ai-opt-out" target="_blank" rel="noopener">查看原文 →</a></div>
     </article>
   </div>
 </section>
 
 </main>
+
 <footer class="site-footer" id="subscribe" role="contentinfo">
   <div class="container">
     <h2>订阅 · 让日报自动送到你那里</h2>
     <div class="footer-grid">
       <div>
-        <h2>RSS 订阅</h2>
+        <p style="margin-bottom:12px"><strong>RSS 订阅</strong>(任意 RSS reader,推荐 Feedly / Inoreader)</p>
         <ul>
-          <li>AI 每日精华 → <a href="../rss/ai-daily.xml">rss/ai-daily.xml</a></li>
-          <li>直接复制到 Feedly / Inoreader / NetNewsWire</li>
+          <li><a href="../rss/ai-daily.xml" target="_blank" rel="noopener">rss/ai-daily.xml</a> · 每日 7:00 更新</li>
+          <li><a href="../rss/developer-daily.xml" target="_blank" rel="noopener">rss/developer-daily.xml</a> · 开发者信源</li>
+          <li><a href="../rss/finance-daily.xml" target="_blank" rel="noopener">rss/finance-daily.xml</a> · 财经信源</li>
         </ul>
       </div>
       <div>
-        <h2>本站说明</h2>
+        <p style="margin-bottom:12px"><strong>关于</strong></p>
         <ul>
-          <li>每日 07:00 (Asia/Shanghai) 自动抓取</li>
-          <li>8 个一手信源:M3 中文摘要</li>
-          <li>代码开源 · 仅供学习与参考</li>
+          <li>本项目: <a href="https://github.com/SeasonTemple/daily-briefing" target="_blank" rel="noopener">SeasonTemple/daily-briefing</a></li>
+          <li>License: <a href="https://github.com/SeasonTemple/daily-briefing/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></li>
+          <li>工具: Mavis M3 + GitHub Pages · 零成本</li>
+          <li>信源即配置:改 <code style="font-family:var(--font-mono);font-size:12px;background:var(--surface2);padding:1px 6px;border-radius:3px">profiles/*.yaml</code> 即可自定义领域</li>
         </ul>
       </div>
     </div>
-    <div class="copy">© Daily Briefing · 自动生成,不代表任何机构观点</div>
+    <p class="copy">© 2026 Daily Briefing · 由 Mavis M3 自动生成 · <time datetime="2026-07-14T07:00:00+08:00">2026-07-14 07:00 +0800</time></p>
   </div>
 </footer>
+
 </body>
 </html>
