@@ -61,7 +61,7 @@
     </item>
 
     <item>
-      <title>HN 热议:LlamaIndex 团队全员加入 Anysphere(Cursor 母公司)</title>
+      <title>LlamaIndex 团队全员加入 Anysphere(Cursor 母公司)</title>
       <description>开源 RAG 框架 LlamaIndex 核心团队被 Cursor 母公司 Anysphere 整体收购,项目将转向"agent 基础设施"方向,引发社区对开源命运的讨论。</description>
       <link>https://news.ycombinator.com/item?id=48910001</link>
       <guid isPermaLink="false">hn-llamaindex-anysphere-2026-07-14</guid>
@@ -91,7 +91,7 @@
     </item>
 
     <item>
-      <title>HN 讨论:Claude Code 33k token 上下文税被 OpenCode 7k 反超</title>
+      <title>Claude Code 33k token 上下文税被 OpenCode 7k 反超</title>
       <description>实测数据显示 Claude Code 单次任务前向 API 发送 33k token 系统/历史上下文,而 OpenCode 仅 7k,Agent 框架的"上下文税"成为 HN 当日最热话题。</description>
       <link>https://news.ycombinator.com/item?id=48886741</link>
       <guid isPermaLink="false">hn-claudecode-tokens-2026-07-14</guid>
