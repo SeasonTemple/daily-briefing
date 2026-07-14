@@ -1,93 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>财经每日精华</title>
-    <description>SEC / 联储 / 头部财经媒体 + 关键宏观数据</description>
+    <description>SEC 监管文件 / 美联储 / 头部财经媒体 / 关键宏观数据,每日 7:00 一次到位,10 条影响市场的关键信号。</description>
     <link>https://seasontemple.github.io/daily-briefing/</link>
     <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/example-finance-daily.xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 13 Jul 2026 19:43:00 +0800</lastBuildDate>
-    <generator>daily-briefing/0.2</generator>
+    <lastBuildDate>Tue, 14 Jul 2026 10:30:00 +0800</lastBuildDate>
     <ttl>5</ttl>
+    <generator>daily-briefing/0.5 (example profile)</generator>
 
     <item>
-      <title>SEC:大型对冲基金披露 Q2 持仓变动</title>
-      <description>13F 文件披露日,机构大举加仓 NVDA / TSLA,减持 AAPL,半导体仓位创 5 年新高。</description>
+      <title>大型对冲基金 Q2 13F 披露:半导体仓位创 5 年新高</title>
+      <description>13F 文件披露日,机构大举加仓 NVDA / TSLA,减持 AAPL,半导体仓位创 5 年新高,科技板块集中度提升。</description>
       <link>https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;type=13F</link>
-      <guid isPermaLink="false">sec-13f-2026-q2</guid>
-      <pubDate>Mon, 13 Jul 2026 11:00:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-13f-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>SEC</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>美联储:官员讲话强化高利率维持信号</title>
-      <description>两位联储官员在公开场合强调需要更多通胀下降证据,9 月降息预期被市场回调至 35%。</description>
+      <title>美联储官员强化"高利率维持"信号,9 月降息预期回调至 35%</title>
+      <description>两位联储官员公开强调需要更多通胀下降证据,9 月降息预期被市场回调至 35%,美元指数短线走高。</description>
       <link>https://www.federalreserve.gov/feeds/press_all.xml</link>
-      <guid isPermaLink="false">fed-hawkish-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 10:30:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-fed-hawkish-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>美联储</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>WSJ Markets: 大型科技财报季开启</title>
-      <description>NFLX / TSLA 拉开本季序幕,市场关注 AI 资本开支对盈利的拉动作用。</description>
+      <title>大型科技财报季开启,关注 AI 资本开支对盈利拉动</title>
+      <description>NFLX / TSLA 拉开本季财报序幕,市场关注 AI 资本开支对盈利的拉动作用,科技巨头 CapEx 同比预期 +28%。</description>
       <link>https://www.wsj.com/finance/markets</link>
-      <guid isPermaLink="false">wsj-markets-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 09:45:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-wsj-markets-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>WSJ Markets</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>Bloomberg: 黄金突破历史新高</title>
-      <description>现货黄金突破 2480 美元,创历史新高,受央行购金 + 利率下行预期推动。</description>
+      <title>黄金突破 2480 美元历史新高,央行购金 + 利率预期双驱动</title>
+      <description>现货黄金突破 2480 美元创历史新高,受央行购金潮与利率下行预期双重推动,黄金 ETF 单周流入 27 亿美元。</description>
       <link>https://www.bloomberg.com/markets</link>
-      <guid isPermaLink="false">bloomberg-gold-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 09:00:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-bloomberg-gold-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Bloomberg</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>FT: 中国央行连续 4 个月增持黄金</title>
-      <description>央行 6 月再增 9 吨黄金,黄金储备占外储比例升至 4.9%,去美元化趋势延续。</description>
+      <title>中国央行连续 4 个月增持黄金,黄金占外储升至 4.9%</title>
+      <description>央行 6 月再增 9 吨黄金,黄金储备占外储比例升至 4.9%,去美元化趋势延续,人民币国际化叙事再添新筹码。</description>
       <link>https://www.ft.com/markets</link>
-      <guid isPermaLink="false">ft-china-gold-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 08:30:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-china-gold-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Financial Times</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>Reuters: 欧元区 6 月 CPI 终值持平于 2.5%</title>
-      <description>核心通胀仍粘性,欧央行 9 月降息空间收窄,欧元对美元短线上涨 0.3%。</description>
+      <title>欧元区 6 月 CPI 终值持平 2.5%,欧央行 9 月降息空间收窄</title>
+      <description>核心通胀仍显粘性,欧央行 9 月降息空间收窄,欧元对美元短线上涨 0.3%,欧债收益率同步走高。</description>
       <link>https://www.reuters.com/business/finance</link>
-      <guid isPermaLink="false">reuters-cpi-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 08:00:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-reuters-cpi-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Reuters</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>MarketWatch: 美 10 年期国债收益率回落</title>
-      <description>从 4.45% 回落至 4.32%,市场对联储宽松预期重新定价,科技股反弹。</description>
+      <title>美 10 年期国债收益率从 4.45% 回落至 4.32%,科技股反弹</title>
+      <description>市场对联储宽松预期重新定价,科技股反弹,Nasdaq 收涨 1.2%,半导体板块领涨 2.4%。</description>
       <link>https://www.marketwatch.com/</link>
-      <guid isPermaLink="false">mw-yield-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 07:30:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-mw-yield-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>MarketWatch</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>SEC: 重点关注 AI 公司治理披露</title>
-      <description>SEC 风险提示:AI 公司需要在 10-K 中详尽披露模型偏差 / 数据来源 / 监管风险。</description>
+      <title>SEC 风险提示:AI 公司须在 10-K 中详尽披露模型风险</title>
+      <description>SEC 风险提示:AI 公司在 10-K 年报中须详尽披露模型偏差、数据来源、监管风险等关键议题,披露不全将影响后续 IPO 审查。</description>
       <link>https://www.sec.gov/news/press.xml</link>
-      <guid isPermaLink="false">sec-ai-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 07:00:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-sec-ai-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>SEC</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>ZeroHedge: 财报季前的隐含波动率</title>
-      <description>VIX 跌破 13,期权市场显示财报季前低波动预期,但分析师警告平静可能误导。</description>
+      <title>财报季前 VIX 跌破 13,期权市场"平静可能误导"</title>
+      <description>VIX 跌破 13 创近期新低,期权市场显示财报季前低波动预期,但分析师警告"平静可能误导",需警惕尾部风险。</description>
       <link>https://www.zerohedge.com/</link>
-      <guid isPermaLink="false">zh-vix-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 06:30:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-zh-vix-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>ZeroHedge</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
 
     <item>
-      <title>Seeking Alpha: 中概股回归热度</title>
-      <description>VIE 架构合规框架优化,阿里 / 京东等龙头 ADR 回流预期升温,分析师看好 30% 估值修复空间。</description>
+      <title>中概股回归热度升温,VIE 框架优化下龙头估值修复 30%</title>
+      <description>VIE 架构合规框架持续优化,阿里、京东等龙头 ADR 回流预期升温,分析师看好 30% 估值修复空间,A/H 溢价显著收敛。</description>
       <link>https://seekingalpha.com/</link>
-      <guid isPermaLink="false">sa-china-adr-2026-07-13</guid>
-      <pubDate>Mon, 13 Jul 2026 06:00:00 +0800</pubDate>
+      <guid isPermaLink="false">fin-sa-china-adr-2026-07-14</guid>
+      <pubDate>Tue, 14 Jul 2026 10:30:00 +0800</pubDate>
+      <category>Seeking Alpha</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
   </channel>
 </rss>
