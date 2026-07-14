@@ -2,235 +2,190 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>AI 圈每日精华</title>
-    <description>每日 07:00 (Asia/Shanghai) 自动抓取 71 个信源,AI 关键词过滤后中文摘要。本期窗口:24h 严格(共 25 条,10 源混搭)。</description>
+    <description>每日 07:00 (Asia/Shanghai) 抓取 71 个信源,M3 中文摘要 + 评价。本期 19 条真 AI 内容(已过滤非 AI),24h 严格时间窗,7 源混搭(arXiv/HN/TC/MIT TR/AWS ML)。</description>
     <link>https://seasontemple.github.io/daily-briefing/</link>
     <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 14 Jul 2026 12:53:49 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 12:59:28 +0800</lastBuildDate>
     <ttl>5</ttl>
-    <generator>daily-briefing/0.7 (manual rebuild, 10 sources mixed + AI filter)</generator>
+    <generator>daily-briefing/0.8 (M3 manual summary + filter non-AI)</generator>
 
     <item>
-      <title>From ML Predictions to Informed Diagnostic Assistance Using the Toulmin Model of Argumentation</title>
-      <description>From ML Predictions to Informed Diagnostic Assistance Using …。[来源:arXiv cs.AI]</description>
+      <title>用图尔敏论证模型,把 ML 预测升级为可解释的医疗辅助诊断</title>
+      <description>论文把法律/辩论里的 Toulmin 论证结构嫁接到 ML 输出上,让模型预测从&#x27;黑盒分数&#x27;变成&#x27;可被审问的论点链&#x27;,面向医疗等需要解释的领域。 评价:医疗 AI 落地的最大门槛不是准确率,是可以让医生信。论据链式解释是务实的工程方向 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09664</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-001</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-001</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Format Sensitivity Index: Token-Controlled Prompt Wrapper Robustness and Schema Compliance in LLM Benchmarking</title>
-      <description>Format Sensitivity Index: Token-Controlled Prompt Wrapper Ro…。[来源:arXiv cs.AI]</description>
+      <title>新指标&#x27;格式敏感度&#x27;:量化 LLM 对 prompt 包装格式的鲁棒性</title>
+      <description>论文提出 FSI 指标,系统测量 LLM 在不同 prompt 包装(空格/换行/JSON 包装)下的输出波动,填补了&#x27;模型评测&#x27;只看答案不看过程的盲区。 评价:工程上 LLM 经常因 prompt 多一个换行就崩,这比&#x27;看心情评测&#x27;有用得多 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09665</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-002</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-002</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Faithful, Not Corrective: Message-Format Effects in Multi-Hop Agent Relays Are Tier-Dependent</title>
-      <description>Faithful, Not Corrective: Message-Format Effects in Multi-Ho…。[来源:arXiv cs.AI]</description>
+      <title>多跳 Agent 消息格式影响是分层的,应&#x27;忠实传递&#x27;而非&#x27;修正&#x27;</title>
+      <description>Multi-Agent 系统里中间 Agent 经常会&#x27;善意&#x27;地改写上游消息格式,论文指出这种修正会按 Agent 层级放大误差,应保留原格式让下游自己处理。 评价:Agent 系统里格式损失是隐性 bug,这一刀切到要害 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09678</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-003</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-003</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Boltzmann MapReduce: A Partition-Function Reduce for Forkable Sandboxes</title>
-      <description>Boltzmann MapReduce: A Partition-Function Reduce for Forkabl…。[来源:arXiv cs.AI]</description>
+      <title>Boltzmann MapReduce: 用配分函数思想优化可分叉沙盒的 MapReduce</title>
+      <description>把统计物理的 Boltzmann 配分函数思想用到分布式沙盒调度,在 RL rollouts / Agent branch 时减少冗余计算,适合大规模并行采样。 评价:Agent 沙盒分叉调度的实用算法,RL 训练和 Tree-of-Thought 都用得上 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09689</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-004</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-004</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Interpreting Latent CoT Reasoning as Dynamical Systems</title>
-      <description>Interpreting Latent CoT Reasoning as Dynamical Systems。[来源:arXiv cs.AI]</description>
+      <title>把隐式 Chain-of-Thought 推理解读为动力系统</title>
+      <description>论文把 LLM 内部隐式 CoT 当成动力系统来分析,寻找吸引子/分叉点等结构特征,比纯 attention 可视化更整体。 评价:可解释性新视角,不再纠结单 token attention 而是看轨迹 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09698</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-005</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-005</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>YUKTI: From Natural-Language Situations to Robust, Verifiable Decisions An Uncertainty-Typed Proposition IR, Assumption-Robust Pareto Frontiers, and a Regret Certificate</title>
-      <description>YUKTI: From Natural-Language Situations to Robust, Verifiabl…。[来源:arXiv cs.AI]</description>
+      <title>YUKTI: 用&#x27;不确定类型 IR&#x27; + Pareto frontier 做可验证决策</title>
+      <description>从自然语言情境出发,转成带不确定性的中间表示,用 Pareto 边界 + 遗憾证书产出可形式化验证的决策,适合金融/医疗高风险场景。 评价:决策可验证 = AI 进入监管严格行业的门票 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09706</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-006</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-006</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>GES-TSP: Graph Edge Sparsification for TSP</title>
-      <description>GES-TSP: Graph Edge Sparsification for TSP。[来源:arXiv cs.AI]</description>
+      <title>GES-TSP: 用图边稀疏化加速经典 TSP 求解</title>
+      <description>对 TSP 图做边稀疏化预处理,大幅加速经典求解器同时保持近似比,落地型工作。 评价:OR 经典问题 + ML 加速的老配方,工程友好 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09708</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-007</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-007</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>The Verifier is the Curriculum: Execution-Gated Self-Distillation for Cross-Family Game Generation</title>
-      <description>The Verifier is the Curriculum: Execution-Gated Self-Distill…。[来源:arXiv cs.AI]</description>
+      <title>把验证器当课程: 跨家族游戏生成的自蒸馏框架</title>
+      <description>用&#x27;可执行验证器&#x27;作为课程信号,让模型自蒸馏出能跨游戏家族工作的生成器,RLHF/Game AI 范式扩展。 评价:验证器即 curriculum 是 RLHF 的自然延伸,值得 Agent 框架借鉴 [来源:arXiv cs.AI]</description>
       <link>https://arxiv.org/abs/2607.09709</link>
-      <guid isPermaLink="false">ai-daily-arxiv_ai-008</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.ai-008</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.AI</category>
+      <category>T1.5 arXiv cs.AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Knowledge Graphs Meet Graph Neural Networks: A Comprehensive Survey</title>
-      <description>Knowledge Graphs Meet Graph Neural Networks: A Comprehensive…。[来源:arXiv cs.LG]</description>
+      <title>知识图谱 + GNN 综述</title>
+      <description>系统综述 KG 和 GNN 的结合点,涵盖表征学习、推理、补全,适合快速对齐 field。 评价:补课用,工程师快速入门 KG+GNN 的最完整指南 [来源:arXiv cs.LG]</description>
       <link>https://arxiv.org/abs/2607.09666</link>
-      <guid isPermaLink="false">ai-daily-arxiv_lg-009</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.lg-009</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.LG</category>
+      <category>T1.5 arXiv cs.LG</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Position: Every Ground Truth is a Human Construction, not an Objective Truth</title>
-      <description>Position: Every Ground Truth is a Human Construction, not an…。[来源:arXiv cs.LG]</description>
+      <title>立场:所有 ground truth 都是人造的,不是客观真相</title>
+      <description>ICML 风格立场论文,主张数据标注里的&#x27;真值&#x27;本质是人类共识,与 AI 偏见/对齐问题直接相关。 评价:元科学/AI 哲学讨论,跟数据偏差和 model collapse 议题同根 [来源:arXiv cs.LG]</description>
       <link>https://arxiv.org/abs/2607.09668</link>
-      <guid isPermaLink="false">ai-daily-arxiv_lg-010</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.lg-010</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.LG</category>
+      <category>T1.5 arXiv cs.LG</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>AuditWeave: A Tamper-Evident, Auditor-Navigable Evidence Layer for AI-Assisted and Data-Transformation Workflows</title>
-      <description>AuditWeave: A Tamper-Evident, Auditor-Navigable Evidence Lay…。[来源:arXiv cs.LG]</description>
+      <title>AuditWeave: 防篡改、可审计的 AI 工作流证据层</title>
+      <description>为 AI 辅助和数据处理工作流设计一个&#x27;证据层&#x27;,记录每一步输入输出和签名,审计员可以回溯。 评价:AI Act / 金融监管 / 医疗合规急需,工程上很实用 [来源:arXiv cs.LG]</description>
       <link>https://arxiv.org/abs/2607.09682</link>
-      <guid isPermaLink="false">ai-daily-arxiv_lg-011</guid>
+      <guid isPermaLink="false">ai-daily-arxivcs.lg-011</guid>
       <pubDate>Tue, 14 Jul 2026 12:00:00 +0800</pubDate>
-      <category>T1 arXiv cs.LG</category>
+      <category>T1.5 arXiv cs.LG</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Agents.md – Dumb Human</title>
-      <description>Agents.md – Dumb Human。[来源:Hacker News]</description>
+      <title>HN 热门: AGENTS.md 文档 vs 真实 LLM Agent 行为的落差</title>
+      <description>作者吐槽 AGENTS.md 这种&#x27;给 Agent 看的 README&#x27;和实际 LLM Agent 行为差距太大,Agent 并不像人一样读规范。 评价:过度规范化 Agent 是常见误区,真实 Agent 行为更看 system prompt 而非 markdown 文档 [来源:Hacker News]</description>
       <link>https://gist.github.com/skorotkiewicz/2d4db4ceaf83aa54eb7f2066fdb961ff</link>
-      <guid isPermaLink="false">ai-daily-hn_front-012</guid>
+      <guid isPermaLink="false">ai-daily-hackernews-012</guid>
       <pubDate>Tue, 14 Jul 2026 10:47:54 +0800</pubDate>
       <category>T3 Hacker News</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Already rich, already successful, why the last wave of tech winners is grinding again</title>
-      <description>Already rich, already successful, why the last wave of tech …。[来源:TechCrunch AI]</description>
+      <title>已经成功的那批科技赢家,为什么又开始&#x27;卷&#x27;</title>
+      <description>TC 长文:Altman、Zuckerberg、Cook 这批顶级 CEO 在 AI 时代反而更勤奋,分析他们&#x27;用已有杠杆抢新窗口&#x27;的策略。 评价:AI 时代格局观察:有资源的人更激进,赢家通吃加剧 [来源:TechCrunch AI]</description>
       <link>https://techcrunch.com/2026/07/13/already-rich-already-successful-why-the-last-wave-of-tech-winners-is-grinding-again/</link>
-      <guid isPermaLink="false">ai-daily-techcrunch_ai-013</guid>
+      <guid isPermaLink="false">ai-daily-techcrunchai-013</guid>
       <pubDate>Tue, 14 Jul 2026 10:46:42 +0800</pubDate>
       <category>T2 TechCrunch AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Our Amish Language</title>
-      <description>Our Amish Language。[来源:Hacker News]</description>
-      <link>https://www.thedial.world/articles/news/amish-pennsylvania-dutch</link>
-      <guid isPermaLink="false">ai-daily-hn_front-014</guid>
-      <pubDate>Tue, 14 Jul 2026 10:40:41 +0800</pubDate>
-      <category>T3 Hacker News</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Japan develops a method to recover up to 90% of lithium from used EV batteries</title>
-      <description>Japan develops a method to recover up to 90% of lithium from…。[来源:Hacker News]</description>
-      <link>https://tech.supercarblondie.com/japan-recovers-up-to-90-of-lithium-from-used-ev-batteries/</link>
-      <guid isPermaLink="false">ai-daily-hn_front-015</guid>
-      <pubDate>Tue, 14 Jul 2026 10:27:20 +0800</pubDate>
-      <category>T3 Hacker News</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Fundamentals of Wireless Communication</title>
-      <description>Fundamentals of Wireless Communication。[来源:Hacker News]</description>
-      <link>https://web.stanford.edu/~dntse/wireless_book.html</link>
-      <guid isPermaLink="false">ai-daily-hn_front-016</guid>
-      <pubDate>Tue, 14 Jul 2026 10:10:19 +0800</pubDate>
-      <category>T3 Hacker News</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Uber&amp;#8217;s product chief on hotels, robotaxis, and why the company doesn&amp;#8217;t want to be &amp;#8220;everything for everyone&amp;#8221;</title>
-      <description>Uber&amp;#8217;s product chief on hotels, robotaxis, and why the…。[来源:TechCrunch AI]</description>
+      <title>Uber 产品负责人谈酒店、robotaxi,以及&#x27;不做什么&#x27;</title>
+      <description>Uber 高管谈产品取舍:聚焦出行 + 配送,不做&#x27;万能 App&#x27;,但 robotaxi 战略不变,与 Waymo/Tesla 正面竞争。 评价:产品取舍 = Uber 重新找定位,robotaxi 战场升温 [来源:TechCrunch AI]</description>
       <link>https://techcrunch.com/2026/07/13/ubers-product-chief-on-hotels-robotaxis-and-why-the-company-doesnt-want-to-be-everything-for-everyone/</link>
-      <guid isPermaLink="false">ai-daily-techcrunch_ai-017</guid>
+      <guid isPermaLink="false">ai-daily-techcrunchai-014</guid>
       <pubDate>Tue, 14 Jul 2026 08:45:00 +0800</pubDate>
       <category>T2 TechCrunch AI</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>OpenAI GPT-5.6 Sol, Terra, and Luna are now generally available on Amazon Bedrock</title>
-      <description>OpenAI GPT-5.6 Sol, Terra, and Luna are now generally availa…。[来源:AWS ML Blog]</description>
+      <title>【首发】OpenAI GPT-5.6 三版本(Sol/Terra/Luna)在 AWS Bedrock 全面上线</title>
+      <description>AWS 宣布 OpenAI 最新模型家族 GPT-5.6 的三个子版本(Sol/Terra/Luna)登陆 Bedrock,企业客户可立即调用。 评价:AWS 拿到 OpenAI 最新模型首发权,Azure 渠道独占优势被削弱,这是多云 AI 战局的关键信号 [来源:AWS ML Blog]</description>
       <link>https://aws.amazon.com/blogs/machine-learning/openai-gpt-5-6-sol-terra-and-luna-are-now-generally-available-on-amazon-bedrock/</link>
-      <guid isPermaLink="false">ai-daily-aws_ml-018</guid>
+      <guid isPermaLink="false">ai-daily-awsmlblog-015</guid>
       <pubDate>Tue, 14 Jul 2026 05:01:20 +0800</pubDate>
       <category>T1 AWS ML Blog</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Samsung Health app threatens data deletion if users opt out AI training</title>
-      <description>Samsung Health app threatens data deletion if users opt out …。[来源:HN Best]</description>
+      <title>三星健康 app 威胁:用户拒绝 AI 训练就删数据</title>
+      <description>三星被曝光:如果用户拒绝把健康数据用于 AI 训练,app 会威胁删除用户的健康记录,被批&#x27;勒索式同意&#x27;。 评价:AI 隐私红线问题,GDPR / 中国 PIPL 应当介入,设备厂商不该把 AI 训练当筹码 [来源:HN Best]</description>
       <link>https://neow.in/cWsyMTV3</link>
-      <guid isPermaLink="false">ai-daily-hn_best-019</guid>
+      <guid isPermaLink="false">ai-daily-hnbest-016</guid>
       <pubDate>Tue, 14 Jul 2026 04:01:43 +0800</pubDate>
-      <category>T2 HN Best</category>
+      <category>T3 HN Best</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Former NOAA employees built Climate.us to preserve climate data and resources</title>
-      <description>Former NOAA employees built Climate.us to preserve climate d…。[来源:HN Best]</description>
-      <link>https://19thnews.org/2026/07/noaa-climate-data-website/</link>
-      <guid isPermaLink="false">ai-daily-hn_best-020</guid>
-      <pubDate>Tue, 14 Jul 2026 03:57:55 +0800</pubDate>
-      <category>T2 HN Best</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Telegram&#x27;s t.me domain has been suspended</title>
-      <description>Telegram&#x27;s t.me domain has been suspended。[来源:HN Best]</description>
-      <link>https://www.whois.com/whois/t.me</link>
-      <guid isPermaLink="false">ai-daily-hn_best-021</guid>
-      <pubDate>Tue, 14 Jul 2026 03:52:25 +0800</pubDate>
-      <category>T2 HN Best</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Building and shipping Mac and iOS apps without opening Xcode</title>
-      <description>Building and shipping Mac and iOS apps without opening Xcode。[来源:HN Best]</description>
+      <title>【边缘 AI】不打开 Xcode 也能构建并发布 Mac/iOS 应用</title>
+      <description>开发者实战分享:用 SwiftPM + xcodebuild 命令行 + fastlane,完全脱离 Xcode GUI 完成 App Store 发布,适合 CI/CD。 评价:虽然不是 AI 主题,但对 AI 编程 agent 自动化 iOS 开发有用 [来源:HN Best]</description>
       <link>https://scottwillsey.com/building-and-shipping-mac-and-ios-apps-without-ever-opening-xcode/</link>
-      <guid isPermaLink="false">ai-daily-hn_best-022</guid>
+      <guid isPermaLink="false">ai-daily-hnbest-017</guid>
       <pubDate>Tue, 14 Jul 2026 02:22:16 +0800</pubDate>
-      <category>T2 HN Best</category>
+      <category>T3 HN Best</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>What Anthropic’s latest AI discovery does—and doesn’t—show</title>
-      <description>What Anthropic’s latest AI discovery does—and doesn’t—show。[来源:MIT Tech Review]</description>
+      <title>MIT TR 冷静拆解: Anthropic 最新 AI 发现能做什么、不能做什么</title>
+      <description>权威媒体对 Anthropic 近期 interpretability 突破(可能涉及电路级机制发现)的克制解读,点出 hype 与实质。 评价:MIT TR 这种冷静拆解比吹捧有用得多,Anthropic 路线值得认真跟进 [来源:MIT Tech Review]</description>
       <link>https://www.technologyreview.com/2026/07/13/1140343/what-anthropics-latest-ai-discovery-does-and-doesnt-show/</link>
-      <guid isPermaLink="false">ai-daily-mit_tr_ai-023</guid>
+      <guid isPermaLink="false">ai-daily-mittechreview-018</guid>
       <pubDate>Tue, 14 Jul 2026 02:00:00 +0800</pubDate>
       <category>T2 MIT Tech Review</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>When your brain works differently, AI isn’t a luxury—it’s accessibility</title>
-      <description>When your brain works differently, AI isn’t a luxury—it’s ac…。[来源:AWS ML Blog]</description>
+      <title>当大脑工作方式不同时,AI 不是奢侈品而是无障碍工具</title>
+      <description>AWS 案例:神经多样性人群(ADHD/自闭谱系/阅读障碍)用 LLM 做笔记/总结/沟通,AI 是真正的 accessibility 工具而非效率工具。 评价:AI for Accessibility 真实案例,提醒我们 AI 价值不只是&#x27;提升效率&#x27;更是&#x27;平等参与&#x27; [来源:AWS ML Blog]</description>
       <link>https://aws.amazon.com/blogs/machine-learning/when-your-brain-works-differently-ai-isnt-a-luxury-its-accessibility/</link>
-      <guid isPermaLink="false">ai-daily-aws_ml-024</guid>
+      <guid isPermaLink="false">ai-daily-awsmlblog-019</guid>
       <pubDate>Tue, 14 Jul 2026 01:50:16 +0800</pubDate>
       <category>T1 AWS ML Blog</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Building an agentic AI solution at Bluesight with Amazon Bedrock</title>
-      <description>Building an agentic AI solution at Bluesight with Amazon Bed…。[来源:AWS ML Blog]</description>
+      <title>Bluesight 用 Bedrock 搭建医药 agentic AI(供应链追溯)</title>
+      <description>医药供应链公司 Bluesight 用 Bedrock Claude 做&#x27;召回智能体&#x27;,自动解析 FDA 召回通知、交叉比对库存、生成行动建议。 评价:真工业级 agentic 落地,医药 + 监管 + AI 三个要素齐全,可参考架构 [来源:AWS ML Blog]</description>
       <link>https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-solution-at-bluesight-with-amazon-bedrock/</link>
-      <guid isPermaLink="false">ai-daily-aws_ml-025</guid>
+      <guid isPermaLink="false">ai-daily-awsmlblog-020</guid>
       <pubDate>Tue, 14 Jul 2026 01:34:38 +0800</pubDate>
       <category>T1 AWS ML Blog</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
