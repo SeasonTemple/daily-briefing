@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'none'; font-src 'self'; base-uri 'none'; form-action 'none';">
+<title>开发者每日信号 · 2026-07-14 · Daily Briefing</title>
+<style>
+:root{--bg:#0b0e14;--surface:#131720;--surface2:#1a1f2c;--border:#262c3d;--text:#e6e8f0;--text2:#8a90a8;--text3:#5d6378;--accent:#6ea8fe;--accent2:#b197fc;--green:#34A853;--red:#EA4335;--yellow:#FBBC05;--orange:#FF6600;--radius:12px;--font-sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans CN","Noto Sans CJK SC",system-ui,-apple-system,sans-serif;--font-serif:"Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;--font-mono:"JetBrains Mono","SF Mono",Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%}body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:16px;line-height:1.8;font-feature-settings:"kern","tnum","palt";-webkit-font-smoothing:antialiased;letter-spacing:.01em}a{color:var(--accent);text-decoration:none;transition:color .15s}a:hover{color:var(--accent2);text-decoration:underline;text-underline-offset:3px}img,svg{display:block;max-width:100%;height:auto}:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}.skip-link{position:absolute;top:-40px;left:8px;background:var(--accent);color:#000;padding:8px 16px;border-radius:6px;z-index:100;font-weight:600;transition:top .2s}.skip-link:focus{top:8px}.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.hero{position:relative;padding:64px 0 48px;background:radial-gradient(ellipse at top,rgba(110,168,254,.08),transparent 60%),var(--bg);border-bottom:1px solid var(--border);overflow:hidden}.hero h1{font-size:clamp(28px,4.5vw,48px);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:12px;background:linear-gradient(135deg,var(--text) 0%,var(--accent) 60%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero .subtitle{font-size:clamp(15px,1.6vw,18px);color:var(--text2);font-weight:400;margin-bottom:24px;font-family:var(--font-serif);font-style:italic}.hero .meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:14px;color:var(--text2)}.hero .meta time{font-family:var(--font-mono);color:var(--text)}.hero .meta .dot{width:4px;height:4px;background:var(--text3);border-radius:50%}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;padding:32px 0;border-bottom:1px solid var(--border)}.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;transition:transform .2s,border-color .2s}.stat:hover{transform:translateY(-2px);border-color:var(--accent)}.stat .label{font-size:12px;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;font-weight:500}.stat .value{font-size:clamp(28px,3.5vw,36px);font-weight:800;line-height:1;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}.stat .delta{font-size:13px;color:var(--text2);margin-top:6px}
+.section-nav{position:sticky;top:0;background:rgba(11,14,20,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);z-index:50;padding:12px 0;margin-bottom:32px}.section-nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:4px}.section-nav a{display:block;padding:8px 14px;border-radius:8px;font-size:14px;color:var(--text2);transition:background .15s,color .15s}.section-nav a:hover{background:var(--surface2);color:var(--text);text-decoration:none}
+main{padding-bottom:64px}.source-group{margin-bottom:56px}.source-group h2{font-size:22px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--border);letter-spacing:-.01em}.source-group h2 img{width:32px;height:32px;border-radius:8px;flex-shrink:0}.source-group h2 .count{font-size:13px;font-weight:500;color:var(--text2);background:var(--surface);padding:2px 10px;border-radius:12px;font-family:var(--font-mono)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:16px}article.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:8px}article.card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 24px rgba(0,0,0,.3)}.card .card-header{display:flex;align-items:flex-start;gap:12px}.card .source-logo{width:40px;height:40px;border-radius:10px;flex-shrink:0;background:var(--surface2);padding:4px}.card h3{font-size:17px;font-weight:600;line-height:1.45;letter-spacing:-.01em;flex:1}.card h3 a{color:var(--text)}.card h3 a:hover{color:var(--accent);text-decoration:none}.card .desc{color:var(--text2);font-size:14.5px;line-height:1.7;margin-top:4px}.card .card-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;color:var(--text3)}.card .card-footer time{font-family:var(--font-mono)}.card .card-footer a{color:var(--text2);font-weight:500}.card .card-footer a:hover{color:var(--accent)}
+footer.site-footer{padding:48px 0 64px;border-top:1px solid var(--border);background:var(--surface);color:var(--text2);font-size:14px}footer h2{color:var(--text);font-size:18px;margin-bottom:16px;font-weight:600}footer .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;margin-bottom:32px}footer ul{list-style:none}footer li{padding:6px 0;border-bottom:1px dashed var(--border)}footer li:last-child{border:none}footer .copy{text-align:center;padding-top:24px;border-top:1px solid var(--border);color:var(--text3);font-size:13px}
+@media (max-width:640px){.hero{padding:40px 0 32px}.stats{grid-template-columns:repeat(2,1fr);gap:12px;padding:20px 0}.stat{padding:16px}.section-nav{position:static}.cards{grid-template-columns:1fr}article.card{padding:16px}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">跳到主要内容</a>
+
+<header class="hero" role="banner">
+  <div class="container">
+    <h1>开发者每日信号</h1>
+    <p class="subtitle">Hacker News / GitHub Trending / dev.to / Lobsters 四大开发者社区信号雷达</p>
+    <div class="meta">
+      <time datetime="2026-07-14">2026-07-14 · 周二</time>
+      <span class="dot" aria-hidden="true"></span>
+      <span>10 条信号 · 4 个信源</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>由 <a href="https://github.com/SeasonTemple/daily-briefing">daily-briefing</a> 自动生成</span>
+    </div>
+  </div>
+</header>
+
+<nav class="section-nav" aria-label="信源导航">
+  <div class="container">
+    <ul>
+      <li><a href="#hn">Hacker News (4)</a></li>
+      <li><a href="#github">GitHub Trending (3)</a></li>
+      <li><a href="#devto">dev.to (2)</a></li>
+      <li><a href="#lobsters">Lobsters (2)</a></li>
+      <li><a href="#subscribe">订阅</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main" class="container" tabindex="-1">
+
+<section class="stats" aria-label="数据概览">
+  <div class="stat"><div class="label">总信号</div><div class="value">10</div><div class="delta">今日筛选后</div></div>
+  <div class="stat"><div class="label">信源</div><div class="value">4</div><div class="delta">覆盖四大社区</div></div>
+  <div class="stat"><div class="label">Top 话题</div><div class="value">Rust</div><div class="delta">async + trait 双线</div></div>
+  <div class="stat"><div class="label">最大社区</div><div class="value">HN</div><div class="delta">4 条热议</div></div>
+</section>
+
+<section class="source-group" id="hn" aria-labelledby="hn-h">
+  <h2 id="hn-h"><img src="../assets/logos/hackernews.svg" alt="">Hacker News <span class="count">4</span></h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true"><h3><a href="https://news.ycombinator.com/item?id=40000001" target="_blank" rel="noopener">工程师讨论把 tokio 拆成更轻的 async runtime</a></h3></div>
+      <p class="desc">HN 顶部热议:把 tokio 拆分成更小的 runtime 以降低嵌入式场景的二进制体积,目前已有 3 个非官方 PoC 仓库。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://news.ycombinator.com/item?id=40000001" target="_blank" rel="noopener">查看讨论 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true"><h3><a href="https://news.ycombinator.com/item?id=40000002" target="_blank" rel="noopener">Linus Torvalds 抨击 Rust for Linux"夸大宣传"</a></h3></div>
+      <p class="desc">Linus 在 LKML 直接批评 Rust for Linux 进展缓慢、过度营销,HN 引发 400+ 评论争论,内核社区与 Rust 社区气氛再起波澜。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://news.ycombinator.com/item?id=40000002" target="_blank" rel="noopener">查看讨论 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true"><h3><a href="https://news.ycombinator.com/item?id=40000003" target="_blank" rel="noopener">WebAssembly 3.0 草案:GC / 异常 / 线程三大新能力</a></h3></div>
+      <p class="desc">Wasm 3.0 草案讨论:GC、exception handling、threads 进入正式草案阶段,浏览器原生支持迎来新一波,语言工具链跟进明确。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://news.ycombinator.com/item?id=40000003" target="_blank" rel="noopener">查看讨论 →</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="source-group" id="github" aria-labelledby="gh-h">
+  <h2 id="gh-h"><img src="../assets/logos/github.svg" alt="">GitHub Trending <span class="count">3</span></h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/github.svg" alt="" aria-hidden="true"><h3><a href="https://github.com/denoland/deno" target="_blank" rel="noopener">Deno 2.0 RC:修复 npm 兼容,Node 迁移成本继续降低</a></h3></div>
+      <p class="desc">denoland/deno 周内 Star +2.3k,2.0 RC 修复多项 npm 兼容性问题,Node 生态迁移门槛进一步下降。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://github.com/denoland/deno" target="_blank" rel="noopener">查看项目 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/github.svg" alt="" aria-hidden="true"><h3><a href="https://github.com/vercel/next.js/releases" target="_blank" rel="noopener">Next.js 15.1 canary:Turbopack 默认启用,Server Actions 升级</a></h3></div>
+      <p class="desc">Vercel 推送 next.js canary 15.1.0,Turbopack 全面启用、Edge runtime 优化、Server Actions 错误处理改进。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://github.com/vercel/next.js/releases" target="_blank" rel="noopener">查看 release →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/github.svg" alt="" aria-hidden="true"><h3><a href="https://github.com/TanStack/query" target="_blank" rel="noopener">TanStack Query v5.6 引入实验性 queryClient suspense 模式</a></h3></div>
+      <p class="desc">新版本加入与 React 19 use() 衔接的 queryClient suspense 实验模式,数据获取与 Suspense 边界更顺滑。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://github.com/TanStack/query" target="_blank" rel="noopener">查看项目 →</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="source-group" id="devto" aria-labelledby="dv-h">
+  <h2 id="dv-h"><img src="../assets/logos/reddit.svg" alt="">dev.to <span class="count">2</span></h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/reddit.svg" alt="" aria-hidden="true"><h3><a href="https://dev.to/example/nextjs-15-perf" target="_blank" rel="noopener">Next.js 15 App Router 性能调优:LCP 从 3.2s 压到 1.1s</a></h3></div>
+      <p class="desc">dev.to 实战分享:Server Components 拆分、streaming 边界、字体策略三招合一把 LCP 从 3.2s 压到 1.1s,代码与对比数据公开。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://dev.to/example/nextjs-15-perf" target="_blank" rel="noopener">阅读原文 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/reddit.svg" alt="" aria-hidden="true"><h3><a href="https://dev.to/example/typescript-5-5" target="_blank" rel="noopener">TypeScript 5.5 新特性实战:type narrowing 全面升级</a></h3></div>
+      <p class="desc">作者用 5 个例子展示 TypeScript 5.5 的 type narrowing、control flow analysis 改进,以及对大型代码库的迁移建议。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://dev.to/example/typescript-5-5" target="_blank" rel="noopener">阅读原文 →</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="source-group" id="lobsters" aria-labelledby="lb-h">
+  <h2 id="lb-h"><img src="../assets/logos/hackernews.svg" alt="">Lobsters <span class="count">2</span></h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true"><h3><a href="https://lobste.rs/s/example/rust-trait-objects" target="_blank" rel="noopener">资深工程师实战讲解 Rust trait object 何时该用 dyn</a></h3></div>
+      <p class="desc">Lobsters 讨论贴:什么时候用 dyn Trait vs 泛型更合理,作者用 5 个真实生产案例对比权衡,可读性与性能兼顾。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://lobste.rs/s/example/rust-trait-objects" target="_blank" rel="noopener">查看 →</a></div>
+    </article>
+    <article class="card">
+      <div class="card-header"><img class="source-logo" src="../assets/logos/hackernews.svg" alt="" aria-hidden="true"><h3><a href="https://lobste.rs/s/example/zig-0-13" target="_blank" rel="noopener">Zig 0.13 性能数据:编译快 18%,Debug 二进制小 12%</a></h3></div>
+      <p class="desc">Zig 0.13 公开基准:相比 0.12 编译速度提升 18%,Debug 模式二进制体积缩小 12%,Release 模式性能持平。</p>
+      <div class="card-footer"><time datetime="2026-07-14">2026-07-14</time><a href="https://lobste.rs/s/example/zig-0-13" target="_blank" rel="noopener">查看 →</a></div>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer" id="subscribe" role="contentinfo">
+  <div class="container">
+    <h2>订阅 · 让日报自动送到你那里</h2>
+    <div class="footer-grid">
+      <div>
+        <p style="margin-bottom:12px"><strong>RSS 订阅</strong></p>
+        <ul>
+          <li><a href="../rss/ai-daily.xml" target="_blank" rel="noopener">rss/ai-daily.xml</a> · 每日 7:00 更新</li>
+          <li><a href="../rss/example-dev-daily.xml" target="_blank" rel="noopener">rss/example-dev-daily.xml</a> · 开发者信源</li>
+          <li><a href="../rss/example-finance-daily.xml" target="_blank" rel="noopener">rss/example-finance-daily.xml</a> · 财经信源</li>
+        </ul>
+      </div>
+      <div>
+        <p style="margin-bottom:12px"><strong>关于</strong></p>
+        <ul>
+          <li>本项目: <a href="https://github.com/SeasonTemple/daily-briefing" target="_blank" rel="noopener">SeasonTemple/daily-briefing</a></li>
+          <li>License: <a href="https://github.com/SeasonTemple/daily-briefing/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 2026 Daily Briefing · 由 Mavis M3 自动生成 · <time datetime="2026-07-14T10:30:00+08:00">2026-07-14 10:30 +0800</time></p>
+  </div>
+</footer>
+</body>
+</html>
