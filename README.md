@@ -108,8 +108,8 @@ python scripts/digest.py --profile my-domain
 | Profile | 跟踪什么 | 信源数 | 一手占比 | 跑法 |
 |---------|---------|------:|--------:|------|
 | `ai-daily` | AI 工程圈(模型 / 论文 / 关键人物) | 33 | 70%+ | `python scripts/digest.py --profile ai-daily` |
-| `example-finance-daily` | 美股 + 宏观财经(SEC / 联储 / 头部媒体) | 14 | 50%+ | `python scripts/digest.py --profile example-finance-daily` |
-| `example-dev-daily` | 通用开发者动态(GitHub Trending / HN / dev.to) | 19 | 60%+ | `python scripts/digest.py --profile example-dev-daily` |
+| `finance-daily` | 美股 + 宏观财经(SEC / 联储 / 头部媒体) | 14 | 50%+ | `python scripts/digest.py --profile finance-daily` |
+| `developer-daily` | 通用开发者动态(GitHub Trending / HN / dev.to) | 19 | 60%+ | `python scripts/digest.py --profile developer-daily` |
 
 每个 profile 都覆盖:
 - **A. 一手机构信源**(org 官方 / 监管 / 论文)
@@ -284,8 +284,8 @@ daily-briefing/
 ├── profiles/                    # ★ 领域配置(profile = 一组信源)
 │   ├── README.md
 │   ├── ai-daily.yaml
-│   ├── example-finance-daily.yaml
-│   └── example-dev-daily.yaml
+│   ├── finance-daily.yaml
+│   └── developer-daily.yaml
 ├── scripts/                     # ★ 固定管线(与领域无关)
 │   ├── fetch.py                 # 多源抓取
 │   ├── normalize.py             # 标准化 + 去重
