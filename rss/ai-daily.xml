@@ -31,7 +31,7 @@
     </item>
 
     <item>
-      <title>Anthropic Claude 5 内部评测泄漏:长上下文达到 1.5M token</title>
+      <title>Claude 5 内部评测泄漏:长上下文达到 1.5M token</title>
       <description>社区流传的 Claude 5 早期 benchmark 显示其有效上下文突破 1.5M,工具调用准确率比 Claude 4.5 提升 18%,Anthropic 未确认。</description>
       <link>https://www.anthropic.com/news</link>
       <guid isPermaLink="false">anthropic-claude5-leak-2026-07-14</guid>
@@ -41,7 +41,7 @@
     </item>
 
     <item>
-      <title>DeepMind Genie 3:文本生成可交互 3D 世界,实时运行</title>
+      <title>Genie 3:文本生成可交互 3D 世界,实时运行</title>
       <description>Genie 3 把任意文字描述渲染成可实时交互的 3D 环境,首批 demo 展示物理一致性 + 角色控制,游戏与训练仿真两开花。</description>
       <link>https://deepmind.google/discover/blog/genie-3</link>
       <guid isPermaLink="false">dm-genie3-2026-07-14</guid>
@@ -81,7 +81,7 @@
     </item>
 
     <item>
-      <title>OpenAI 推出企业级 Privacy Mode:训练数据隔离 + 零保留</title>
+      <title>企业级 Privacy Mode:训练数据隔离 + 零保留</title>
       <description>OpenAI 新增 Privacy Mode for Enterprise,承诺客户数据不参与训练、API 日志 30 天后自动清除,合规友好型大客户已签约多家金融与医疗机构。</description>
       <link>https://openai.com/index/enterprise-privacy-mode</link>
       <guid isPermaLink="false">openai-privacy-mode-2026-07-14</guid>
@@ -101,7 +101,7 @@
     </item>
 
     <item>
-      <title>Anthropic 报告:Agent 经济规模化,API 调用 Q2 同比增 4.2 倍</title>
+      <title>Agent 经济规模化,API 调用 Q2 同比增 4.2 倍</title>
       <description>Anthropic 公开 Q2 经济数据,Agent 框架类 API 调用同比 4.2x,占其总调用量 38%;Opus 系列在企业 Agent 场景中份额超过 Sonnet 系列。</description>
       <link>https://www.anthropic.com/news/q2-2026-economics</link>
       <guid isPermaLink="false">anthropic-q2-economics-2026-07-14</guid>
@@ -111,7 +111,7 @@
     </item>
 
     <item>
-      <title>DeepMind 发布 Safety Gym 3:多智能体对抗训练环境</title>
+      <title>Safety Gym 3:多智能体对抗训练环境</title>
       <description>Safety Gym 3 引入多智能体对抗场景,用于训练 AI 在博弈与协作中识别安全边界,集成到 Gemini 安全评估管线,首批论文同步上线。</description>
       <link>https://deepmind.google/discover/blog/safety-gym-3</link>
       <guid isPermaLink="false">dm-safety-gym-3-2026-07-14</guid>
@@ -121,7 +121,7 @@
     </item>
 
     <item>
-      <title>OpenAI Realtime API 降价 60%,长语音流场景成本打骨折</title>
+      <title>Realtime API 降价 60%,长语音流场景成本打骨折</title>
       <description>OpenAI Realtime API 全面降价 60%,长语音对话/客服场景单位成本接近自托管 Whisper,中小开发者可放心接入实时语音产品。</description>
       <link>https://openai.com/index/realtime-api-price-cut</link>
       <guid isPermaLink="false">openai-realtime-cut-2026-07-14</guid>
