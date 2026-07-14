@@ -1,17 +1,18 @@
 # ========================================================================
 # AI Daily profile · 一手信源优先
 #
-# 这是个示例 profile,不是工具的核心。工具本身通用,任何领域都能套。
-# 加新领域 = 复制本文件改名 + 改 sources 即可,代码零改动。
+# 加新领域 = 复制本文件改名 + 改 sources,代码零改动。
 # 详见 profiles/README.md
 #
-# 33 个信源:
-#   A. 模型厂家 X 官号  × 10
-#   B. 厂方关键人物      × 5
-#   C. 官方 newsroom    × 4
-#   D. 官方 GitHub orgs × 5
-#   E. arXiv + HF Papers × 4
-#   F. 二手聚合兜底      × 5
+# 信源设计原则:
+#   T1   一手官方:模型厂家 X 官号 + newsroom + GitHub orgs
+#   T1.5 论文:arXiv cs.AI/CL/LG + HF Papers
+#   T2   二手权威:The Verge / TechCrunch / Ars Technica / Wired / MIT TR
+#   T3   社区信号:HN / Reddit ML / Lobsters
+#   T4   Newsletter:TLDR AI / Import AI / Latent Space / Ben's Bites
+#   T5   中文:36Kr / 量子位 / 机器之心 / 少数派 / V2EX
+#
+# best_effort: true = cron 拉不到时 skip(用于 X RSSHub / 反爬强站),不阻塞 RSS 输出
 # ========================================================================
 
 profile: ai-daily
@@ -19,8 +20,9 @@ title: "AI 圈每日精华"
 subtitle: "一手机构 + 关键人物 + arXiv + GitHub 的 AI 信号流"
 description: |
   每天抓取 AI 一手机构(Anthropic / OpenAI / DeepMind / Meta / Mistral / xAI /
-  DeepSeek / 智谱 / 月之暗面 / 通义)X 官号、关键人物、newsroom、GitHub 组织,
-  加上 arXiv 与 HF Daily Papers,经 LLM 脱水中文化与摘要评分,产出可订阅的 RSS。
+  DeepSeek / 智谱 / 月之暗面 / 通义)X 官号 + newsroom + GitHub + 关键人物推文,
+  加上 arXiv / HF Papers / 权威二手 / 中文编辑稿,经 M3 LLM 脱水中文化摘要,
+  产出可订阅的 RSS。
 author: "Daily Briefing"
 language: zh-CN
 timezone: "Asia/Shanghai"
@@ -44,53 +46,130 @@ keywords:
   - Llama
   - Hugging Face
   - arXiv
+  - RLHF
 
 # ----------------------------------------------------------------------
-# 一手信源
+# T1: 一手官方 - 厂家 X 官号 (10)
+# 用 RSSHub 公共实例转 RSS;best_effort 表示拉不到就 skip
 # ----------------------------------------------------------------------
 sources:
 
-  # ----- A. 模型厂家 X 官号 (10) -----
-  - { type: x_user, handle: "AnthropicAI",     label: "Anthropic" }
-  - { type: x_user, handle: "OpenAI",          label: "OpenAI" }
-  - { type: x_user, handle: "GoogleDeepMind",  label: "Google DeepMind" }
-  - { type: x_user, handle: "AIatMeta",        label: "Meta AI" }
-  - { type: x_user, handle: "MistralAI",       label: "Mistral AI" }
-  - { type: x_user, handle: "xai",             label: "xAI" }
-  - { type: x_user, handle: "deepseek_ai",     label: "DeepSeek" }
-  - { type: x_user, handle: "Zhipuai_org",     label: "智谱 Zhipu" }
-  - { type: x_user, handle: "moonshotai",      label: "月之暗面 Moonshot" }
-  - { type: x_user, handle: "Alibaba_Qwen",    label: "通义千问 Qwen" }
+  # ----- T1: 模型厂家 X 官号 (10) -----
+  - { type: x_user, handle: "AnthropicAI",     label: "Anthropic",    tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/AnthropicAI" }
+  - { type: x_user, handle: "OpenAI",          label: "OpenAI",       tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/OpenAI" }
+  - { type: x_user, handle: "GoogleDeepMind",  label: "DeepMind",     tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/GoogleDeepMind" }
+  - { type: x_user, handle: "AIatMeta",        label: "Meta AI",      tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/AIatMeta" }
+  - { type: x_user, handle: "MistralAI",       label: "Mistral",      tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/MistralAI" }
+  - { type: x_user, handle: "xai",             label: "xAI",          tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/xai" }
+  - { type: x_user, handle: "deepseek_ai",     label: "DeepSeek",     tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/deepseek_ai" }
+  - { type: x_user, handle: "Zhipuai_org",     label: "智谱",          tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/Zhipuai_org" }
+  - { type: x_user, handle: "moonshotai",      label: "Moonshot",     tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/moonshotai" }
+  - { type: x_user, handle: "Alibaba_Qwen",    label: "Qwen",         tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/Alibaba_Qwen" }
 
-  # ----- B. 厂方关键人物 (5) -----
-  - { type: x_user, handle: "sama",            label: "Sam Altman" }
-  - { type: x_user, handle: "ylecun",          label: "Yann LeCun" }
-  - { type: x_user, handle: "karpathy",        label: "Andrej Karpathy" }
-  - { type: x_user, handle: "demishassabis",   label: "Demis Hassabis" }
-  - { type: x_user, handle: "sundarpichai",    label: "Sundar Pichai" }
+  # ----- T1: 关键人物推文 (5) -----
+  - { type: x_user, handle: "sama",            label: "Sam Altman",   tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/sama" }
+  - { type: x_user, handle: "ylecun",          label: "Yann LeCun",   tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/ylecun" }
+  - { type: x_user, handle: "karpathy",        label: "Andrej Karpathy", tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/karpathy" }
+  - { type: x_user, handle: "demishassabis",   label: "Demis Hassabis", tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/demishassabis" }
+  - { type: x_user, handle: "sundarpichai",    label: "Sundar Pichai", tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/sundarpichai" }
+  # 补充:研究者 + 业界 KOL
+  - { type: x_user, handle: "jxmnop",          label: "Jim Fan (NVIDIA)", tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/jxmnop" }
+  - { type: x_user, handle: "swyx",            label: "swyx (Latent Space)", tier: T4, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/swyx" }
+  - { type: x_user, handle: "DrJimFan",        label: "Jim Fan",     tier: T1, best_effort: true,
+    rss_url: "https://rsshub.app/twitter/user/DrJimFan" }
 
-  # ----- C. 官方 newsroom / blog (4) -----
-  - { type: rss, name: "Anthropic News",  url: "https://www.anthropic.com/news/rss.xml" }
-  - { type: rss, name: "OpenAI Blog",     url: "https://openai.com/blog/rss.xml" }
-  - { type: rss, name: "DeepMind Blog",   url: "https://deepmind.google/discover/blog/rss.xml" }
-  - { type: rss, name: "Hugging Face Blog", url: "https://huggingface.co/blog/feed.xml" }
+  # ----- T1: 官方 newsroom / blog (8) -----
+  - { type: rss, name: "Anthropic News",     url: "https://www.anthropic.com/news/rss.xml", tier: T1 }
+  - { type: rss, name: "OpenAI Blog",        url: "https://openai.com/blog/rss.xml", tier: T1 }
+  - { type: rss, name: "DeepMind Blog",      url: "https://deepmind.google/discover/blog/rss.xml", tier: T1 }
+  - { type: rss, name: "Google AI Blog",     url: "https://blog.google/technology/ai/rss/", tier: T1 }
+  - { type: rss, name: "Google Research",    url: "https://research.google/blog/rss/", tier: T1 }
+  - { type: rss, name: "Meta AI Blog",       url: "https://ai.meta.com/blog/rss/", tier: T1 }
+  - { type: rss, name: "Mistral AI News",    url: "https://mistral.ai/news/rss.xml", tier: T1 }
+  - { type: rss, name: "AWS ML Blog",        url: "https://aws.amazon.com/blogs/machine-learning/feed/", tier: T1 }
+  - { type: rss, name: "Microsoft AI Blog",  url: "https://blogs.microsoft.com/ai/feed/", tier: T1 }
+  - { type: rss, name: "Hugging Face Blog",  url: "https://huggingface.co/blog/feed.xml", tier: T1 }
+  - { type: rss, name: "Apple ML Research",  url: "https://machinelearning.apple.com/rss.xml", tier: T1 }
 
-  # ----- D. 官方 GitHub orgs (5) -----
-  - { type: github_org, org: "anthropics",      label: "Anthropic GitHub" }
-  - { type: github_org, org: "openai",          label: "OpenAI GitHub" }
-  - { type: github_org, org: "google-deepmind", label: "Google DeepMind GitHub" }
-  - { type: github_org, org: "deepseek-ai",     label: "DeepSeek GitHub" }
-  - { type: github_org, org: "QwenLM",          label: "Qwen GitHub" }
+  # ----- T1: 官方 GitHub orgs (5) - 现成 atom feed -----
+  - { type: rss, name: "GitHub Anthropic",   url: "https://github.com/anthropics.atom", tier: T1 }
+  - { type: rss, name: "GitHub OpenAI",      url: "https://github.com/openai.atom", tier: T1 }
+  - { type: rss, name: "GitHub DeepMind",    url: "https://github.com/google-deepmind.atom", tier: T1 }
+  - { type: rss, name: "GitHub DeepSeek",    url: "https://github.com/deepseek-ai.atom", tier: T1 }
+  - { type: rss, name: "GitHub Qwen",        url: "https://github.com/QwenLM.atom", tier: T1 }
 
-  # ----- E. arXiv + HF Papers -----
-  - { type: rss, name: "arXiv cs.AI", url: "http://export.arxiv.org/rss/cs.AI" }
-  - { type: rss, name: "arXiv cs.CL", url: "http://export.arxiv.org/rss/cs.CL" }
-  - { type: rss, name: "arXiv cs.LG", url: "http://export.arxiv.org/rss/cs.LG" }
-  - { type: rss, name: "HF Daily Papers", url: "https://jamesg.blog/hf-papers.xml" }
+  # ----- T1.5: 论文 (4) -----
+  - { type: rss, name: "arXiv cs.AI",        url: "http://export.arxiv.org/rss/cs.AI", tier: T1.5 }
+  - { type: rss, name: "arXiv cs.CL",        url: "http://export.arxiv.org/rss/cs.CL", tier: T1.5 }
+  - { type: rss, name: "arXiv cs.LG",        url: "http://export.arxiv.org/rss/cs.LG", tier: T1.5 }
+  - { type: rss, name: "HF Daily Papers",    url: "https://jamesg.blog/hf-papers.xml", tier: T1.5 }
 
-  # ----- F. 二手聚合兜底 (5) -----
-  - { type: rss, name: "Hacker News", url: "https://hnrss.org/frontpage" }
-  - { type: rss, name: "36Kr AI",     url: "https://36kr.com/feed" }
-  - { type: rss, name: "少数派",      url: "https://sspai.com/feed" }
-  - { type: rss, name: "InfoQ AI",    url: "https://www.infoq.cn/ai.xml" }
-  - { type: rss, name: "V2EX AI",     url: "https://www.v2ex.com/feed/tab/ai.xml" }
+  # ----- T2: 权威二手 (6) -----
+  - { type: rss, name: "The Verge AI",       url: "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml", tier: T2 }
+  - { type: rss, name: "TechCrunch AI",      url: "https://techcrunch.com/category/artificial-intelligence/feed/", tier: T2 }
+  - { type: rss, name: "Ars Technica AI",    url: "https://feeds.arstechnica.com/arstechnica/ai", tier: T2 }
+  - { type: rss, name: "Wired AI",           url: "https://www.wired.com/feed/tag/ai/latest/rss", tier: T2 }
+  - { type: rss, name: "VentureBeat AI",     url: "https://venturebeat.com/category/ai/feed/", tier: T2 }
+  - { type: rss, name: "MIT Tech Review AI", url: "https://www.technologyreview.com/topic/artificial-intelligence/feed", tier: T2 }
+
+  # ----- T3: 社区信号 (4) -----
+  - { type: rss, name: "Hacker News",        url: "https://hnrss.org/frontpage", tier: T3 }
+  - { type: rss, name: "Reddit r/MachineLearning", url: "https://www.reddit.com/r/MachineLearning/.rss", tier: T3 }
+  - { type: rss, name: "Reddit r/artificial", url: "https://www.reddit.com/r/artificial/.rss", tier: T3 }
+  - { type: rss, name: "Lobsters AI",        url: "https://lobste.rs/t/ai.rss", tier: T3 }
+
+  # ----- T4: Newsletter (4) -----
+  - { type: rss, name: "TLDR AI",            url: "https://tldr.tech/api/ai/rss", tier: T4 }
+  - { type: rss, name: "Import AI",          url: "https://importai.substack.com/feed", tier: T4 }
+  - { type: rss, name: "Ben's Bites",        url: "https://www.bensbites.com/feed", tier: T4 }
+  - { type: rss, name: "Interconnects",      url: "https://www.interconnects.ai/feed", tier: T4 }
+
+  # ----- T5: 中文 (5) -----
+  - { type: rss, name: "36Kr",               url: "https://36kr.com/feed", tier: T5 }
+  - { type: rss, name: "量子位",              url: "https://www.qbitai.com/feed", tier: T5 }
+  - { type: rss, name: "机器之心",            url: "https://www.jiqizhixin.com/rss", tier: T5 }
+  - { type: rss, name: "少数派",              url: "https://sspai.com/feed", tier: T5 }
+  - { type: rss, name: "V2EX AI",            url: "https://www.v2ex.com/feed/tab/ai.xml", tier: T5 }
+
+# ----------------------------------------------------------------------
+# 抓取 / 处理规则
+# ----------------------------------------------------------------------
+fetch:
+  concurrency: 4            # 一次 4 个并发 web_fetch
+  per_source_timeout_sec: 10
+  retry_on_5xx: 1
+  user_agent: "daily-briefing/0.7 (+https://github.com/SeasonTemple/daily-briefing)"
+
+time_window:
+  primary_hours: 24         # 主窗口:24h 严格
+  fallback_hours: 72         # fallback:3 天
+  hard_max_hours: 168        # 硬上限:7 天
+  per_source_min_count: 1    # 单源最少 1 条,保证多样
+  total_min_count: 12        # 一天至少 12 条
+
+llm:
+  model: "M3"
+  temperature: 0.3
+  summary_max_chars: 80
+  include_source_in_summary: true  # "[来源: OpenAI]"
+  skip_if:
+    - already_seen_24h
+    - low_signal_keywords
+    - non_ai_tech
