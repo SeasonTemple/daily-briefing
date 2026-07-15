@@ -1,23 +1,25 @@
 name: daily-briefing-review
-"on":
+on:
   schedule:
     - cron: '0 0,2,4,6,8,10,12,14,16,18,20,22 * * *'
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   review:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with: { token: ${{ secrets.GITHUB_TOKEN }}, fetch-depth: 1 }
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 1
       - uses: actions/setup-python@v5
-        with: { python-version: '3.11' }
+        with:
+          python-version: '3.11'
       - run: pip install --quiet requests
       - name: Review RSS via GH Models (gpt-4o)
-        env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 scripts/review_rss.py \
             --rss rss/ai-daily.xml \
@@ -34,5 +36,3 @@ jobs:
             git commit -m "chore(review): gpt-4o review RSS $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
-      - uses: actions/upload-artifact@v4
-        with: { name: review-log, path: logs/, if-no-files-found: ignore }
