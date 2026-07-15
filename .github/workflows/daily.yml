@@ -1,18 +1,17 @@
 name: daily-briefing
 on:
   schedule:
-    - cron: '0 23 * * *'   # UTC 23:00 = Asia/Shanghai 7:00 主
-    - cron: '0 15 * * *'   # UTC 15:00 = Asia/Shanghai 23:00 兜底
+    - cron: '0 23 * * *'   # UTC 23:00 = Asia/Shanghai 7:00
+    - cron: '0 15 * * *'   # UTC 15:00 = Asia/Shanghai 23:00
   workflow_dispatch:
 
 permissions:
   contents: write
   pages: write
-  models: read
   discussions: write
 
 jobs:
-  build:
+  fetch-raw:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,50 +26,41 @@ jobs:
       - name: Install deps
         run: pip install --quiet feedparser requests pyyaml lxml
 
-      - name: Fetch + LLM (mistral-large) + render RSS/HTML
+      - name: Fetch raw + write data/raw-*.json
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 scripts/fetch.py \
             --profile profiles/ai-daily.yaml \
-            --out rss/ai-daily.xml \
-            --html digests/ai-daily.html \
-            --log logs/cron-$(date -u +%Y%m%dT%H%M%S).log
+            --no-llm \
+            --out data/raw-ai-daily-$(date -u +%Y%m%dT%H%M%S).json \
+            --log logs/fetch-$(date -u +%Y%m%dT%H%M%S).log
 
-      - name: Commit and push
+      - name: Commit raw + log
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add rss/ digests/ logs/ 2>/dev/null || true
+          git add data/ logs/ 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No changes"
+            echo "No new raw data"
           else
-            git commit -m "chore(daily): auto-rebuild $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "chore(daily): fetch raw $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
 
-      - name: Trigger Pages rebuild
-        if: always()
-        run: |
-          curl -s -X POST \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            -H "Content-Length: 0" \
-            "https://api.github.com/repos/${{ github.repository }}/pages/builds" \
-            | head -c 200 && echo
-
-      - name: Push Discussion notification
+      - name: Notify Discussion (waiting for M3)
         if: always()
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          python3 scripts/notify_discussions.py || echo "Discussion push failed (non-blocking)"
+          # 推 Discussion 通知 user:raw 已就绪
+          python3 scripts/notify_discussions.py || echo "Discussion push failed"
 
       - name: Upload log
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cron-log
+          name: fetch-log
           path: logs/
           if-no-files-found: ignore
           retention-days: 7
