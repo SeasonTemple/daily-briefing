@@ -1,0 +1,7 @@
+2026-07-15 05:13:36,093 INFO Profile: ai-daily, 45 sources
+2026-07-15 05:18:39,023 WARNING   fetch fail 虎嗅: IncompleteRead(19846 bytes read)
+2026-07-15 05:18:39,025 INFO Final: 25 items
+2026-07-15 05:18:39,025 INFO LLM disabled, using fallback
+2026-07-15 05:18:39,025 INFO Wrote data/raw-ai-daily-20260715T051335.json (25 items)
+2026-07-15 05:18:39,026 INFO Wrote digests/ai-daily.html (25 cards)
+2026-07-15 05:18:39,026 INFO DONE

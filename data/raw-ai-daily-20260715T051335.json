@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>AI 圈每日精华</title>
+    <description>每日 07:00 (Asia/Shanghai) 自动抓取 45 个信源,LLM 中文摘要 + 评价。GitHub Actions 一条龙,user 不用动。本期 25 条,11+ 源混搭。</description>
+    <link>https://seasontemple.github.io/daily-briefing/</link>
+    <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 15 Jul 2026 13:13:36 +0800</lastBuildDate>
+    <ttl>5</ttl>
+    <generator>daily-briefing/2.0 (GH Actions + mistral-large)</generator>
+
+    <item>
+      <title>Optimal Adaptive Market Making: A Theoretical Framework for …</title>
+      <description>来自 arXiv cs.AI 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11888</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-001</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>In-Context Reinforcement Learning under Non-Stationarity: A …</title>
+      <description>来自 arXiv cs.AI 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11906</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-002</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Ontology-Amplified Distillation and Contextuality Auditing f…</title>
+      <description>来自 arXiv cs.AI 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11948</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-003</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Scaling Point-in-Time Language Models</title>
+      <description>来自 arXiv cs.CL 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11889</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-004</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>CANDI: Contextual Alignment for Niche Domains Question Answe…</title>
+      <description>来自 arXiv cs.CL 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11891</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-005</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>G-SHARE: A Guideline-Based Structured Reasoning Framework fo…</title>
+      <description>来自 arXiv cs.CL 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11892</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-006</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>OmniPMNet: Bridging discrete and gridded PM10 forecasts via …</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11896</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-007</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Semidirect Fourier Delta Attention: Phase-Controlled Delta M…</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11897</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-008</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Repairing Shape-Prior Shortcuts in Long-Range Single-Shot Fr…</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11928</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-009</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>TSCA-Net: Temporal-Spatial Clique Attention for Interpretabl…</title>
+      <description>来自 arXiv cs.CV 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.CV]</description>
+      <link>https://arxiv.org/abs/2607.11939</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-010</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CV</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>GenDiff: A Dose and Anatomy Aware Diffusion Model with Struc…</title>
+      <description>来自 arXiv cs.CV 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.CV]</description>
+      <link>https://arxiv.org/abs/2607.11941</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-011</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CV</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Anomalous Frame Detection Using VLM-Based Description Compar…</title>
+      <description>来自 arXiv cs.CV 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.CV]</description>
+      <link>https://arxiv.org/abs/2607.11957</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-012</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CV</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>EFLUX: Elastic Multi-Robot Formation Navigation and Adaptati…</title>
+      <description>来自 arXiv cs.RO 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.RO]</description>
+      <link>https://arxiv.org/abs/2607.12050</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-013</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.RO</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Enabling 24-hour Agricultural Robotics: Unsupervised Day-to-…</title>
+      <description>来自 arXiv cs.RO 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.RO]</description>
+      <link>https://arxiv.org/abs/2607.12065</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-014</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.RO</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Robust In-Hand Manipulation via Priors in Reinforcement Lear…</title>
+      <description>来自 arXiv cs.RO 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:arXiv cs.RO]</description>
+      <link>https://arxiv.org/abs/2607.12105</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-015</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.RO</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>又快又聪明，阿里发布Qwen-Audio-3.0-Realtime：实时语音大模型四项功能升级</title>
+      <description>来自 量子位 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:量子位]</description>
+      <link>https://www.qbitai.com/2026/07/450250.html</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-016</guid>
+      <pubDate>Wed, 15 Jul 2026 11:48:46 +0800</pubDate>
+      <category>T5 量子位</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>角落新声｜从桌面「长」出来的创业空间，我靠这些好物「偷」一点清闲</title>
+      <description>来自 少数派 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:少数派]</description>
+      <link>https://sspai.com/post/112243</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-017</guid>
+      <pubDate>Wed, 15 Jul 2026 11:00:00 +0800</pubDate>
+      <category>T5 少数派</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Jurassic Park computers in excruciating detail</title>
+      <description>来自 Hacker News 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:Hacker News]</description>
+      <link>https://fabiensanglard.net/jurrasic_park_computers/index.html</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-018</guid>
+      <pubDate>Wed, 15 Jul 2026 10:57:47 +0800</pubDate>
+      <category>T3 Hacker News</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>TS-2026-009: Insecure argument handling in Tailscale SSH per…</title>
+      <description>来自 Hacker News 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:Hacker News]</description>
+      <link>https://tailscale.com/security-bulletins</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-019</guid>
+      <pubDate>Wed, 15 Jul 2026 09:08:26 +0800</pubDate>
+      <category>T3 Hacker News</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>估值4800亿，DeepSeek火速开启新一轮融资！最快明年IPO</title>
+      <description>来自 量子位 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:量子位]</description>
+      <link>https://www.qbitai.com/2026/07/450101.html</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-020</guid>
+      <pubDate>Wed, 15 Jul 2026 08:54:59 +0800</pubDate>
+      <category>T5 量子位</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>OpenAI researcher Miles Wang in talks to launch AI drug disc…</title>
+      <description>来自 TechCrunch AI 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:TechCrunch AI]</description>
+      <link>https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-021</guid>
+      <pubDate>Wed, 15 Jul 2026 08:27:04 +0800</pubDate>
+      <category>T2 TechCrunch AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Data centers have hiked electricity prices on the public by …</title>
+      <description>来自 Hacker News 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:Hacker News]</description>
+      <link>https://fortune.com/2026/07/14/data-centers-23-billion-electricity-bills/</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-022</guid>
+      <pubDate>Wed, 15 Jul 2026 08:20:31 +0800</pubDate>
+      <category>T3 Hacker News</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>派早报：Meta 被诉借助 AI 违规裁员、Google 被诉使用版权内容训练 Gemini 模型等</title>
+      <description>来自 少数派 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:少数派]</description>
+      <link>https://sspai.com/post/112334</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-023</guid>
+      <pubDate>Wed, 15 Jul 2026 08:19:12 +0800</pubDate>
+      <category>T5 少数派</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>The Memory Heist</title>
+      <description>来自 Lobsters AI 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:Lobsters AI]</description>
+      <link>https://ayush.digital/blog/the-memory-heist</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-024</guid>
+      <pubDate>Wed, 15 Jul 2026 08:11:45 +0800</pubDate>
+      <category>T3 Lobsters AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>[AINews] not much happened today</title>
+      <description>来自 Latent Space 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态。 [来源:Latent Space]</description>
+      <link>https://www.latent.space/p/ainews-not-much-happened-today-c72</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-025</guid>
+      <pubDate>Wed, 15 Jul 2026 07:54:07 +0800</pubDate>
+      <category>T4 Latent Space</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+    </item>
+  </channel>
+</rss>
