@@ -1,0 +1,32 @@
+name: daily-briefing
+on:
+  schedule:
+    - cron: '0 23 * * *'   # Asia/Shanghai 7:00
+    - cron: '0 15 * * *'   # Asia/Shanghai 23:00 兜底
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-raw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { token: ${{ secrets.GITHUB_TOKEN }}, fetch-depth: 1 }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - run: pip install --quiet feedparser requests pyyaml
+      - name: Fetch raw
+        env: { GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} }
+        run: |
+          python3 scripts/build_daily.py > /tmp/build.log 2>&1 || true
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(daily): fetch raw $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+      - uses: actions/upload-artifact@v4
+        with: { name: build-log, path: /tmp/build.log, if-no-files-found: ignore }
