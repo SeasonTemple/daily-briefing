@@ -1,21 +1,18 @@
 name: daily-briefing
 on:
   schedule:
-    # UTC 23:00 = Asia/Shanghai 7:00  (主)
-    - cron: '0 23 * * *'
-    # UTC 15:00 = Asia/Shanghai 23:00  (兜底)
-    - cron: '0 15 * * *'
+    - cron: '0 23 * * *'   # UTC 23:00 = Asia/Shanghai 7:00 主
+    - cron: '0 15 * * *'   # UTC 15:00 = Asia/Shanghai 23:00 兜底
   workflow_dispatch:
-  push:
-    paths:
-      - 'profiles/ai-daily.yaml'
-      - 'scripts/fetch.py'
 
 permissions:
   contents: write
+  pages: write
+  models: read
+  discussions: write
 
 jobs:
-  fetch:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,33 +27,50 @@ jobs:
       - name: Install deps
         run: pip install --quiet feedparser requests pyyaml lxml
 
-      - name: Fetch raw (no LLM)
+      - name: Fetch + LLM (mistral-large) + render RSS/HTML
         env:
-          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python3 scripts/fetch.py \
             --profile profiles/ai-daily.yaml \
-            --out data/raw-ai-daily-$(date -u +%Y%m%dT%H%M%S).json
+            --out rss/ai-daily.xml \
+            --html digests/ai-daily.html \
+            --log logs/cron-$(date -u +%Y%m%dT%H%M%S).log
 
-      - name: Commit raw
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ 2>/dev/null || true
+          git add rss/ digests/ logs/ 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "No raw data changes"
+            echo "No changes"
           else
-            git commit -m "chore(daily): fetch raw $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git commit -m "chore(daily): auto-rebuild $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
 
-      - name: Notify Mavis via Discussion
+      - name: Trigger Pages rebuild
+        if: always()
+        run: |
+          curl -s -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "Content-Length: 0" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds" \
+            | head -c 200 && echo
+
+      - name: Push Discussion notification
         if: always()
         env:
-          GH_PAT: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # 触发一条 discussion, 通知 Mavis 接管
-          LATEST=$(ls -1t data/raw-ai-daily-*.json 2>/dev/null | head -1)
-          if [ -n "$LATEST" ]; then
-            python3 scripts/notify_mavis.py "$LATEST" || echo "Notify failed, Mavis will pick up next session"
-          fi
+          python3 scripts/notify_discussions.py || echo "Discussion push failed (non-blocking)"
+
+      - name: Upload log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cron-log
+          path: logs/
+          if-no-files-found: ignore
+          retention-days: 7
