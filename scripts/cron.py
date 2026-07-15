@@ -131,8 +131,13 @@ def summarize_with_llm(title_en, src_label, model='gpt-4o-mini'):
 源: {src_label}
 英文标题: {title_en}
 
+要求:
+- title_zh: 中文标题,20-40字,精炼有信息量
+- summary: 中文摘要,60-80字,讲清楚事件/研究具体是什么
+- take: 中文评价,30-50字,要给出**具体观点**(对比/数字/对手/场景),**不要**使用"提供了理论基础/值得关注的套话"。可以是'X 跟 Y 的区别'、'对 Z 行业的影响'、'具体数字 N%'等。
+
 输出严格 JSON (无 markdown,无解释):
-{{"title_zh":"中文标题(20-40字,精炼)","summary":"中文摘要(60-80字,讲清楚事件/研究是什么)","take":"中文评价(30-50字,为什么值得关注 / 工程价值 / 行业意义)"}}"""
+{{"title_zh":"...","summary":"...","take":"..."}}"""
     try:
         r = requests.post(
             'https://models.inference.ai.azure.com/chat/completions',
@@ -435,22 +440,25 @@ def main():
     for k in list(pools.keys()):
         pools[k] = [i for i in pools[k] if is_ai(i['title'], k)]
 
-    # 5. 多源混搭 (按 tier 限)
+    # 5. 多源混搭 (按 tier 限, 强制多源覆盖)
     SRC_LIMITS = {}
     for src in profile.get('sources', []):
         key = src.get('label') or src.get('name') or src.get('handle')
         tier = src.get('tier', 'T2')
-        if tier in ('T1', 'T1.5'):
-            SRC_LIMITS[key] = 8
+        if tier == 'T1.5':       # arxiv 论文: 每分类少限, 让多源进
+            SRC_LIMITS[key] = 3
+        elif tier == 'T1':       # 一手 newsroom / blog
+            SRC_LIMITS[key] = 3
         elif tier in ('T2', 'T3'):
-            SRC_LIMITS[key] = 4
-        else:
-            SRC_LIMITS[key] = 5
+            SRC_LIMITS[key] = 3
+        else:                    # T4/T5 newsletter + 中文
+            SRC_LIMITS[key] = 3
 
     final = []
     for k, items in pools.items():
         lim = SRC_LIMITS.get(k, 3)
         final.extend(items[:lim])
+    # 按时间排序
     final.sort(key=lambda x: x['pub'] or NOW, reverse=True)
     # 去重
     seen, deduped = set(), []
