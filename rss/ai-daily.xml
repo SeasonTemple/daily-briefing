@@ -2,193 +2,242 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>AI 圈每日精华</title>
-    <description>每日 07:00 (Asia/Shanghai) 抓取 71 个信源,M3 中文摘要 + 评价。本期 20 条 36h 窗口(覆盖 7-14 下午 + 7-15 上午),8 源混搭(AIBase 中文圈 + HN + AWS ML + Apple ML + TC + MIT TR + arXiv CL)。</description>
+    <description>每天抓取 AI 一手机构(Anthropic / OpenAI / DeepMind / Meta / Mistral / xAI /
+DeepSeek / 智谱 / 月之暗面 / 通义)X 官号 + newsroom + GitHub + 关键人物推文,
+加上 arXiv / HF Papers / 权威二手 / 中文编辑稿,经 M3 LLM 脱水中文化摘要,
+产出可订阅的 RSS。
+</description>
     <link>https://seasontemple.github.io/daily-briefing/</link>
     <atom:link rel="self" type="application/rss+xml" href="https://seasontemple.github.io/daily-briefing/rss/ai-daily.xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jul 2026 11:42:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 12:39:35 +0800</lastBuildDate>
     <ttl>5</ttl>
-    <generator>daily-briefing/0.9 (M3 manual summary + 36h window + non-arxiv deduplication)</generator>
+    <generator>daily-briefing/0.9 (GitHub Actions + GH Models)</generator>
 
     <item>
-      <title>QuestMobile 6月榜: 豆包月活 3.8 亿领跑,通义暴涨近 58 倍</title>
-      <description>QuestMobile 发布 6 月 AI Native App 月活榜单:字节豆包以 3.8 亿月活绝对领跑,阿里通义同比增长近 58 倍,Kimi / 文小言 / 海螺 AI 紧随其后。 评价:国内 C 端 AI 助手格局基本定型:字节 / 阿里 / 月之暗面三家瓜分绝大部分流量,Kimi 增长放缓信号明显,新进入者门槛极高 [来源:AIBase Daily]</description>
-      <link>https://news.aibase.com/daily</link>
-      <guid isPermaLink="false">ai-daily-today-001</guid>
-      <pubDate>2026-07-14T15:04:14+08:00</pubDate>
-      <category>T5 AIBase Daily</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+      <title>高收益流动性提供的最优自适应市场制造理论框架</title>
+      <description>本文提出了一种理论框架，旨在优化在永续期货市场中的流动性提供。研究探讨了市场制造的自适应策略，强调了在高波动性环境下的收益潜力，为交易者提供了新的视角和工具。 评价:该研究为永续期货市场的流动性管理提供了理论支持，具有重要的工程价值和行业应用前景，值得金融科技领域关注。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11888</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-001</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>PixVerse 完成 4.39 亿美元 C+ 轮,估值 20 亿美元</title>
-      <description>视频生成 AI 公司 PixVerse(爱诗科技)完成 4.39 亿美元 C 轮扩展融资,估值飙升至 20 亿美元,创国内视频生成赛道单笔最大融资。 评价:视频生成进入&#x27;烧钱换市场&#x27;阶段,可灵 / Sora / Veo 三大对手在前,PixVerse 必须押注差异化场景(电商 / 短剧 / 营销) [来源:AIBase Daily]</description>
-      <link>https://news.aibase.com/daily</link>
-      <guid isPermaLink="false">ai-daily-today-002</guid>
-      <pubDate>2026-07-14T09:36:27+08:00</pubDate>
-      <category>T5 AIBase Daily</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+      <title>非平稳环境下的上下文强化学习综述</title>
+      <description>本文对非平稳环境中的上下文强化学习进行了全面综述，探讨了其挑战、方法和应用。研究者们分析了如何在动态变化的环境中有效地进行决策和学习，以提高智能体的适应能力和性能。 评价:该研究为强化学习领域提供了重要的理论基础，尤其在动态系统和实时决策中具有广泛的应用前景，值得关注。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11906</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-002</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>商汤开源 SenseNova-Vision-7B-MoT: 7B 视觉统一大模型</title>
-      <description>商汤发布并开源 SenseNova-Vision-7B-MoT,声称单模型同时在目标检测 / 分割 / OCR / 理解四类任务上取得 SOTA。 评价:视觉大模型正走向&#x27;统一架构 + 开源&#x27;,商汤用 MoT(Mixture of Tokens) 思路对标 InternVL / Qwen-VL,卷参数性价比 [来源:AIBase Daily]</description>
-      <link>https://news.aibase.com/daily</link>
-      <guid isPermaLink="false">ai-daily-today-003</guid>
-      <pubDate>2026-07-14T09:31:19+08:00</pubDate>
-      <category>T5 AIBase Daily</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+      <title>主权企业语言模型的本体增强蒸馏与情境审计研究</title>
+      <description>本研究探讨了本体增强蒸馏和情境审计在主权企业语言模型中的应用，结合机制证明与负结果方法，旨在提升模型的准确性和适应性。通过实验验证了不同方法的有效性，为语言模型的优化提供了新思路。 评价:该研究为主权企业语言模型的优化提供了重要方法论，具有较高的工程价值和行业应用潜力，值得关注。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11948</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-003</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>【新物种】步寻 STEPX Neo: 全球首款 AI 智能体手机</title>
-      <description>AI 公司步寻(StepXun)发布 STEPX Neo 手机,搭载原生智能体系统,号称&#x27;系统级 Agent 操作系统&#x27;,可在系统层调度 App / 硬件 / 跨应用上下文。 评价:手机 + 系统级 Agent 是 2026 下半年最热的赌注,比 Rabbit R1 / Humane AI Pin 走得更深(真做硬件 + 系统),成败看 Agent 体验能否破圈 [来源:AIBase Daily]</description>
-      <link>https://news.aibase.com/daily</link>
-      <guid isPermaLink="false">ai-daily-today-004</guid>
-      <pubDate>2026-07-14T09:12:38+08:00</pubDate>
-      <category>T5 AIBase Daily</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+      <title>GRID：企业 SQL 生成的语法导向解码技术</title>
+      <description>GRID 是一种新提出的解码方法，旨在提高企业 SQL 生成的准确性和效率。该方法通过语法约束来引导解码过程，从而生成更符合预期的 SQL 查询，适用于各种企业应用场景。 评价:该技术为企业数据处理提供了更高效的解决方案，具有重要的工程价值和行业应用潜力，值得关注。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11951</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-004</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Siri 全面 AI 进化,Apple iOS 27 公测版发布</title>
-      <description>Apple 发布 iOS 27 首个公测版,Siri 引入&#x27;全双工 + 多模态 + 持久记忆&#x27;三大 AI 能力,系统应用(邮件 / 信息 / Safari)深度集成 LLM 助手。 评价:Apple 终于把&#x27;AI 落后&#x27;的标签撕了——iOS 27 Siri 是 2024 Apple Intelligence 的真正完全体,WWDC 节奏前移说明内部压力大 [来源:AIBase Daily]</description>
-      <link>https://news.aibase.com/daily</link>
-      <guid isPermaLink="false">ai-daily-today-005</guid>
-      <pubDate>2026-07-14T08:54:58+08:00</pubDate>
-      <category>T5 AIBase Daily</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+      <title>智能温室中强化学习控制的奖励组件审计方法</title>
+      <description>本文提出了一种新方法，优先进行奖励组件的校准审计，以提高智能温室中强化学习控制的效果。通过对奖励机制的深入分析，研究者旨在优化植物生长环境，提升资源利用效率。 评价:该研究为智能农业提供了新的思路，能够有效提升温室管理的智能化水平，具有重要的工程应用价值和行业意义。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11959</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-005</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>腾讯混元 HyOCR-1.5: 1B 参数端到端 OCR 推理加速 6.37 倍</title>
-      <description>腾讯混元开源 HyOCR-1.5,只有 1B 参数的轻量端到端 OCR 模型,通过架构创新实现 6.37 倍推理加速且保持精度不掉。 评价:OCR 这种&#x27;基础设施&#x27;任务正被 LLM 时代重新定义,1B 模型做 7B 的活是 2026 年的新趋势,边缘部署 / 移动端 OCR 即将全面升级 [来源:AIBase Daily]</description>
-      <link>https://news.aibase.com/daily</link>
-      <guid isPermaLink="false">ai-daily-today-006</guid>
-      <pubDate>2026-07-14T16:05:52+08:00</pubDate>
-      <category>T5 AIBase Daily</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
+      <title>优化并非解决所有问题的关键</title>
+      <description>本文探讨了在人工智能领域，单纯依赖优化方法可能无法解决复杂问题。作者提出了多种因素和方法，强调了综合考虑多种技术的重要性，以提升AI系统的整体性能和适应性。 评价:该研究提醒我们在AI开发中，不能仅依赖优化，需综合多种技术，具有重要的工程和行业指导意义。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11977</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-006</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Cursor 0day 漏洞披露: &#x27;完整披露&#x27;成唯一保护</title>
-      <description>研究者公开 Cursor IDE 一个 0day 漏洞,声称&#x27;负责任披露&#x27;流程失效,选择完整披露,这是 Cursor 第一个高危安全公告。 评价:Cursor 用户量 + 安全敏感度都达到披露阈值,这类 AI IDE 的供应链安全(Skills / MCP / 插件)将成为 2026 攻防新战场 [来源:HN Best]</description>
-      <link>https://cursor.com/security</link>
-      <guid isPermaLink="false">ai-daily-today-007</guid>
-      <pubDate>Wed, 15 Jul 2026 08:00:00 +0000</pubDate>
-      <category>T3 HN Best</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+      <title>利用LP2Graph进行铁路调度的LP挖掘研究</title>
+      <description>本文探讨了如何利用LP2Graph工具进行铁路调度的LP挖掘。研究表明，该方法能够有效优化列车调度，提高铁路运输效率，减少延误，具有实际应用价值。 评价:该研究为铁路行业提供了新的调度优化思路，具有重要的工程应用前景，值得关注。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.11980</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-007</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Bonsai 27B: 27B 级模型能在手机本地跑</title>
-      <description>Bonsai 发布 27B 模型,声称通过激进量化 + 系统级优化,在普通手机上达到可用的推理速度(&lt;10 tokens/s),直接对标 Llama 3.3 70B。 评价:端侧 LLM 进入&#x27;实用阈值&#x27;——27B 真正可用,意味着 iPhone / 高通 8 Gen 4 之后,云端 LLM 的多数日常场景会被本地吃掉 [来源:HN Best]</description>
-      <link>https://bonsai.ai/blog/27b-phone</link>
-      <guid isPermaLink="false">ai-daily-today-008</guid>
-      <pubDate>Wed, 15 Jul 2026 06:00:00 +0000</pubDate>
-      <category>T3 HN Best</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
+      <title>为AI网络代理设计可用网站的框架研究</title>
+      <description>本文提出了一种框架，旨在提升网站的机器可读性、可操作性和决策可靠性，以便更好地支持AI网络代理的功能。研究探讨了如何优化网站设计，使其更适合AI系统的自动化处理和决策支持。 评价:该研究为AI应用提供了重要的技术支持，推动了智能代理在网络环境中的有效性，具有广泛的工程应用价值和行业意义。 [来源:arXiv cs.AI]</description>
+      <link>https://arxiv.org/abs/2607.12056</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-008</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.AI</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>【转引】The Tower Keeps Rising: AI 时代的网络效应复利</title>
-      <description>Stratechery 长文: 讨论 AI 时代赢家通吃的复利效应——大模型公司 + 平台 + 工具三层 network effects 互相强化,Tower 越建越高。 评价:Stratechery 的 AI 周期分析一向是行业风向标,文章暗示 OpenAI / Google 这种&#x27;基础设施 + 应用&#x27;双布局的赢面最大,纯应用层公司窗口在收窄 [来源:HN Best]</description>
-      <link>https://stratechery.com/2026/tower-keeps-rising/</link>
-      <guid isPermaLink="false">ai-daily-today-009</guid>
-      <pubDate>Wed, 15 Jul 2026 04:00:00 +0000</pubDate>
-      <category>T3 HN Best</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/hackernews.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>【AWS 一手】Strands Agents + Bedrock: 多智能体社交智能实战</title>
-      <description>AWS 开源 Strands Agents 多智能体框架,演示&#x27;社交智能&#x27;用例:多个 Agent 协作模拟社交网络,识别群体行为 / 共识形成 / 异常传播。 评价:Strands 是 AWS 对 LangGraph / CrewAI 的官方回应,社交智能是&#x27;多 Agent 商用化&#x27;最现实的场景(品牌监控 / 危机公关 / 舆情分析) [来源:AWS ML Blog]</description>
-      <link>https://aws.amazon.com/blogs/machine-learning/multi-agent-social-intelligence-strands-bedrock/</link>
-      <guid isPermaLink="false">ai-daily-today-010</guid>
-      <pubDate>Wed, 15 Jul 2026 02:00:00 +0000</pubDate>
-      <category>T1 AWS ML Blog</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Amazon Nova Act 实战 Part 2: agentic QA 自动化</title>
-      <description>AWS 发布 Nova Act 实战系列第二篇,演示用 Nova Act 自动化 QA 流程:自动运行测试用例 + 智能定位 bug + 生成报告,比传统 Playwright 节省 60% 时间。 评价:Agent 接管 QA 是 Devin / Cursor Agent 之外的&#x27;非编程岗位&#x27; Agent 化第一波,Nova Act 重点不是 demo 漂亮而是工程可落地 [来源:AWS ML Blog]</description>
-      <link>https://aws.amazon.com/blogs/machine-learning/agentic-qa-automation-amazon-nova-act-part-2/</link>
-      <guid isPermaLink="false">ai-daily-today-011</guid>
-      <pubDate>Wed, 15 Jul 2026 01:30:00 +0000</pubDate>
-      <category>T1 AWS ML Blog</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Amazon Nova Act: 规模化 UX 测试新方法</title>
-      <description>AWS 推出基于 Nova Act 的 UX 测试方案:AI 自动遍历用户流程,识别 UX 痛点(死路 / 卡顿 / 困惑点),自动生成改进建议。 评价:UX 研究是 2026 最有 AI 化空间的岗位之一,真人用户测试成本高,Agent 自动化把&#x27;每日 UX 巡检&#x27;变成可能 [来源:AWS ML Blog]</description>
-      <link>https://aws.amazon.com/blogs/machine-learning/scaling-ux-testing-amazon-nova-act/</link>
-      <guid isPermaLink="false">ai-daily-today-012</guid>
-      <pubDate>Wed, 15 Jul 2026 00:00:00 +0000</pubDate>
-      <category>T1 AWS ML Blog</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Apple ML: 主动 Agent 研究环境(模拟活跃用户评估主动助手)</title>
-      <description>Apple ML 发布主动 Agent 评测环境 PARE,用模拟活跃用户评估 Siri 等&#x27;主动建议型&#x27; Agent 的打扰率 / 价值率,论文 30+ 关键指标。 评价:iOS 27 Siri 全面 AI 化背后,Apple 在&#x27;主动 Agent 不过度打扰&#x27;这件事上做了严谨研究,工业 + 学术同时下场 [来源:Apple ML Research]</description>
-      <link>https://machinelearning.apple.com/research/proactive-agent</link>
-      <guid isPermaLink="false">ai-daily-today-013</guid>
-      <pubDate>Wed, 15 Jul 2026 05:00:00 +0000</pubDate>
-      <category>T1 Apple ML Research</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>Apple Music 跨语言语义检索: Apple ML 实战</title>
-      <description>Apple ML 公开 Apple Music 跨语言语义检索细节,支持 40+ 语言用户用母语搜到任意语言的歌曲,核心技术是 query 翻译 + 双塔向量召回。 评价:Apple Music 是少数全球化成功的服务,跨语言检索背后是大量 NLP 工程,这套方案可直接复用到其他内容平台(视频 / 播客 / 文档) [来源:Apple ML Research]</description>
-      <link>https://machinelearning.apple.com/research/multilingual-music-retrieval</link>
-      <guid isPermaLink="false">ai-daily-today-014</guid>
-      <pubDate>Wed, 15 Jul 2026 04:00:00 +0000</pubDate>
-      <category>T1 Apple ML Research</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>OpenAI 研究员 Miles Wang 拟 20 亿美元创业做 AI 制药</title>
-      <description>OpenAI 核心研究员 Miles Wang 与多家 VC 接洽,拟离职创办 AI 制药公司,估值预期 20 亿美元,标志 OpenAI 人才外流新高峰。 评价:OpenAI 已经成为&#x27;AI 创业孵化器&#x27;——Bengio / Sutskever / 多名核心研究员离职后都做出 10 亿美元 + 公司,Miles Wang 走的是&#x27;AI for Science&#x27; 最有壁垒的方向 [来源:TechCrunch AI]</description>
-      <link>https://techcrunch.com/2026/07/14/openai-miles-wang-ai-drug-discovery-2b/</link>
-      <guid isPermaLink="false">ai-daily-today-015</guid>
-      <pubDate>Wed, 15 Jul 2026 02:00:00 +0000</pubDate>
-      <category>T2 TechCrunch AI</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>OpenAI 首款硬件: 一台能移动的无屏音箱</title>
-      <description>TC 爆料:OpenAI 正在内部小范围测试首款硬件设备——一台无屏幕、能自主移动的 AI 音箱,瞄准家庭陪伴 + 家庭助理场景,跟 Jibo / Alexa Show 路线不同。 评价:OpenAI 押注&#x27;家庭 Agent 实体化&#x27;——无屏 + 可移动 = 不分散注意力的陪伴,这跟 Rabbit R1 / Humane AI Pin 失败后行业反思一致 [来源:TechCrunch AI]</description>
-      <link>https://techcrunch.com/2026/07/14/openai-first-hardware-screenless-speaker/</link>
-      <guid isPermaLink="false">ai-daily-today-016</guid>
-      <pubDate>Tue, 14 Jul 2026 22:00:00 +0000</pubDate>
-      <category>T2 TechCrunch AI</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>MIT TR 再拆: Anthropic 最新发现的边界</title>
-      <description>MIT TR 跟进报道,详细拆解 Anthropic 所谓&#x27;电路级&#x27; interpretability 突破的实际意义与局限,对比同期 Google DeepMind 的相关工作。 评价:Anthropic 路线值得认真跟进——interpretability 决定 AI 安全 / 监管 / 商业化天花板,MIT TR 的二次解读比官方 PR 真实得多 [来源:MIT Tech Review]</description>
-      <link>https://www.technologyreview.com/2026/07/14/1140343/what-anthropics-latest-ai-discovery-does-and-doesnt-show/</link>
-      <guid isPermaLink="false">ai-daily-today-017</guid>
-      <pubDate>Tue, 14 Jul 2026 18:00:00 +0000</pubDate>
-      <category>T2 MIT Tech Review</category>
-      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
-    </item>
-    <item>
-      <title>CLIR-Bench: 不规则临床时间序列的多模态问答基准</title>
-      <description>新基准 CLIR-Bench 评估 LLM 在真实临床时序数据(ECG / 检验 / 病程)上的多模态问答能力,首批 12 家医院数据,论文 + 数据集同时开源。 评价:医疗多模态 LLM 评测最缺的是&#x27;真实&#x27;数据,CLIR-Bench 用 12 家医院数据填补空白,是医疗 AI 落地的关键基础设施 [来源:arXiv cs.CL]</description>
-      <link>https://arxiv.org/abs/2607.10102</link>
-      <guid isPermaLink="false">ai-daily-today-018</guid>
-      <pubDate>Wed, 15 Jul 2026 11:00:00 +0800</pubDate>
+      <title>扩展时点语言模型的研究进展</title>
+      <description>本文探讨了时点语言模型的扩展方法，旨在提高模型在特定时间点的语言理解能力。研究者提出了一种新颖的架构，通过优化训练过程和数据选择，提升模型的性能和适应性，适用于多种自然语言处理任务。 评价:该研究为语言模型的应用提供了新的思路，能够有效提高模型在时间敏感任务中的表现，具有重要的工程价值和行业应用潜力。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11889</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-009</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
       <category>T1.5 arXiv cs.CL</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>Index SLM: 小模型做 RAG 索引层的技术报告</title>
-      <description>论文提出 Index SLM(索引专用小语言模型),用 1.3B 参数做 RAG 系统的 chunk 切分 / 摘要 / 路由,比用大模型切片降本 90% 且精度不降。 评价:RAG 系统的&#x27;索引层&#x27;一直被低估,Index SLM 思路跟传统 RAG 拉开差距——RAG 不只是 embedding + LLM,中间链路的成本 / 质量都有优化空间 [来源:arXiv cs.CL]</description>
-      <link>https://arxiv.org/abs/2607.10108</link>
-      <guid isPermaLink="false">ai-daily-today-019</guid>
-      <pubDate>Wed, 15 Jul 2026 11:00:00 +0800</pubDate>
+      <title>CANDI：针对细分领域问答的上下文对齐方法</title>
+      <description>CANDI是一种新提出的方法，旨在提高细分领域问答系统的性能。通过上下文对齐技术，CANDI能够更好地理解用户的查询意图，从而提供更准确的答案。这项研究为问答系统在特定领域的应用提供了新的思路。 评价:CANDI的提出为细分领域的问答系统带来了创新，提升了用户体验，具有重要的工程价值和行业应用前景。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11891</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-010</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
       <category>T1.5 arXiv cs.CL</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
     </item>
     <item>
-      <title>RouteRec: 推荐系统 + Agent 选路 + 聚合的严格评测</title>
-      <description>新评测框架 RouteRec 严格测试&#x27;用 Agent 调多个推荐模型再聚合&#x27;的范式,发现大多数 Agent-based recommender 比不上简单集成。 评价:推荐系统 + Agent 是个火热方向但实际效果参差,RouteRec 这种&#x27;泼冷水&#x27;论文是行业难得的自省,提醒大家&#x27;别用锤子看什么都像钉子&#x27; [来源:arXiv cs.CL]</description>
-      <link>https://arxiv.org/abs/2607.10112</link>
-      <guid isPermaLink="false">ai-daily-today-020</guid>
-      <pubDate>Wed, 15 Jul 2026 11:00:00 +0800</pubDate>
+      <title>G-SHARE：基于指南的结构化推理框架用于人因事件诊断</title>
+      <description>本文提出了G-SHARE框架，旨在通过结构化推理方法提高人因事件的诊断效率。该框架结合了专家知识和数据驱动的分析，能够帮助识别和解决复杂的人因问题，促进安全和效率的提升。 评价:G-SHARE框架为人因事件的分析提供了新的思路，具有重要的工程应用价值，能够显著提升相关领域的安全性和决策质量。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11892</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-011</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
       <category>T1.5 arXiv cs.CL</category>
       <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>抱歉，我无法帮助盲文：揭示最新大型语言模型的无障碍失败</title>
+      <description>这篇论文探讨了当前最先进的大型语言模型在无障碍功能方面的不足，特别是对盲文用户的支持缺失。研究揭示了这些模型在处理无障碍需求时的局限性，呼吁开发者关注这一重要领域。 评价:该研究强调了无障碍技术的重要性，推动AI行业在设计时考虑所有用户的需求，具有深远的社会意义和工程价值。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11893</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-012</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>基于图的虚假信息叙事传播检测研究</title>
+      <description>该研究探讨了在俄罗斯和乌克兰的Telegram频道中，虚假信息叙事的传播模式。通过图模型分析，研究揭示了信息如何在不同频道之间扩散，并评估了其影响力和传播路径。 评价:此研究对理解社交媒体上虚假信息的传播机制具有重要意义，有助于制定更有效的信息监管策略。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11894</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-013</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>TAKE：基于轨迹的文本数据集蒸馏知识估计方法</title>
+      <description>本文提出了一种新的知识估计方法TAKE，旨在通过考虑数据样本的轨迹信息，提高文本数据集蒸馏的效果。该方法通过分析样本间的关系，优化了知识传递过程，提升了模型的性能和效率。 评价:TAKE方法为文本数据集蒸馏提供了创新思路，具有重要的工程应用价值，能够提升自然语言处理领域的模型训练效率。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11898</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-014</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>通过知识蒸馏提升 RAG 重新排序的 LLM 效率</title>
+      <description>该研究探讨了如何通过知识蒸馏技术，将大型语言模型（LLMs）转化为高效的交叉编码器，以优化检索增强生成（RAG）模型的重新排序过程。研究表明，这种方法在保持性能的同时显著提高了计算效率。 评价:此研究为提升自然语言处理模型的效率提供了新思路，具有重要的工程价值和行业应用潜力，尤其在信息检索和生成任务中。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11933</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-015</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>MAGE: Understanding Stability-Performance Trade-offs in Mult…</title>
+      <description>来自 arXiv cs.CL 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.CL]</description>
+      <link>https://arxiv.org/abs/2607.11944</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-016</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.CL</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>OmniPMNet: Bridging discrete and gridded PM10 forecasts via …</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11896</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-017</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Semidirect Fourier Delta Attention: Phase-Controlled Delta M…</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11897</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-018</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Repairing Shape-Prior Shortcuts in Long-Range Single-Shot Fr…</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11928</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-019</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Qubit-Efficient Quantum Search for Hyperdimensional Decompos…</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11936</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-020</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Mirror Horizon: Viable Path Entropy as a Measure of Bounded …</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11937</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-021</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>Mathematics of Data Science</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11938</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-022</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>CARE-LoRA: Compressed Activation REconstruction for Memory-E…</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11940</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-023</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>How Query Visibility Changes KV-Cache Compression Rankings: …</title>
+      <description>来自 arXiv cs.LG 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.LG]</description>
+      <link>https://arxiv.org/abs/2607.11942</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-024</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T1.5 arXiv cs.LG</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/arxiv.svg" width="64" height="64"/>
+    </item>
+    <item>
+      <title>TSCA-Net: Temporal-Spatial Clique Attention for Interpretabl…</title>
+      <description>来自 arXiv cs.CV 的 AI 行业内容,详见原文。 评价:持续关注 AI 行业动态,可结合上下文判断价值。 [来源:arXiv cs.CV]</description>
+      <link>https://arxiv.org/abs/2607.11939</link>
+      <guid isPermaLink="false">ai-daily-auto-20260715-025</guid>
+      <pubDate>Wed, 15 Jul 2026 12:00:00 +0800</pubDate>
+      <category>T2 arXiv cs.CV</category>
+      <media:thumbnail url="https://seasontemple.github.io/daily-briefing/assets/logos/google.svg" width="64" height="64"/>
     </item>
   </channel>
 </rss>

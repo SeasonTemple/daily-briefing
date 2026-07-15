@@ -1,0 +1,78 @@
+2026-07-15 04:39:35,250 INFO Loaded profile: ai-daily
+2026-07-15 04:39:35,525 INFO   arXiv cs.AI: fetched 256 items
+2026-07-15 04:39:35,640 INFO   arXiv cs.CL: fetched 103 items
+2026-07-15 04:39:35,848 INFO   arXiv cs.LG: fetched 234 items
+2026-07-15 04:39:36,006 INFO   arXiv cs.CV: fetched 178 items
+2026-07-15 04:39:36,091 INFO   arXiv cs.RO: fetched 69 items
+2026-07-15 04:39:36,813 INFO   HF Daily Papers: fetched 0 items
+2026-07-15 04:39:40,791 INFO   Anthropic News: fetched 0 items
+2026-07-15 04:39:42,105 INFO   OpenAI Blog: fetched 1035 items
+2026-07-15 04:39:42,694 INFO   DeepMind Blog: fetched 0 items
+2026-07-15 04:39:43,106 INFO   AWS ML Blog: fetched 20 items
+2026-07-15 04:39:43,178 INFO   Apple ML Research: fetched 10 items
+2026-07-15 04:39:43,859 INFO   Mistral AI News: fetched 0 items
+2026-07-15 04:39:44,227 INFO   Hugging Face Blog: fetched 823 items
+2026-07-15 04:39:44,377 INFO   GitHub Anthropic: fetched 0 items
+2026-07-15 04:39:44,530 INFO   GitHub OpenAI: fetched 0 items
+2026-07-15 04:39:44,672 INFO   GitHub DeepMind: fetched 0 items
+2026-07-15 04:39:44,826 INFO   GitHub DeepSeek: fetched 0 items
+2026-07-15 04:39:44,999 INFO   GitHub Qwen: fetched 2 items
+2026-07-15 04:39:45,213 INFO   The Verge AI: fetched 0 items
+2026-07-15 04:39:45,264 INFO   TechCrunch AI: fetched 20 items
+2026-07-15 04:39:45,698 INFO   Ars Technica AI: fetched 0 items
+2026-07-15 04:39:45,794 INFO   MIT Tech Review: fetched 10 items
+2026-07-15 04:39:46,079 INFO   Stratechery: fetched 10 items
+2026-07-15 04:39:46,389 INFO   Hacker News: fetched 20 items
+2026-07-15 04:39:46,586 INFO   HN Best: fetched 30 items
+2026-07-15 04:39:47,218 INFO   Reddit r/MachineLearning: fetched 25 items
+2026-07-15 04:39:47,280 INFO   Reddit r/artificial: fetched 0 items
+2026-07-15 04:39:47,340 INFO   Reddit r/LocalLLaMA: fetched 0 items
+2026-07-15 04:39:47,689 INFO   Lobsters AI: fetched 25 items
+2026-07-15 04:39:47,777 INFO   TLDR AI: fetched 0 items
+2026-07-15 04:39:47,925 INFO   Import AI: fetched 0 items
+2026-07-15 04:39:48,273 INFO   Ben's Bites: fetched 20 items
+2026-07-15 04:39:48,499 INFO   Interconnects: fetched 20 items
+2026-07-15 04:39:48,815 INFO   Latent Space: fetched 20 items
+2026-07-15 04:39:49,194 INFO   The Rundown AI: fetched 0 items
+2026-07-15 04:39:49,482 INFO   AlphaSignal: fetched 0 items
+2026-07-15 04:39:49,808 INFO   Last Week in AI: fetched 20 items
+2026-07-15 04:39:50,046 INFO   Simon Willison: fetched 30 items
+2026-07-15 04:39:51,302 INFO   AIBase Daily: fetched 0 items
+2026-07-15 04:39:53,881 INFO   36Kr: fetched 30 items
+2026-07-15 04:39:56,221 INFO   量子位: fetched 10 items
+2026-07-15 04:39:57,962 INFO   机器之心: fetched 0 items
+2026-07-15 04:39:59,202 INFO   少数派: fetched 10 items
+2026-07-15 04:39:59,366 INFO   V2EX AI: fetched 0 items
+2026-07-15 04:44:43,324 WARNING   fetch fail 虎嗅: IncompleteRead(25638 bytes read)
+2026-07-15 04:44:43,325 INFO   虎嗅: fetched 0 items
+2026-07-15 04:44:43,325 INFO 24h total: 913
+2026-07-15 04:44:43,327 INFO Final: 25 items after dedup + cap
+2026-07-15 04:44:43,327 INFO LLM mode: on (GH Models)
+2026-07-15 04:44:46,215 INFO   [1] LLM ok: 高收益流动性提供的最优自适应市场制造理论框架
+2026-07-15 04:44:48,212 INFO   [2] LLM ok: 非平稳环境下的上下文强化学习综述
+2026-07-15 04:44:50,482 INFO   [3] LLM ok: 主权企业语言模型的本体增强蒸馏与情境审计研究
+2026-07-15 04:44:52,297 INFO   [4] LLM ok: GRID：企业 SQL 生成的语法导向解码技术
+2026-07-15 04:44:54,153 INFO   [5] LLM ok: 智能温室中强化学习控制的奖励组件审计方法
+2026-07-15 04:44:55,811 INFO   [6] LLM ok: 优化并非解决所有问题的关键
+2026-07-15 04:44:57,384 INFO   [7] LLM ok: 利用LP2Graph进行铁路调度的LP挖掘研究
+2026-07-15 04:44:59,648 INFO   [8] LLM ok: 为AI网络代理设计可用网站的框架研究
+2026-07-15 04:45:01,548 INFO   [9] LLM ok: 扩展时点语言模型的研究进展
+2026-07-15 04:45:03,876 INFO   [10] LLM ok: CANDI：针对细分领域问答的上下文对齐方法
+2026-07-15 04:45:05,787 INFO   [11] LLM ok: G-SHARE：基于指南的结构化推理框架用于人因事件诊断
+2026-07-15 04:45:08,076 INFO   [12] LLM ok: 抱歉，我无法帮助盲文：揭示最新大型语言模型的无障碍失败
+2026-07-15 04:45:10,018 INFO   [13] LLM ok: 基于图的虚假信息叙事传播检测研究
+2026-07-15 04:45:12,196 INFO   [14] LLM ok: TAKE：基于轨迹的文本数据集蒸馏知识估计方法
+2026-07-15 04:45:14,575 INFO   [15] LLM ok: 通过知识蒸馏提升 RAG 重新排序的 LLM 效率
+2026-07-15 04:45:15,073 WARNING   GH Models 429: {"error":{"code":"RateLimitReached","message":"Rate limit of 15 per 60s exceeded for UserByModelByMinute. Please wait 28 seconds before retrying.","details":"Rate limit of 15 per 60s exceeded for User
+2026-07-15 04:45:15,075 INFO   [16] LLM fail, used fallback for: MAGE: Understanding Stability-Performance Trade-of
+2026-07-15 04:45:15,119 WARNING   GH Models 429: {"error":{"code":"RateLimitReached","message":"Rate limit of 15 per 60s exceeded for UserByModelByMinute. Please wait 28 seconds before retrying.","details":"Rate limit of 15 per 60s exceeded for User
+2026-07-15 04:45:15,120 INFO   [17] LLM fail, used fallback for: OmniPMNet: Bridging discrete and gridded PM10 fore
+2026-07-15 04:45:15,168 WARNING   GH Models 429: {"error":{"code":"RateLimitReached","message":"Rate limit of 15 per 60s exceeded for UserByModelByMinute. Please wait 28 seconds before retrying.","details":"Rate limit of 15 per 60s exceeded for User
+2026-07-15 04:45:15,169 INFO   [18] LLM fail, used fallback for: Semidirect Fourier Delta Attention: Phase-Controll
+2026-07-15 04:45:15,212 WARNING   GH Models 429: {"error":{"code":"RateLimitReached","message":"Rate limit of 15 per 60s exceeded for UserByModelByMinute. Please wait 28 seconds before retrying.","details":"Rate limit of 15 per 60s exceeded for User
+2026-07-15 04:45:15,213 INFO   [19] LLM fail, used fallback for: Repairing Shape-Prior Shortcuts in Long-Range Sing
+2026-07-15 04:45:15,714 WARNING   GH Models 429: {"error":{"code":"RateLimitReached","message":"Rate limit of 15 per 60s exceeded for UserByModelByMinute. Please wait 27 seconds before retrying.","details":"Rate limit of 15 per 60s exceeded for User
+2026-07-15 04:45:15,715 INFO   [20] LLM fail, used fallback for: Qubit-Efficient Quantum Search for Hyperdimensiona
+2026-07-15 04:45:15,716 INFO Wrote rss/ai-daily.xml (25 items)
+2026-07-15 04:45:15,717 INFO Wrote digests/ai-daily.html (25 cards)
+2026-07-15 04:45:15,717 INFO DONE
