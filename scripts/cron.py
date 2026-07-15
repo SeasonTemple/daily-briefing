@@ -64,6 +64,10 @@ SRC_TIER = {
 def setup_logging(log_path=None):
     fmt = '%(asctime)s %(levelname)s %(message)s'
     if log_path:
+        # 确保 logs 目录存在
+        log_dir = os.path.dirname(log_path)
+        if log_dir and not os.path.exists(log_dir):
+            os.makedirs(log_dir, exist_ok=True)
         logging.basicConfig(
             level=logging.INFO,
             format=fmt,
