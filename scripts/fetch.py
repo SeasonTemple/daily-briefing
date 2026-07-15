@@ -1,427 +1,173 @@
+#!/usr/bin/env python3
 """
-fetch.py — multi-source ingestion for Daily Briefing.
-
-Each source type is implemented as an independent fetcher; failures are
-isolated and recorded in the returned ``stats`` dict so one bad source
-can never break the whole pipeline.
-
-Supported source types:
-  - rss        : any RSS / Atom feed (via feedparser)
-  - x_user     : a Twitter/X user, pulled via a list of Nitter mirrors
-                 with round-robin fallback. We try every mirror in order;
-                 if all fail we mark the source as "x_unavailable" but
-                 never raise.
-  - github_org : a GitHub organization (events Atom feed)
-
-Output schema (one record per item):
-  {
-    "id":         str,    # stable per-source ID (URL or guid)
-    "title":      str,
-    "url":        str,
-    "source":     str,    # source name (label)
-    "source_type": str,   # rss | x_user | github_org
-    "author":     str,    # best-effort author display
-    "published":  datetime | None,
-    "content":    str,    # summary / body
-    "lang":       "en" | "zh" | "und"
-  }
+Daily fetch: 只抓数据 + 写 raw JSON,不做 LLM 摘要。
+Mavis M3 session 接管,做中文摘要 + 评价。
 """
-from __future__ import annotations
-
-import json
-import logging
+import argparse
 import os
 import re
 import sys
-import time
-from dataclasses import dataclass, field, asdict
-from datetime import datetime, timezone
-from typing import Any, Iterable
-from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
+import json
+import logging
+from datetime import datetime, timezone, timedelta
 
 import feedparser
-import requests
+import yaml
 
-LOG = logging.getLogger("fetch")
+SH = timezone(timedelta(hours=8))
+NOW = datetime.now(SH)
 
-DEFAULT_UA = os.getenv(
-    "HTTP_USER_AGENT",
-    "daily-briefing/0.1 (+https://github.com/local/daily-briefing)",
+AI_KW = re.compile(
+    r'\b(ai|llm|gpt|claude|gemini|mistral|llama|deepseek|qwen|openai|anthropic|deepmind|hugging|'
+    r'transformer|diffusion|rag|agent|embedding|finetune|prompt|cuda|ml|model|neural|train|'
+    r'dataset|inference|tokeniz|sora|midjourney|stable diffusion|人工智能|大模型|深度学习|'
+    r'机器学习|神经网络|训练|推理|微调|智能体|多模态|生成式|robot|autonomous|nlp|speech|语音|视觉)',
+    re.IGNORECASE
 )
-TIMEOUT = 15
-# X via Nitter is famously flaky. Tight timeouts + no retry: the next
-# mirror in the list is the retry. Single attempt = predictable runtime.
-NITTER_TIMEOUT = 5
-NITTER_MIRRORS = [
-    "https://nitter.net",
-    "https://nitter.privacydev.net",
-    "https://nitter.poast.org",
-    "https://nitter.1d4.us",
-    "https://nitter.woodland.cafe",
-]
-
-# ---------------------------------------------------------------------------
-# Data class
-# ---------------------------------------------------------------------------
-
-@dataclass
-class Item:
-    id: str
-    title: str
-    url: str
-    source: str
-    source_type: str
-    author: str = ""
-    published: datetime | None = None
-    content: str = ""
-    lang: str = "und"
-
-    def to_dict(self) -> dict[str, Any]:
-        d = asdict(self)
-        if self.published is not None:
-            d["published"] = self.published.isoformat()
-        return d
+NON_AI = re.compile(
+    r'\b(database|graphql|kubernetes|docker|rust\b|golang|typescript|linux\b|kernel\b|'
+    r'compiler|debugger|ide\b|vim|emacs|crypto|bitcoin|ethereum|nft|web3|defi|blockchain|'
+    r'storage|cache|queue|nosql|sql\b|orm|frontend|backend)',
+    re.IGNORECASE
+)
 
 
-# ---------------------------------------------------------------------------
-# URL canonicalization helpers
-# ---------------------------------------------------------------------------
-
-_TRACKING_PARAMS = {
-    "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
-    "fbclid", "gclid", "mc_cid", "mc_eid", "ref", "ref_src", "ref_url",
-    "igshid", "vero_id", "vero_conv", "trk", "trkCampaign",
-}
-
-def canonicalize_url(url: str) -> str:
-    if not url:
-        return url
-    try:
-        p = urlparse(url)
-    except Exception:
-        return url
-    if not p.netloc:
-        return url
-    # Drop fragment
-    frag = ""
-    # Keep query but strip tracking params
-    q = []
-    for k, v in parse_qsl(p.query, keep_blank_values=True):
-        if k.lower() in _TRACKING_PARAMS:
-            continue
-        q.append((k, v))
-    new_query = urlencode(q, doseq=True)
-    # Lower-case scheme + host
-    new = urlunparse((
-        (p.scheme or "https").lower(),
-        p.netloc.lower(),
-        p.path or "",
-        p.params or "",
-        new_query,
-        frag,
-    ))
-    return new
+def is_ai(title, src):
+    if not title:
+        return False
+    if src.startswith('arXiv'):
+        return True
+    if AI_KW.search(title):
+        return True
+    if NON_AI.search(title):
+        return False
+    return True
 
 
-# ---------------------------------------------------------------------------
-# Time helpers
-# ---------------------------------------------------------------------------
-
-def _to_dt(*candidates: Any) -> datetime | None:
-    """Best-effort conversion from feedparser time tuples to datetime."""
-    for c in candidates:
-        if not c:
+def parse_pub(entry):
+    from email.utils import parsedate_to_datetime
+    for k in ['published', 'updated', 'created', 'pubDate']:
+        v = entry.get(k)
+        if not v:
             continue
         try:
-            t = feedparser._parse_date(c) if isinstance(c, str) else c
-            if t is None:
-                continue
-            if isinstance(t, datetime):
-                # feedparser returns naive UTC; assume UTC if no tz
-                if t.tzinfo is None:
-                    t = t.replace(tzinfo=timezone.utc)
-                return t.astimezone(timezone.utc)
+            return parsedate_to_datetime(v).astimezone(SH)
         except Exception:
-            continue
+            pass
     return None
 
 
-# ---------------------------------------------------------------------------
-# HTTP helper with retry
-# ---------------------------------------------------------------------------
-
-def http_get(url: str, *, timeout: int = TIMEOUT, headers: dict | None = None) -> requests.Response | None:
-    h = {"User-Agent": DEFAULT_UA, "Accept": "*/*"}
-    if headers:
-        h.update(headers)
-    for attempt in range(2):
-        try:
-            r = requests.get(url, headers=h, timeout=timeout, allow_redirects=True)
-            if r.status_code == 200 and r.content:
-                return r
-            LOG.warning("non-200 from %s: %s", url, r.status_code)
-        except requests.RequestException as e:
-            LOG.warning("GET %s failed (attempt %d): %s", url, attempt + 1, e)
-        time.sleep(0.5 * (attempt + 1))
-    return None
-
-
-def http_get_once(url: str, *, timeout: int = TIMEOUT, headers: dict | None = None) -> requests.Response | None:
-    """Single-attempt GET. Used for Nitter where the next mirror is the retry."""
-    h = {"User-Agent": DEFAULT_UA, "Accept": "*/*"}
-    if headers:
-        h.update(headers)
+def fetch_source(url, src_key, timeout=15):
     try:
-        r = requests.get(url, headers=h, timeout=timeout, allow_redirects=True)
-        if r.status_code == 200 and r.content:
-            return r
-        LOG.warning("non-200 from %s: %s", url, r.status_code)
-    except requests.RequestException as e:
-        LOG.debug("GET %s failed: %s", url, e)
-    return None
+        d = feedparser.parse(url, agent='daily-briefing/1.0 (+https://github.com/SeasonTemple/daily-briefing)')
+        out = []
+        for e in d.entries:
+            t = (e.get('title') or '').strip()
+            l = (e.get('link') or '').strip()
+            if not t or not l:
+                continue
+            pub = parse_pub(e)
+            out.append({
+                'title': t, 'link': l, 'pub': pub.isoformat() if pub else None,
+                'src': src_key
+            })
+        return out
+    except Exception as ex:
+        logging.warning(f"  fetch fail {src_key}: {ex}")
+        return []
 
 
-# ---------------------------------------------------------------------------
-# Source: generic RSS / Atom feed
-# ---------------------------------------------------------------------------
-
-def fetch_rss(source: dict) -> tuple[list[Item], str | None]:
-    """Return (items, error_msg)."""
-    url = source["url"]
-    name = source.get("name") or url
-    LOG.info("RSS fetch: %s", name)
-    try:
-        r = http_get(url, timeout=20)
-        if not r:
-            return [], f"http_failed: {url}"
-        feed = feedparser.parse(r.content)
-        items: list[Item] = []
-        for entry in feed.entries[: int(os.getenv("FETCH_PER_SOURCE", "30"))]:
-            link = entry.get("link") or entry.get("id") or ""
-            link = canonicalize_url(link)
-            title = (entry.get("title") or "").strip()
-            if not title:
-                # synthesize from link
-                title = link
-            author = (entry.get("author") or "").strip()
-            content = ""
-            if entry.get("summary"):
-                content = entry.summary
-            elif entry.get("content"):
-                v = entry.content
-                if isinstance(v, list) and v:
-                    content = v[0].get("value", "")
-            if entry.get("published_parsed"):
-                pub = _to_dt(entry.published_parsed, entry.get("published"))
-            else:
-                pub = _to_dt(entry.get("published"), entry.get("updated"))
-            lang = (entry.get("language") or "und").lower()[:2] or "und"
-            items.append(Item(
-                id=entry.get("id") or link or title,
-                title=title,
-                url=link,
-                source=name,
-                source_type="rss",
-                author=author,
-                published=pub,
-                content=_strip_html(content),
-                lang=lang,
-            ))
-        return items, None
-    except Exception as e:
-        return [], f"exception: {e!r}"
-
-
-# ---------------------------------------------------------------------------
-# Source: X (Twitter) user via Nitter mirrors
-# ---------------------------------------------------------------------------
-
-def fetch_x_user(source: dict) -> tuple[list[Item], str | None]:
-    handle = source["handle"].lstrip("@")
-    label = source.get("label") or f"@{handle}"
-    per_source = int(os.getenv("FETCH_PER_SOURCE", "30"))
-    items: list[Item] = []
-    last_err: str | None = None
-    for mirror in NITTER_MIRRORS:
-        url = f"{mirror.rstrip('/')}/{handle}/rss"
-        LOG.debug("X mirror try: %s for @%s", mirror, handle)
-        # No retry on Nitter; the next mirror is the retry.
-        r = http_get_once(url, timeout=NITTER_TIMEOUT)
-        if not r:
-            last_err = f"http_failed: {url}"
-            continue
-        try:
-            feed = feedparser.parse(r.content)
-        except Exception as e:
-            last_err = f"parse_error: {e!r}"
-            continue
-        if not feed.entries:
-            last_err = f"empty_feed: {url}"
-            continue
-        for entry in feed.entries[:per_source]:
-            link = entry.get("link") or entry.get("id") or ""
-            link = canonicalize_url(link)
-            title = (entry.get("title") or "").strip()
-            # Nitter often uses the tweet text as title; trim if huge
-            if len(title) > 240:
-                title = title[:237].rstrip() + "..."
-            if not title:
-                title = f"Tweet by @{handle}"
-            content = ""
-            if entry.get("summary"):
-                content = entry.summary
-            pub = _to_dt(entry.get("published_parsed"), entry.get("published"))
-            items.append(Item(
-                id=entry.get("id") or link or f"x:{handle}:{title[:40]}",
-                title=title,
-                url=link,
-                source=f"{label} (@{handle})",
-                source_type="x_user",
-                author=f"@{handle}",
-                published=pub,
-                content=_strip_html(content),
-                lang="en",
-            ))
-        LOG.info("X mirror OK: %s -> %d items", mirror, len(items))
-        return items, None
-    return [], last_err or "x_unavailable"
-
-
-# ---------------------------------------------------------------------------
-# Source: GitHub org events Atom feed
-# ---------------------------------------------------------------------------
-
-def fetch_github_org(source: dict) -> tuple[list[Item], str | None]:
-    org = source["org"]
-    label = source.get("label") or f"GitHub:{org}"
-    url = f"https://github.com/orgs/{org}/events.atom"
-    LOG.info("GitHub events fetch: %s", org)
-    r = http_get(url, timeout=15, headers={"Accept": "application/atom+xml"})
-    if not r:
-        return [], f"http_failed: {url}"
-    try:
-        feed = feedparser.parse(r.content)
-    except Exception as e:
-        return [], f"parse_error: {e!r}"
-    items: list[Item] = []
-    for entry in feed.entries[: int(os.getenv("FETCH_PER_SOURCE", "30"))]:
-        link = canonicalize_url(entry.get("link") or entry.get("id") or "")
-        title = (entry.get("title") or "").strip()
-        if not title:
-            title = f"GitHub activity in {org}"
-        content = entry.get("summary") or entry.get("content", "")
-        if isinstance(content, list):
-            content = " ".join(str(x) for x in content)
-        pub = _to_dt(entry.get("published_parsed"), entry.get("published"))
-        author = ""
-        for a in entry.get("authors", []) or []:
-            if a.get("name"):
-                author = a["name"]
-                break
-        items.append(Item(
-            id=entry.get("id") or link or f"github:{org}:{title[:40]}",
-            title=title,
-            url=link,
-            source=label,
-            source_type="github_org",
-            author=author,
-            published=pub,
-            content=_strip_html(content),
-            lang="en",
-        ))
-    return items, None
-
-
-# ---------------------------------------------------------------------------
-# HTML stripping
-# ---------------------------------------------------------------------------
-
-_TAG_RE = re.compile(r"<[^>]+>")
-_WS_RE = re.compile(r"\s+")
-
-def _strip_html(s: str | None) -> str:
-    if not s:
-        return ""
-    s = _TAG_RE.sub(" ", s)
-    s = s.replace("&nbsp;", " ").replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">").replace("&quot;", "\"").replace("&#39;", "'")
-    s = _WS_RE.sub(" ", s).strip()
-    return s
-
-
-# ---------------------------------------------------------------------------
-# Dispatcher
-# ---------------------------------------------------------------------------
-
-def fetch_all(sources: list[dict]) -> tuple[list[Item], dict[str, Any]]:
-    """Fetch every source. Returns (items, stats)."""
-    items: list[Item] = []
-    stats: dict[str, Any] = {
-        "total": 0,
-        "per_source": {},
-        "errors": {},
-        "started_at": datetime.now(timezone.utc).isoformat(),
-    }
-    for s in sources:
-        st = s.get("type", "rss")
-        name = (
-            s.get("label")
-            or s.get("name")
-            or s.get("handle")
-            or s.get("org")
-            or s.get("url")
-            or "unknown"
-        )
-        try:
-            if st == "rss":
-                its, err = fetch_rss(s)
-            elif st == "x_user":
-                its, err = fetch_x_user(s)
-            elif st == "github_org":
-                its, err = fetch_github_org(s)
-            else:
-                LOG.warning("unknown source type: %s", st)
-                its, err = [], f"unknown_type:{st}"
-        except Exception as e:  # hard guard
-            LOG.exception("source %s crashed: %s", name, e)
-            its, err = [], f"crash:{e!r}"
-
-        stats["per_source"][name] = len(its)
-        if err:
-            stats["errors"][name] = err
-        items.extend(its)
-    stats["total"] = len(items)
-    stats["ended_at"] = datetime.now(timezone.utc).isoformat()
-    return items, stats
-
-
-# ---------------------------------------------------------------------------
-# CLI for debugging
-# ---------------------------------------------------------------------------
-
-def main() -> int:
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
-    import argparse, yaml
+def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--profile", required=True)
-    p.add_argument("--out", default="-")
+    p.add_argument('--profile', required=True)
+    p.add_argument('--out', required=True)
     args = p.parse_args()
 
-    with open(f"profiles/{args.profile}.yaml", "r", encoding="utf-8") as f:
-        prof = yaml.safe_load(f)
-    sources = prof.get("sources", [])
-    items, stats = fetch_all(sources)
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
+
+    with open(args.profile) as f:
+        profile = yaml.safe_load(f)
+    logging.info(f"Profile: {profile.get('profile', '?')}, {len(profile.get('sources', []))} sources")
+
+    items_by_src = {}
+    for src in profile.get('sources', []):
+        url = src.get('rss_url') or src.get('url')
+        if not url:
+            continue
+        key = src.get('label') or src.get('name') or src.get('handle') or 'unknown'
+        if src.get('type') in ['x_user', 'github_org'] and not src.get('rss_url'):
+            continue
+        items = fetch_source(url, key)
+        items_by_src[key] = items
+        logging.info(f"  {key}: fetched {len(items)} items (tier {src.get('tier', '?')})")
+
+    # 时间窗 24h → 36h → 72h
+    def in_win(items, cut):
+        out = []
+        for i in items:
+            if not i['pub']:
+                continue
+            try:
+                dt = datetime.fromisoformat(i['pub']).astimezone(SH)
+                if dt >= cut:
+                    out.append(i)
+            except Exception:
+                pass
+        return sorted(out, key=lambda x: x['pub'], reverse=True)
+
+    pools = {k: in_win(v, NOW - timedelta(hours=24)) for k, v in items_by_src.items()}
+    total_24 = sum(len(v) for v in pools.values())
+    logging.info(f"24h total: {total_24}")
+
+    if total_24 < 15:
+        pools = {k: in_win(v, NOW - timedelta(hours=36)) for k, v in items_by_src.items()}
+        logging.info("Expanded to 36h")
+    if sum(len(v) for v in pools.values()) < 15:
+        pools = {k: in_win(v, NOW - timedelta(hours=72)) for k, v in items_by_src.items()}
+        logging.info("Expanded to 72h")
+
+    # AI 过滤
+    for k in list(pools.keys()):
+        pools[k] = [i for i in pools[k] if is_ai(i['title'], k)]
+
+    # per-source cap (tier-based)
+    SRC_LIMITS = {}
+    for src in profile.get('sources', []):
+        key = src.get('label') or src.get('name') or src.get('handle')
+        tier = src.get('tier', 'T2')
+        SRC_LIMITS[key] = {'T1.5': 3, 'T1': 3, 'T2': 3, 'T3': 3, 'T4': 3, 'T5': 3}.get(tier, 3)
+
+    final = []
+    for k, items in pools.items():
+        lim = SRC_LIMITS.get(k, 3)
+        final.extend(items[:lim])
+    final.sort(key=lambda x: x['pub'] or '', reverse=True)
+    # dedup
+    seen, deduped = set(), []
+    for it in final:
+        k = re.sub(r'\s+', ' ', it['title'].lower())[:60]
+        if k in seen:
+            continue
+        seen.add(k)
+        deduped.append(it)
+    final = deduped[:25]
+    logging.info(f"Final: {len(final)} items")
+
+    # 写 raw
+    os.makedirs(os.path.dirname(args.out) or '.', exist_ok=True)
     payload = {
-        "stats": stats,
-        "items": [it.to_dict() for it in items],
+        'date': NOW.isoformat(),
+        'profile': profile.get('profile'),
+        'window': '24h+fallback',
+        'items': final,
+        'sources_count': len(items_by_src),
+        'per_source': {k: len(v) for k, v in items_by_src.items()},
+        'note': 'raw data for Mavis M3 to summarize',
     }
-    txt = json.dumps(payload, ensure_ascii=False, indent=2)
-    if args.out == "-":
-        print(txt)
-    else:
-        with open(args.out, "w", encoding="utf-8") as f:
-            f.write(txt)
-    return 0
+    with open(args.out, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    logging.info(f"Wrote {args.out}")
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+if __name__ == '__main__':
+    main()
