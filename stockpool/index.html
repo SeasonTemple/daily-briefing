@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="data-date" content="2026-10-21T140852">
+<meta name="data-date" content="2026-10-21T141049">
 <meta name="screen-day" content="2026-10-20">
 <title>股票池 · 六条件选股看板</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -499,15 +499,15 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 </div>
 
 <script>
-/* 自更新:按 GitHub API → jsDelivr → raw 的顺序取最新快照,只在新版本日期更大时替换 */
+/* 自更新:按 GitHub API → raw → jsDelivr 取最新快照,版本戳更大才替换 */
 (function(){
   var curEl = document.querySelector('meta[name="data-date"]');
   if(!curEl) return;
   var cur = curEl.content;
   var SOURCES = [
     {type:'api', url:'https://api.github.com/repos/SeasonTemple/daily-briefing/contents/stockpool/index.html?ref=main'},
-    {type:'raw', url:'https://cdn.jsdelivr.net/gh/SeasonTemple/daily-briefing@main/stockpool/index.html'},
-    {type:'raw', url:'https://raw.githubusercontent.com/SeasonTemple/daily-briefing/main/stockpool/index.html'}
+    {type:'raw', url:'https://raw.githubusercontent.com/SeasonTemple/daily-briefing/main/stockpool/index.html'},
+    {type:'raw', url:'https://cdn.jsdelivr.net/gh/SeasonTemple/daily-briefing@main/stockpool/index.html'}
   ];
   var i = 0;
   function mark(tag){
