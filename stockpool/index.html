@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="data-date" content="2026-10-21">
+<title>股票池 · 六条件选股看板</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafafa; --card:#fff; --line:#e9e9ec; --line-soft:#f1f1f4;
+  --ink:#14171e; --ink-2:#4a5160; --ink-3:#8b909c;
+  --up:#e5484d; --down:#12a373; --accent:#e5484d;
+  --up-bg:rgba(229,72,77,.09); --down-bg:rgba(18,163,115,.09);
+  --warn:#c97b3f; --warn-bg:rgba(201,123,63,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Outfit',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px 96px}
+header{padding:56px 0 36px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;margin-bottom:14px}
+h1{font-size:32px;line-height:1.25;margin:0 0 10px;letter-spacing:-.01em;font-weight:600}
+.lede{font-size:15px;color:var(--ink-2);max-width:62ch;margin:0}
+.hmeta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 18px;font-size:13px;color:var(--ink-3)}
+.hmeta b{color:var(--ink-2);font-weight:500}
+section{margin-top:52px}
+h2{font-size:22px;margin:0 0 6px;font-weight:600;letter-spacing:-.005em;display:flex;align-items:center;gap:10px}
+h2 svg{color:var(--accent)}
+.sub{font-size:14px;color:var(--ink-3);margin:0 0 22px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.kpi .v{font-size:30px;font-weight:600;line-height:1.1;letter-spacing:-.02em}
+.kpi .k{font-size:13px;color:var(--ink-3);margin-top:6px}
+.kpi.accent .v{color:var(--accent)}
+.kpi.down .v{color:var(--down)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04);font-size:13.5px}
+th{font-size:12px;font-weight:500;color:var(--ink-3);text-align:left;padding:12px 12px;
+  border-bottom:1px solid var(--line);white-space:nowrap;letter-spacing:.02em}
+td{padding:11px 12px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right}
+td.nm{font-weight:500}
+td.ck{color:var(--down);text-align:center;font-size:15px;width:52px}
+th.ckh{text-align:center}
+.dim{color:var(--ink-3);font-size:12px}
+.up{color:var(--up)} .down{color:var(--down)}
+.notes{white-space:normal;min-width:220px}
+.note{display:inline-block;font-size:11.5px;line-height:1.5;padding:2px 7px;border-radius:6px;
+  background:var(--warn-bg);color:var(--warn);margin:1px 4px 1px 0}
+.note.none{background:transparent;color:var(--ink-3)}
+.pickdot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);
+  margin-right:6px;vertical-align:middle}
+.cards{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;
+  box-shadow:0 4px 16px -2px rgba(0,0,0,.06)}
+.card-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+.card-idx{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);
+  border:1px solid var(--up-bg);background:var(--up-bg);border-radius:8px;padding:4px 8px;line-height:1.4}
+.card-title{font-size:19px;font-weight:600;letter-spacing:-.01em}
+.card-sub{font-size:13px;color:var(--ink-3);margin-top:3px}
+.card-px{margin-left:auto;text-align:right}
+.px-num{font-size:22px;font-weight:600;line-height:1.2}
+.px-chg{font-size:13px;margin-top:2px}
+.px-time{font-size:11px;color:var(--ink-3);margin-top:3px}
+.badge{font-size:11px;padding:2px 7px;border-radius:6px;background:var(--warn-bg);color:var(--warn);
+  margin-left:6px;white-space:nowrap}
+.levels{margin:4px 0 20px}
+.levels-track{position:relative;height:34px;background:var(--line-soft);border-radius:9px}
+.levels-zone{position:absolute;top:0;bottom:0;background:rgba(18,163,115,.18);
+  border-left:1px solid rgba(18,163,115,.45);border-right:1px solid rgba(18,163,115,.45)}
+.levels-mark{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink-3)}
+.levels-mark.row2 span{top:-38px}
+.levels-mark span{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:11px;
+  font-family:'JetBrains Mono',monospace;color:var(--ink-2);background:var(--card);padding:0 3px;white-space:nowrap}
+.levels-mark.stop{background:var(--down)} .levels-mark.stop span{color:var(--down)}
+.levels-mark.px{background:var(--accent)} .levels-mark.px span{color:var(--accent);font-weight:600}
+.levels-mark.tgt{background:var(--ink-3)}
+.levels-legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:12px;font-size:12px;color:var(--ink-2)}
+.lg::before{content:'';display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:6px;
+  vertical-align:middle;background:var(--ink-3)}
+.lg.stop::before{background:var(--down)} .lg.zone::before{background:rgba(18,163,115,.55)}
+.lg.px::before{background:var(--accent)} .lg.tgt::before{background:var(--ink-3)}
+.kv{border-top:1px solid var(--line-soft)}
+.kv-row{display:grid;grid-template-columns:92px 1fr;gap:14px;padding:9px 0;
+  border-bottom:1px dashed var(--line-soft);font-size:13.5px}
+.kv-row:last-child{border-bottom:none}
+.kv-row>span:first-child{color:var(--ink-3);font-size:12.5px}
+.kv-row>span:last-child{color:var(--ink-2)}
+.rr.ok{color:var(--down);font-weight:600} .rr.weak{color:var(--warn);font-weight:600}
+.note-row{margin-top:12px}
+.bench-row{display:grid;grid-template-columns:96px 1fr 68px;gap:12px;align-items:center;padding:4px 0}
+.bench-row .label{font-size:11.5px;color:var(--ink-3)}
+.bar-bg{height:16px;background:var(--line-soft);border-radius:5px;position:relative}
+.bar-zero{position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:var(--ink-3);opacity:.5}
+.bar-fill{position:absolute;top:0;bottom:0;border-radius:5px;background:var(--ink-3)}
+.bar-fill.pos{background:linear-gradient(90deg,var(--up),#f2717a)}
+.bar-fill.neg{background:linear-gradient(90deg,var(--down),#4fc39a)}
+.bench-row .val{font-size:11.5px;text-align:right;color:var(--ink-2);
+  font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}
+.funds{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.fund-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+  box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.fund-name{font-size:13.5px;font-weight:500;margin-bottom:10px}
+.note-box{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:12px;padding:16px 18px;font-size:14px;color:var(--ink-2);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.note-box b{color:var(--ink)}
+.rules{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
+  font-size:13.5px;color:var(--ink-2);display:flex;gap:11px;align-items:flex-start;
+  box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.rule .rn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:6px;padding:1px 6px;line-height:1.6;flex:none}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+  font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:8px 20px}
+.sync{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-3);
+  border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+.sync.ok{color:var(--down);border-color:rgba(18,163,115,.3)}
+@media (max-width:860px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .wrap{padding:0 16px 64px}
+  header{padding:36px 0 28px}
+  h1{font-size:26px}
+  .kv-row{grid-template-columns:78px 1fr;gap:10px}
+  .card-head{flex-wrap:wrap}
+  .card-px{margin-left:0;text-align:left;width:100%}
+  .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">六条件选股 · 股票池</div>
+  <h1>池子 8 只,今日选 3 只</h1>
+  <p class="lede">入池只有六条指标,一条不踢。今天从池子里挑 3 只,给出买点、止损、目标和盈亏比;
+  池外 71 只命中五条的票不在池子里,不看、不选。</p>
+  <div class="hmeta">
+    <span>数据基准 <b>2026-10-20 收盘</b></span>
+    <span>页面生成 <b>2026-10-21</b></span>
+    <span>来源 <b>恒生全市场 + 同花顺 iFinD 交叉验证</b></span>
+    <span>下一轮 <b>每日收盘后重建</b></span>
+  </div>
+</header>
+
+<section>
+  <h2><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>今日精选</h2>
+  <p class="sub">从池内按资金面、位置、盈亏比排序挑出。盈亏比不足 2:1 的只做小仓或直接放弃。</p>
+  <div class="cards">
+<div class="card">
+  <div class="card-head">
+    <div class="card-idx">01</div>
+    <div>
+      <div class="card-title">翰宇药业 <span class="mono dim">300199.SZ</span></div>
+      <div class="card-sub">池内评分 77 · 6/6 全中 · 红柱第 9 根 </div>
+    </div>
+    <div class="card-px">
+      <div class="px-num mono up">27.21</div>
+      <div class="px-chg mono up">+2.68%</div>
+      <div class="px-time mono">2026-10-21 11:30</div>
+    </div>
+  </div>
+  
+<div class="levels">
+  <div class="levels-track">
+    <div class="levels-zone" style="left:25.5%;width:31.2%"></div>
+    <div class="levels-mark stop row1" style="left:7.0%"><span>24.91</span></div><div class="levels-mark px row1" style="left:60.9%"><span>27.21</span></div><div class="levels-mark tgt row1" style="left:93.0%"><span>28.58</span></div>
+  </div>
+  <div class="levels-legend">
+    <span class="lg stop">止损 24.91</span>
+    <span class="lg zone">买点 25.7–27.03</span>
+    <span class="lg px">现价 27.21</span>
+    <span class="lg tgt">目标 28.58</span>
+  </div>
+</div>
+  <div class="kv">
+    <div class="kv-row"><span>入池依据</span><span>K 81.3/D 72.8 落 70-90 · RSI6 76.2>50 · BR 139 · MACD 柱 0.55>0 · 换手 7.88% · 成交额 15.366亿</span></div>
+    <div class="kv-row"><span>资金面</span><span>主力 1/3/5 日 8,690 / 22,453 / 10,554 万 · 主力成本 24.45</span></div>
+    <div class="kv-row"><span>关键位</span><span>MA5 25.43 · MA10 24.9 · MA60 23.4 · 支撑 20.26 · 压力 28.58</span></div>
+    <div class="kv-row"><span>盈亏比</span><span class="rr weak">1.31:1 不足 2:1,只做小仓或放弃</span></div>
+    <div class="kv-row"><span>仓位</span><span>≤1.5% 总资产 · 3 只合计 ≤8%</span></div>
+    <div class="kv-row"><span>失效条件</span><span>收盘跌破 24.91 · 5 日主力转净流出 · 减持/业绩预减公告 · 跌出池子</span></div>
+  </div>
+  
+</div>
+<div class="card">
+  <div class="card-head">
+    <div class="card-idx">02</div>
+    <div>
+      <div class="card-title">盟固利 <span class="mono dim">301487.SZ</span></div>
+      <div class="card-sub">池内评分 77 · 6/6 全中 · 红柱第 11 根 <span class="badge warn">今日已跌超 5%,等企稳</span></div>
+    </div>
+    <div class="card-px">
+      <div class="px-num mono down">18.01</div>
+      <div class="px-chg mono down">-6.39%</div>
+      <div class="px-time mono">2026-10-21 11:30</div>
+    </div>
+  </div>
+  
+<div class="levels">
+  <div class="levels-track">
+    <div class="levels-zone" style="left:20.8%;width:23.2%"></div>
+    <div class="levels-mark stop row1" style="left:7.0%"><span>18.09</span></div><div class="levels-mark px row2" style="left:7.0%"><span>18.01</span></div><div class="levels-mark tgt row1" style="left:93.0%"><span>21.65</span></div>
+  </div>
+  <div class="levels-legend">
+    <span class="lg stop">止损 18.09</span>
+    <span class="lg zone">买点 18.66–19.62</span>
+    <span class="lg px">现价 18.01</span>
+    <span class="lg tgt">目标 21.65</span>
+  </div>
+</div>
+  <div class="kv">
+    <div class="kv-row"><span>入池依据</span><span>K 75.4/D 71.6 落 70-90 · RSI6 70.8>50 · BR 160 · MACD 柱 0.58>0 · 换手 9.82% · 成交额 8.441亿</span></div>
+    <div class="kv-row"><span>资金面</span><span>主力 1/3/5 日 -895 / 2,177 / 11,176 万 · 主力成本 17.58</span></div>
+    <div class="kv-row"><span>关键位</span><span>MA5 18.35 · MA10 17.92 · MA60 16.29 · 支撑 12.97 · 压力 21.65</span></div>
+    <div class="kv-row"><span>盈亏比</span><span class="rr ok">2.1:1 达标</span></div>
+    <div class="kv-row"><span>仓位</span><span>≤3% 总资产 · 3 只合计 ≤8%</span></div>
+    <div class="kv-row"><span>失效条件</span><span>收盘跌破 18.09 · 5 日主力转净流出 · 减持/业绩预减公告 · 跌出池子</span></div>
+  </div>
+  
+</div>
+<div class="card">
+  <div class="card-head">
+    <div class="card-idx">03</div>
+    <div>
+      <div class="card-title">金沃股份 <span class="mono dim">300984.SZ</span></div>
+      <div class="card-sub">池内评分 75 · 6/6 全中 · 红柱第 17 根 </div>
+    </div>
+    <div class="card-px">
+      <div class="px-num mono down">36.58</div>
+      <div class="px-chg mono down">-0.60%</div>
+      <div class="px-time mono">2026-10-21 11:30</div>
+    </div>
+  </div>
+  
+<div class="levels">
+  <div class="levels-track">
+    <div class="levels-zone" style="left:20.8%;width:22.9%"></div>
+    <div class="levels-mark stop row1" style="left:7.0%"><span>34.59</span></div><div class="levels-mark px row1" style="left:31.8%"><span>36.58</span></div><div class="levels-mark tgt row1" style="left:93.0%"><span>41.49</span></div>
+  </div>
+  <div class="levels-legend">
+    <span class="lg stop">止损 34.59</span>
+    <span class="lg zone">买点 35.7–37.54</span>
+    <span class="lg px">现价 36.58</span>
+    <span class="lg tgt">目标 41.49</span>
+  </div>
+</div>
+  <div class="kv">
+    <div class="kv-row"><span>入池依据</span><span>K 77.1/D 70.3 落 70-90 · RSI6 71.1>50 · BR 136 · MACD 柱 1.01>0 · 换手 7.87% · 成交额 3.576亿</span></div>
+    <div class="kv-row"><span>资金面</span><span>主力 1/3/5 日 4,088 / 6,989 / 10,132 万 · 主力成本 32.66</span></div>
+    <div class="kv-row"><span>关键位</span><span>MA5 33.92 · MA10 32.97 · MA60 31.96 · 支撑 23.99 · 压力 41.49</span></div>
+    <div class="kv-row"><span>盈亏比</span><span class="rr ok">2.12:1 达标</span></div>
+    <div class="kv-row"><span>仓位</span><span>≤3% 总资产 · 3 只合计 ≤8%</span></div>
+    <div class="kv-row"><span>失效条件</span><span>收盘跌破 34.59 · 5 日主力转净流出 · 减持/业绩预减公告 · 跌出池子</span></div>
+  </div>
+  <div class="note-row"><span class="note">30天内解禁 2026-11-30(占总股本0.00%)</span><span class="note">⚠️ 5日主力净流出 -39634 万(形态与资金背离,选它要额外理由)</span><span class="note">⚠️ 3日主力净流出 -34390 万</span></div>
+</div></div>
+</section>
+
+<section>
+  <h2><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>入池条件命中</h2>
+  <p class="sub">池内每一只都同时满足六条。这张表就是入池依据,没有第七条。</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr>
+      <th>代码</th><th>名称</th>
+      <th class="ckh">KDJ 70-90</th><th class="ckh">BRAR 100-300</th><th class="ckh">RSI6>50</th><th class="ckh">MACD红柱</th><th class="ckh">换手5-10%</th><th class="ckh">成交额≥1亿</th>
+      <th class="num">评分</th>
+    </tr></thead>
+    <tbody><tr><td class="mono">300199.SZ</td><td class="nm">翰宇药业</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">77</td></tr><tr><td class="mono">301487.SZ</td><td class="nm">盟固利</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">77</td></tr><tr><td class="mono">300984.SZ</td><td class="nm">金沃股份</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">75</td></tr><tr><td class="mono">002811.SZ</td><td class="nm">郑中设计</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">71</td></tr><tr><td class="mono">600573.SH</td><td class="nm">惠泉啤酒</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">52</td></tr><tr><td class="mono">601811.SH</td><td class="nm">新华文轩</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">52</td></tr><tr><td class="mono">002727.SZ</td><td class="nm">一心堂</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">49</td></tr><tr><td class="mono">300133.SZ</td><td class="nm">华策影视</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="ck">✓</td><td class="mono num">49</td></tr></tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>池内主力资金</h2>
+  <p class="sub">主力 = 特大单 + 大单净买入(万元)。红柱、绿柱为 5 日 / 3 日累计,用于池内排序,不改变入池资格。</p>
+  <div class="funds"><div class="fund-item"><div class="fund-name">翰宇药业 <span class="mono dim">300199.SZ</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:13.3%"></div></div><span class="val">10,554</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:28.3%"></div></div><span class="val">22,453</span></div></div><div class="fund-item"><div class="fund-name">盟固利 <span class="mono dim">301487.SZ</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:14.1%"></div></div><span class="val">11,176</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:2.7%"></div></div><span class="val">2,177</span></div></div><div class="fund-item"><div class="fund-name">金沃股份 <span class="mono dim">300984.SZ</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:12.8%"></div></div><span class="val">10,132</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:8.8%"></div></div><span class="val">6,989</span></div></div><div class="fund-item"><div class="fund-name">郑中设计 <span class="mono dim">002811.SZ</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:9.2%"></div></div><span class="val">7,267</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:9.8%"></div></div><span class="val">7,730</span></div></div><div class="fund-item"><div class="fund-name">惠泉啤酒 <span class="mono dim">600573.SH</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill neg" style="right:50%;width:19.6%"></div></div><span class="val">-15,559</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill neg" style="right:50%;width:15.8%"></div></div><span class="val">-12,505</span></div></div><div class="fund-item"><div class="fund-name">新华文轩 <span class="mono dim">601811.SH</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill pos" style="left:50%;width:5.4%"></div></div><span class="val">4,265</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill neg" style="right:50%;width:24.5%"></div></div><span class="val">-19,431</span></div></div><div class="fund-item"><div class="fund-name">一心堂 <span class="mono dim">002727.SZ</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill neg" style="right:50%;width:9.7%"></div></div><span class="val">-7,650</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill neg" style="right:50%;width:10.8%"></div></div><span class="val">-8,540</span></div></div><div class="fund-item"><div class="fund-name">华策影视 <span class="mono dim">300133.SZ</span></div><div class="bench-row"><span class="label">5 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill neg" style="right:50%;width:50.0%"></div></div><span class="val">-39,634</span></div><div class="bench-row"><span class="label">3 日主力(万)</span><div class="bar-bg"><div class="bar-zero"></div><div class="bar-fill neg" style="right:50%;width:43.4%"></div></div><span class="val">-34,390</span></div></div></div>
+</section>
+
+<section>
+  <h2><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>池内全部 8 只</h2>
+  <p class="sub">带红点的为今日精选。风险提示只做标注,不把人踢出池子。</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr>
+      <th>代码</th><th>名称</th><th class="num">评分</th><th>红柱</th>
+      <th class="num">收盘</th><th class="num">涨跌</th><th class="num">换手</th><th class="num">成交额</th>
+      <th class="num">K/D</th><th class="num">RSI6</th><th class="num">BR</th>
+      <th class="num">主力5日</th><th>风险提示</th>
+    </tr></thead>
+    <tbody>
+<tr>
+  <td class="mono"><span class="pickdot"></span>300199.SZ</td>
+  <td class="nm">翰宇药业</td>
+  <td class="mono num">77</td>
+  <td class="mono">9根</td>
+  <td class="mono num">26.5</td>
+  <td class="mono up">+2.68%</td>
+  <td class="mono num">7.88%</td>
+  <td class="mono num">15.366亿</td>
+  <td class="mono num">81.3/72.8</td>
+  <td class="mono num">76.2</td>
+  <td class="mono num">139</td>
+  <td class="mono num up">10,554</td>
+  <td class="notes"><span class="note none">—</span></td>
+</tr>
+<tr>
+  <td class="mono"><span class="pickdot"></span>301487.SZ</td>
+  <td class="nm">盟固利</td>
+  <td class="mono num">77</td>
+  <td class="mono">11根</td>
+  <td class="mono num">19.24</td>
+  <td class="mono down">-6.39%</td>
+  <td class="mono num">9.82%</td>
+  <td class="mono num">8.441亿</td>
+  <td class="mono num">75.4/71.6</td>
+  <td class="mono num">70.8</td>
+  <td class="mono num">160</td>
+  <td class="mono num up">11,176</td>
+  <td class="notes"><span class="note none">—</span></td>
+</tr>
+<tr>
+  <td class="mono"><span class="pickdot"></span>300984.SZ</td>
+  <td class="nm">金沃股份</td>
+  <td class="mono num">75</td>
+  <td class="mono">17根</td>
+  <td class="mono num">36.8</td>
+  <td class="mono down">-0.60%</td>
+  <td class="mono num">7.87%</td>
+  <td class="mono num">3.576亿</td>
+  <td class="mono num">77.1/70.3</td>
+  <td class="mono num">71.1</td>
+  <td class="mono num">136</td>
+  <td class="mono num up">10,132</td>
+  <td class="notes"><span class="note">30天内解禁 2026-11-26(占总股本10.18%)</span></td>
+</tr>
+<tr>
+  <td class="mono">002811.SZ</td>
+  <td class="nm">郑中设计</td>
+  <td class="mono num">71</td>
+  <td class="mono">16根</td>
+  <td class="mono num">21.96</td>
+  <td class="mono up">+10.02%</td>
+  <td class="mono num">8.32%</td>
+  <td class="mono num">5.08亿</td>
+  <td class="mono num">84.8/81.4</td>
+  <td class="mono num">82.0</td>
+  <td class="mono num">178</td>
+  <td class="mono num up">7,267</td>
+  <td class="notes"><span class="note">⚠️ RSI6 82.0 超买</span></td>
+</tr>
+<tr>
+  <td class="mono">600573.SH</td>
+  <td class="nm">惠泉啤酒</td>
+  <td class="mono num">52</td>
+  <td class="mono">12根</td>
+  <td class="mono num">12.48</td>
+  <td class="mono up">+4.09%</td>
+  <td class="mono num">7.7%</td>
+  <td class="mono num">2.417亿</td>
+  <td class="mono num">73.4/80.0</td>
+  <td class="mono num">53.4</td>
+  <td class="mono num">132</td>
+  <td class="mono num down">-15,559</td>
+  <td class="notes"><span class="note">⚠️ 5日主力净流出 -15559 万(形态与资金背离,选它要额外理由)</span><span class="note">⚠️ 3日主力净流出 -12505 万</span></td>
+</tr>
+<tr>
+  <td class="mono">601811.SH</td>
+  <td class="nm">新华文轩</td>
+  <td class="mono num">52</td>
+  <td class="mono">25根</td>
+  <td class="mono num">22.99</td>
+  <td class="mono down">-0.48%</td>
+  <td class="mono num">6.82%</td>
+  <td class="mono num">12.84亿</td>
+  <td class="mono num">71.6/79.3</td>
+  <td class="mono num">51.3</td>
+  <td class="mono num">158</td>
+  <td class="mono num up">4,265</td>
+  <td class="notes"><span class="note">近3个月违规处罚(2026-09-24,其他违规,出具监管工作函)</span><span class="note">⚠️ 3日主力净流出 -19431 万</span><span class="note">⚠️ 高位放量长阴(-9.24% 但红柱已25根)</span></td>
+</tr>
+<tr>
+  <td class="mono">002727.SZ</td>
+  <td class="nm">一心堂</td>
+  <td class="mono num">49</td>
+  <td class="mono">10根</td>
+  <td class="mono num">13.08</td>
+  <td class="mono up">+1.76%</td>
+  <td class="mono num">5.45%</td>
+  <td class="mono num">2.841亿</td>
+  <td class="mono num">89.1/85.1</td>
+  <td class="mono num">85.5</td>
+  <td class="mono num">159</td>
+  <td class="mono num down">-7,650</td>
+  <td class="notes"><span class="note">近3个月违规处罚(2026-08-31,违反特定管理规定,责令当事人改正违法行为，建议对当事人减轻处罚如下:1)</span><span class="note">⚠️ 3日主力净流出 -8540 万</span><span class="note">⚠️ RSI6 85.5 超买</span></td>
+</tr>
+<tr>
+  <td class="mono">300133.SZ</td>
+  <td class="nm">华策影视</td>
+  <td class="mono num">49</td>
+  <td class="mono">14根</td>
+  <td class="mono num">9.32</td>
+  <td class="mono down">-0.64%</td>
+  <td class="mono num">5.34%</td>
+  <td class="mono num">8.172亿</td>
+  <td class="mono num">78.9/81.0</td>
+  <td class="mono num">75.2</td>
+  <td class="mono num">139</td>
+  <td class="mono num down">-39,634</td>
+  <td class="notes"><span class="note">30天内解禁 2026-11-30(占总股本0.00%)</span><span class="note">⚠️ 5日主力净流出 -39634 万(形态与资金背离,选它要额外理由)</span><span class="note">⚠️ 3日主力净流出 -34390 万</span></td>
+</tr></tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>口径与纪律</h2>
+  <p class="sub">这套规则来自一份微信选股口诀,已固化成可复现的每日流程。</p>
+  <div class="rules">
+    <div class="rule"><span class="rn">C1</span><span>KDJ(9,3,3)日线,<b>K 与 D 同落 70-90</b>,J ≤ 100</span></div>
+    <div class="rule"><span class="rn">C2</span><span>BRAR(26),<b>BR 落 100-300</b>,AR 同步记录</span></div>
+    <div class="rule"><span class="rn">C3</span><span><b>RSI6 &gt; 50</b>(同花顺 RSI1 = 6 日)</span></div>
+    <div class="rule"><span class="rn">C4</span><span>DIF&gt;DEA 且 <b>MACD 柱 &gt; 0</b>;第一根红柱评分最高</span></div>
+    <div class="rule"><span class="rn">C5</span><span>当日<b>换手率 5-10%</b></span></div>
+    <div class="rule"><span class="rn">C6</span><span>当日<b>成交额 ≥ 1 亿</b></span></div>
+    <div class="rule"><span class="rn">池外</span><span>全市场还有 71 只命中五条,<b>不在池子里,今天不看、不选</b></span></div>
+    <div class="rule"><span class="rn">止损</span><span>距买入价 <b>≥3%</b> 且高于跌停价,<b>收盘价确认</b></span></div>
+    <div class="rule"><span class="rn">仓位</span><span>单只 ≤3%、三只合计 ≤8%、当日新开仓 ≤10%</span></div>
+    <div class="rule"><span class="rn">不追</span><span>开盘高于昨收 +2% 不买;回踩 MA5 不破再进</span></div>
+    <div class="rule"><span class="rn">空池</span><span>池子可以为空,<b>连续空仓是合法结果</b></span></div>
+    <div class="rule"><span class="rn">流程</span><span>收盘后重建:全市场 → 预筛 → 技术指标 → 六条判定 → 标注 → 排序</span></div>
+  </div>
+  <div class="note-box" style="margin-top:16px">
+    <b>为什么池里的票红柱都不短?</b> KDJ 爬到 70-90 的时候,MACD 红柱通常已经连着走了好几根;
+    真正"第一根红柱"的那天,K/D 往往还在 20-65 爬升。这两条天然错位 —— 所以池子里的票多是"已经启动过一段"的,
+    不是"刚启动"。想抓第一根红柱就在池外,而池外我们不看。
+  </div>
+</section>
+
+<footer>
+  <span class="sync" id="syncbadge">数据版本 2026-10-21</span>
+  <span>六条件股票池 · 自动重建</span>
+  <span>数据来源:恒生(MiniMax Finance)· 同花顺 iFinD</span>
+  <span>不构成投资建议,数据自用</span>
+</footer>
+</div>
+
+<script>
+/* 自更新:若 GitHub 上的快照比本页新,自动换成最新版 */
+(function(){
+  var curEl = document.querySelector('meta[name="data-date"]');
+  if(!curEl) return;
+  var cur = curEl.content;
+  var sources = [
+    'https://raw.githubusercontent.com/SeasonTemple/daily-briefing/main/stockpool/index.html',
+    'https://cdn.jsdelivr.net/gh/SeasonTemple/daily-briefing@main/stockpool/index.html'
+  ];
+  var i = 0;
+  function mark(){
+    var b = document.getElementById('syncbadge');
+    if(b){ b.textContent = '数据版本 ' + cur + ' · 已是最新'; b.classList.add('ok'); }
+  }
+  function tryNext(){
+    if(i >= sources.length){ mark(); return; }
+    var u = sources[i++] + '?t=' + Date.now();
+    fetch(u,{cache:'no-store'}).then(function(r){
+      if(!r.ok) throw new Error('http');
+      return r.text();
+    }).then(function(txt){
+      var doc = new DOMParser().parseFromString(txt,'text/html');
+      var nd = doc.querySelector('meta[name="data-date"]');
+      if(nd && nd.content > cur){
+        document.open(); document.write(txt); document.close();
+      } else { mark(); }
+    }).catch(tryNext);
+  }
+  tryNext();
+})();
+</script>
+
+</body>
+</html>
