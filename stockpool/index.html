@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="data-date" content="2026-10-21T141049">
+<meta name="data-date" content="2026-10-21T141148">
 <meta name="screen-day" content="2026-10-20">
 <title>股票池 · 六条件选股看板</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -121,6 +121,7 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 .sync{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-3);
   border:1px solid var(--line);border-radius:6px;padding:2px 8px}
 .sync.ok{color:var(--down);border-color:rgba(18,163,115,.3)}
+.sync.warn{color:var(--warn);border-color:rgba(201,123,63,.35)}
 @media (max-width:860px){
   .kpis{grid-template-columns:repeat(2,1fr)}
   .wrap{padding:0 16px 64px}
@@ -509,10 +510,12 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
     {type:'raw', url:'https://raw.githubusercontent.com/SeasonTemple/daily-briefing/main/stockpool/index.html'},
     {type:'raw', url:'https://cdn.jsdelivr.net/gh/SeasonTemple/daily-briefing@main/stockpool/index.html'}
   ];
-  var i = 0;
+  var i = 0, gotRemote = false;
   function mark(tag){
     var b = document.getElementById('syncbadge');
-    if(b){ b.textContent = '数据版本 ' + cur.split('T')[0] + (tag ? ' · ' + tag : ''); b.classList.add('ok'); }
+    if(!b) return;
+    b.textContent = '数据版本 ' + cur.split('T')[0] + (tag ? ' · ' + tag : '');
+    b.classList.add(gotRemote ? 'ok' : 'warn');
   }
   function pick(txt){
     var doc = new DOMParser().parseFromString(txt,'text/html');
@@ -522,7 +525,7 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
     } else { mark('已是最新'); }
   }
   function tryNext(){
-    if(i >= SOURCES.length){ mark('取数受限,显示部署版'); return; }
+    if(i >= SOURCES.length){ mark(gotRemote ? '已是最新' : '取数受限,显示本地版本'); return; }
     var s = SOURCES[i++];
     var url = s.url + (s.type === 'api' ? '&t=' + Date.now() : '?t=' + Date.now());
     fetch(url, {cache:'no-store'}).then(function(r){
@@ -536,7 +539,7 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
         });
       }
       return r.text();
-    }).then(pick).catch(tryNext);
+    }).then(function(txt){ gotRemote = true; return pick(txt); }).catch(tryNext);
   }
   tryNext();
 })();
