@@ -452,33 +452,44 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 </div>
 
 <script>
-/* 自更新:若 GitHub 上的快照比本页新,自动换成最新版 */
+/* 自更新:按 GitHub API → jsDelivr → raw 的顺序取最新快照,只在新版本日期更大时替换 */
 (function(){
   var curEl = document.querySelector('meta[name="data-date"]');
   if(!curEl) return;
   var cur = curEl.content;
-  var sources = [
-    'https://raw.githubusercontent.com/SeasonTemple/daily-briefing/main/stockpool/index.html',
-    'https://cdn.jsdelivr.net/gh/SeasonTemple/daily-briefing@main/stockpool/index.html'
+  var SOURCES = [
+    {type:'api', url:'https://api.github.com/repos/SeasonTemple/daily-briefing/contents/stockpool/index.html?ref=main'},
+    {type:'raw', url:'https://cdn.jsdelivr.net/gh/SeasonTemple/daily-briefing@main/stockpool/index.html'},
+    {type:'raw', url:'https://raw.githubusercontent.com/SeasonTemple/daily-briefing/main/stockpool/index.html'}
   ];
   var i = 0;
-  function mark(){
+  function mark(tag){
     var b = document.getElementById('syncbadge');
-    if(b){ b.textContent = '数据版本 ' + cur + ' · 已是最新'; b.classList.add('ok'); }
+    if(b){ b.textContent = '数据版本 ' + cur + (tag ? ' · ' + tag : ''); b.classList.add('ok'); }
+  }
+  function pick(txt){
+    var doc = new DOMParser().parseFromString(txt,'text/html');
+    var nd = doc.querySelector('meta[name="data-date"]');
+    if(nd && nd.content > cur){
+      document.open(); document.write(txt); document.close();
+    } else { mark('已是最新'); }
   }
   function tryNext(){
-    if(i >= sources.length){ mark(); return; }
-    var u = sources[i++] + '?t=' + Date.now();
-    fetch(u,{cache:'no-store'}).then(function(r){
-      if(!r.ok) throw new Error('http');
+    if(i >= SOURCES.length){ mark('取数受限,显示部署版'); return; }
+    var s = SOURCES[i++];
+    var url = s.url + (s.type === 'api' ? '&t=' + Date.now() : '?t=' + Date.now());
+    fetch(url, {cache:'no-store'}).then(function(r){
+      if(!r.ok) throw new Error('http ' + r.status);
+      if(s.type === 'api'){
+        return r.json().then(function(j){
+          var bin = atob(j.content);
+          var arr = new Uint8Array(bin.length);
+          for(var k=0;k<bin.length;k++) arr[k]=bin.charCodeAt(k);
+          return new TextDecoder('utf-8').decode(arr);
+        });
+      }
       return r.text();
-    }).then(function(txt){
-      var doc = new DOMParser().parseFromString(txt,'text/html');
-      var nd = doc.querySelector('meta[name="data-date"]');
-      if(nd && nd.content > cur){
-        document.open(); document.write(txt); document.close();
-      } else { mark(); }
-    }).catch(tryNext);
+    }).then(pick).catch(tryNext);
   }
   tryNext();
 })();
