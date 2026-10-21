@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="data-date" content="2026-10-21T141148">
+<meta name="data-date" content="2026-10-21T141223">
 <meta name="screen-day" content="2026-10-20">
 <title>股票池 · 六条件选股看板</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -522,7 +522,10 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
     var nd = doc.querySelector('meta[name="data-date"]');
     if(nd && nd.content > cur){
       document.open(); document.write(txt); document.close();
-    } else { mark('已是最新'); }
+    } else {
+      // 这个源拿到的不是更新的版本 → 继续试下一个源(raw 有 5 分钟 CDN 缓存,可能落后)
+      tryNext();
+    }
   }
   function tryNext(){
     if(i >= SOURCES.length){ mark(gotRemote ? '已是最新' : '取数受限,显示本地版本'); return; }
