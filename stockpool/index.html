@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="data-date" content="2026-10-21">
+<meta name="data-date" content="2026-10-21T140852">
+<meta name="screen-day" content="2026-10-20">
 <title>股票池 · 六条件选股看板</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -489,7 +490,7 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
 </section>
 
 <footer>
-  <span class="sync" id="syncbadge">数据版本 2026-10-21</span>
+  <span class="sync" id="syncbadge">数据版本 2026-10-20</span>
   <span>六条件股票池 · 自动重建</span>
   <span>官方地址 <a href="https://nq0caoa45li9i.space.mcode.cn/" style="color:var(--ink-2);text-decoration:none;border-bottom:1px dotted var(--ink-3)">nq0caoa45li9i.space.mcode.cn</a></span>
   <span>数据来源:恒生(MiniMax Finance)· 同花顺 iFinD</span>
@@ -511,7 +512,7 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
   var i = 0;
   function mark(tag){
     var b = document.getElementById('syncbadge');
-    if(b){ b.textContent = '数据版本 ' + cur + (tag ? ' · ' + tag : ''); b.classList.add('ok'); }
+    if(b){ b.textContent = '数据版本 ' + cur.split('T')[0] + (tag ? ' · ' + tag : ''); b.classList.add('ok'); }
   }
   function pick(txt){
     var doc = new DOMParser().parseFromString(txt,'text/html');
